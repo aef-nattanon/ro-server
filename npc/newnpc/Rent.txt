@@ -1,0 +1,130 @@
+-	script	yek	-1,{
+
+	mes "^0066FF[ yek ]^000000";
+	mes "สวัสดี";
+	mes "ข้ามีบริการหลากหลายให้ท่านเลือก";
+	mes "โปรดเลือกรายการ!";
+	next;
+	menu "รับสกิลเสริม",SkillAdd,"เช่านก/เป็ด",Rant;
+	
+	
+	
+	SkillAdd:
+	mes "^0066FF[ yek ]^000000";
+	mes "รับสกิวเสริม";
+	mes "อาชีพต่างๆ";
+	next;
+	callfunc "F_GetPlatinumSkills";
+	mes "^0066FF[ yek ]^000000";	
+	mes "เรียบร้อย!";
+	close;
+	
+	Rant:
+	mes "^0066FF[ yek ]^000000";
+	mes "โปรดเลือกรายการ";
+	next;
+	menu "เช่า Peco",Repeco,"เช่า Falcon",Refal;
+	close;
+	
+	
+	resetscoin:
+	menu "ResetStat/Skill ^ff9900 Zeny ^000000",resets;
+	close;
+	
+	resetcoin:
+	mes "^0066FF[ yek ]^000000";
+	mes "บริการ รีสเตตัส และ สกิล";
+	mes "ครั้งละ 25 Cash Coin";
+	next;
+	menu "^ff0000•^000000 Status",Resetstatus1cash,"^ff0000•^000000 Skill",Skill1cash;
+	close;
+	
+	Resetstatus1cash:
+	if (countitem(7720) > 0) {
+	next;
+	resetstatus;
+	delitem 7720,25;
+	mes "^0066FF[ yek ]^000000";
+	mes "เสร็จเรียบร้อย";	
+	}else{
+	mes "^0066FF[ yek ]^000000";
+	mes "คุณไม่มี Cash Coin จำนวน 25 ชิ้น";	
+	}
+	close;
+	
+	Skill1cash:
+	if (countitem(7720) > 0) {
+	next;
+	resetskill;
+	delitem 7720,25;
+	mes "^0066FF[ yek ]^000000";
+	mes "เสร็จเรียบร้อย";	
+	}else{
+	mes "^0066FF[ yek ]^000000";
+	mes "คุณไม่มี Cash Coin จำนวน 25 ชิ้น";	
+	}
+	close;
+	
+	
+	resets:
+	mes "^0066FF[ yek ]^000000";
+	mes "ResetStat/Skill ";
+	mes "ครั้งละ 1M";
+	next;
+	menu "^ff0000•^000000 Status",Resetstatus1,"^ff0000•^000000 Skill",Resetskill1;
+	close;
+	
+	Repeco:
+	if ((Class == 7) || (Class == 14) || (Class == 4008) || (Class == 4015) || (Class == 4030) || (Class == 4037)) {
+		mes .@heading$;
+		mes "^0066FF[ yek ]^000000";
+		mes "ยินดีให้บริการค่ะ";
+		setriding;
+	} else {
+		mes "^0066FF[ yek ]^000000";
+		mes .@heading$;
+		mes "คุณไม่สามารถเช่า Peco ได้";
+	}
+	close;
+
+	Refal:
+	if ((Class == 11) || (Class == 4012) || (Class == 4034)) {
+		mes .@heading$;
+		mes "^0066FF[ yek ]^000000";
+		mes "ยินดีให้บริการค่ะ";
+		setfalcon;
+	} else {
+		mes .@heading$;
+		mes "^0066FF[ yek ]^000000";
+		mes "คุณไม่สามารถเช่า Falcon ได้";
+	}
+	close;
+
+
+	Resetstatus1:
+	mes "^0066FF[ yek ]^000000";
+	if (Zeny<1000000) goto resetnotwprk;
+	mes "ยินดีให้บริการค่ะ";
+	set Zeny,Zeny-1000000;
+	resetstatus;
+	close;
+
+	Resetskill1:
+	mes "^0066FF[ yek ]^000000";
+	if (Zeny<1000000) goto resetnotwprk;
+	mes "ยินดีให้บริการค่ะ";
+	set Zeny,Zeny-1000000;
+	resetskill;
+	close;
+
+	resetnotwprk:
+	//mes "^0066FF[ yek ]^000000";
+	mes "คุณมีเงินไม่พอค่ะ";
+	close;
+	
+	OnInit:
+	waitingroom "เช่านกเป็ด/สกิลเสริม",0;
+	end;
+}
+
+morocc,147,110,6	duplicate(yek)	yek#bra2	814

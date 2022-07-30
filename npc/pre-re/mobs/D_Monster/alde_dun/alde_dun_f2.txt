@@ -1,0 +1,50 @@
+
+-	script	Clock Tower B2	-1,{
+
+	mes "^0066FF[Clock Tower B2]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Orc Archer",Orc_Archer,"Arclouse",Arclouse,"Brilight",Brilight,"High Orc",High;
+	close;
+	
+	Orc_Archer:
+	mes "^0066FF[Clock Tower B2]^000000";	
+	mes "^ff0066 Orc Archer ^000000 รหัสมันเตอร์  1189 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1189";
+	close;	
+	
+	Arclouse:
+	mes "^0066FF[Clock Tower B2]^000000";	
+	mes "^ff0066 Orc Arclouse ^000000 รหัสมันเตอร์  1194 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1194";
+	close;	
+	
+	Brilight:
+	mes "^0066FF[Clock Tower B2]^000000";	
+	mes "^ff0066 Brilight ^000000 รหัสมันเตอร์  1211 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1211";
+	close;	
+	
+	High:
+	mes "^0066FF[Clock Tower B2]^000000";	
+	mes "^ff0066 High Orc ^000000 รหัสมันเตอร์  1213 จำนวนเกิด 50 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1213";
+	close;	
+	
+	OnInit:
+	waitingroom "Clock Tower B2",0;
+	//close;		
+
+	
+	
+}
+
+alde_dun02,127,169,3	duplicate(Clock Tower B2)	Clock Tower B2#alb1	1189
+

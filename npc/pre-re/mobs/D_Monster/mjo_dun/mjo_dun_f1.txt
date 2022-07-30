@@ -1,0 +1,44 @@
+
+-	script	Mjolnir Dead Pit F1	-1,{
+
+	mes "^0066FF[Mjolnir Dead Pit F1]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Familiar (ค้างคาว)",Familiar,"Martin",Martin,"Tarou",Tarou;
+	close;
+	
+	Familiar:
+	mes "^0066FF[Mjolnir Dead Pit F1]^000000";	
+	mes "^ff0066 Familiar ^000000 รหัสมันเตอร์  1005 จำนวนเกิด 30 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1005";
+	close;	
+	
+	Martin:
+	mes "^0066FF[Mjolnir Dead Pit F1]^000000";	
+	mes "^ff0066 Martin ^000000 รหัสมันเตอร์  1145 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1145";
+	close;
+	
+	Tarou:
+	mes "^0066FF[Mjolnir Dead Pit F1]^000000";	
+	mes "^ff0066 Tarou ^000000 รหัสมันเตอร์  1175 จำนวนเกิด 60 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1175";
+	close;
+	
+	
+	OnInit:
+	waitingroom "Mjolnir Dead Pit F1",0;
+	//close;		
+
+	
+	
+}
+
+mjo_dun01,52,17,3	duplicate(Mjolnir Dead Pit F1)	Mjolnir Dead Pit F1#alb1	1005
+

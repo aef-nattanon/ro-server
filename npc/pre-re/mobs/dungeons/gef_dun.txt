@@ -1,0 +1,42 @@
+//https://ratemyserver.net/
+//==================================================
+// gef_dun00 - Geffen Dungeon F1
+//==================================================
+gef_dun00,0,0,0,0	monster	Familiar	1005,20,0,0,0
+gef_dun00,0,0,0,0	monster	Poporing	1031,15,0,0,0
+gef_dun00,0,0,0,0	monster	Poison Spore	1077,120,0,0,0
+gef_dun00,91,106,0,0	monster	Red Plant	1078,1,300000,480000,0
+//gef_dun00,91,106,0,0	monster	Red Plant	1078,10,180000,300000,0
+gef_dun00,114,106,0,0	monster	Green Plant	1080,1,300000,480000,0
+gef_dun00,92,108,0,0	monster	Yellow Plant	1081,1,300000,480000,0
+gef_dun00,0,0,0,0	monster	Shining Plant	1083,1,3000000,4500000,0
+gef_dun00,89,111,3,3	monster	Black Mushroom	1084,6,180000,300000,0
+gef_dun00,0,0,0,0	monster	Dustiness	1114,15,0,0,0
+
+
+//==================================================
+// gef_dun01 - Geffen Dungeon F2
+//==================================================
+gef_dun01,0,0,0,0	monster	Farmiliar	1005,20,0,0,0
+gef_dun01,0,0,0,0	monster	Poison Spore	1077,25,0,0,0
+gef_dun01,0,0,0,0	monster	Blue Plant	1079,1,300000,0,0
+gef_dun01,0,0,0,0	monster	Argos	1100,40,0,0,0
+gef_dun01,0,0,0,0	monster	Bathory	1102,70,0,0,0
+gef_dun01,0,0,0,0	monster	Dustiness	1114,30,0,0,0
+gef_dun01,0,0,0,0	monster	Jakk	1130,40,0,0,0
+gef_dun01,0,0,0,0	monster	Ogretooth	1204,1,1800000,0,0
+
+//==================================================
+// gef_dun02 - Geffenia
+//==================================================
+gef_dun02,0,0,0,0	monster	Hunter Fly	1035,15,0,0,0
+gef_dun02,0,0,0,0	monster	Ghoul	1036,20,0,0,0
+gef_dun02,0,0,0,0	boss_monster	Doppelganger	1046,1,7200000,0,1
+gef_dun02,0,0,0,0	monster	Nightmare	1061,45,0,0,0
+gef_dun02,214,212,10,10	monster	White Plant	1082,12,180000,0,0
+gef_dun02,58,167,10,10	monster	Shining Plant	1083,2,3000000,0,0
+gef_dun02,0,0,0,0	monster	Deviruchi	1109,55,0,0,0
+gef_dun02,0,0,0,0	monster	Marionette	1143,25,0,0,0
+gef_dun02,0,0,0,0	monster	Whisper	1179,25,0,0,0
+
+

@@ -1,0 +1,36 @@
+
+-	script	Clock Tower B1	-1,{
+
+	mes "^0066FF[Clock Tower B1]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Drainliar",Drainliar,"Arclouse",Arclouse;
+	close;
+	
+	Drainliar:
+	mes "^0066FF[Clock Tower B1]^000000";	
+	mes "^ff0066 Drainliar ^000000 รหัสมันเตอร์  1111 จำนวนเกิด 40 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1111";
+	close;	
+
+	Arclouse:
+	mes "^0066FF[Clock Tower B1]^000000";	
+	mes "^ff0066 Arclouse ^000000 รหัสมันเตอร์  1194 จำนวนเกิด 50 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1194";
+	close;
+	
+	OnInit:
+	waitingroom "Clock Tower B1",0;
+	//close;		
+
+	
+	
+}
+
+alde_dun01,297,25,3	duplicate(Clock Tower B1)	Clock Tower B1#alb1	1215
+

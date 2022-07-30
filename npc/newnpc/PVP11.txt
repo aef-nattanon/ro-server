@@ -1,0 +1,20 @@
+-	script	Play1	-1,{
+
+	
+	mes "^0066FF[ Play1 ]^000000";
+	mes "ลุยกันเลย !!!";
+	
+	switch(select("- > กิจกรรมPVP")) {
+	next;
+	case 1:
+		mes "^0066FF[ Play1 ]^000000";
+		savepoint "morocc",173,43;
+		warp "guild_vs5.gat",0,0;
+	close;
+	}
+	OnInit:
+	waitingroom "กิจกรรมPVP",0;
+	end;
+}
+
+ayo_in01,179,185,3	duplicate(Play1)	Play1#new1	843

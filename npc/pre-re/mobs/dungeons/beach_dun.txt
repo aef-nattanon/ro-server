@@ -1,0 +1,34 @@
+//https://ratemyserver.net/
+//==================================================
+// beach_dun - Karu, the West Cave
+//==================================================
+beach_dun,0,0,0,0	monster	Medusa	1148,220,0,0,0
+beach_dun,0,0,0,0	monster	Nereid	1255,20,0,0,0
+beach_dun,0,0,0,0	monster	Pest	1256,25,0,0,0
+beach_dun,0,0,0,0	monster	Merman	1264,15,0,0,0
+beach_dun,0,0,0,0	monster	Megalith	1274,8,0,0,0
+beach_dun,0,0,0,0	monster	Chimera	1283,1,7200000,0,0
+
+
+//==================================================
+// beach_dun2 - Ruande, the North Cave
+//==================================================
+beach_dun2,0,0,0,0	monster	Hydra	1068,10,0,0,0
+beach_dun2,0,0,0,0	monster	Nereid	1255,10,0,0,0
+beach_dun2,0,0,0,0	monster	Merman	1264,3,0,0,0
+beach_dun2,0,0,0,0	monster	Megalith	1274,30,0,0,0
+beach_dun2,0,0,0,0	monster	Stalactic Golem	1278,68,0,0,0
+beach_dun2,0,0,0,0	monster	Tri Joint	1279,20,0,0,0
+beach_dun2,0,0,0,0	monster	Lava Golem	1366,30,0,0,0
+
+//==================================================
+// beach_dun3 - Mao, the East Cave
+//==================================================
+beach_dun3,0,0,0,0	monster	Megalodon	1064,30,0,0,0
+beach_dun3,0,0,0,0	monster	Cornutus	1067,30,0,0,0
+beach_dun3,0,0,0,0	monster	Hydra	1068,50,0,0,0
+beach_dun3,0,0,0,0	monster	Shellfish	1074,25,0,0,0
+beach_dun3,0,0,0,0	monster	Nereid	1255,2,0,0,0
+beach_dun3,0,0,0,0	monster	Pest	1256,2,60000,0,0
+beach_dun3,0,0,0,0	monster	Tri Joint	1279,3,0,0,0
+

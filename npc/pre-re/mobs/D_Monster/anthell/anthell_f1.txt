@@ -1,0 +1,82 @@
+
+-	script	Ant Hell F1	-1,{
+
+	mes "^0066FF[Ant Hell F1]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Familiar (ค้างคาว)",Familiar,"Andre (มดเหลือง)",Andre,"Ant Egg (ไข่มด)",AntEgg,"Deniro (มดแดง)",Deniro,
+	"Giearth (ลิง)",Giearth,"Piere (มดเขียว)",Piere,"Vitata (มดดำ)",Vitata,"Maya Purple (มินิบอส Mini Boss)",Maya_Purple;
+	close;
+	
+	Familiar:
+	mes "^0066FF[Ant Hell F1]^000000";	
+	mes "^ff0066 Familiar ^000000 รหัสมันเตอร์  1005 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1005";
+	close;	
+	
+	Andre:
+	mes "^0066FF[Ant Hell F1]^000000";	
+	mes "^ff0066 Andre ^000000 รหัสมันเตอร์  1095 จำนวนเกิด 15 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1095";
+	close;	
+	
+	AntEgg:
+	mes "^0066FF[Ant Hell F1]^000000";	
+	mes "^ff0066 Ant Egg ^000000 รหัสมันเตอร์  1097 จำนวนเกิด 87 ตัว ตายแล้ว 1-2 วิเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1097";
+	close;
+	
+	
+	Deniro:
+	mes "^0066FF[Ant Hell F1]^000000";	
+	mes "^ff0066 Deniro ^000000 รหัสมันเตอร์  1105 จำนวนเกิด 40 ตัว  ตายแล้วเกิด  ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1105";
+	close;
+	
+	Giearth:
+	mes "^0066FF[Ant Hell F1]^000000";	
+	mes "^ff0066 Giearth ^000000 รหัสมันเตอร์  1121 จำนวนเกิด 1 ตัว  ตายแล้วเกิด  ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1121";
+	close;
+	
+	Piere:
+	mes "^0066FF[Ant Hell F1]^000000";	
+	mes "^ff0066 Piere ^000000 รหัสมันเตอร์  1160 จำนวนเกิด 50 ตัว  ตายแล้วเกิด  ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1160";
+	close;
+	
+	Vitata:
+	mes "^0066FF[Ant Hell F1]^000000";	
+	mes "^ff0066 Vitata ^000000 รหัสมันเตอร์  1176 จำนวนเกิด 10 ตัว  ตายแล้วเกิด  ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1176";
+	close;
+	
+	
+	Maya_Purple:
+	mes "^0066FF[Ant Hell F1]^000000";	
+	mes "^ff0066 Maya Purple ^000000 รหัสมันเตอร์  1289 จำนวนเกิด 1 ตัว  ตายแล้ว 120-180 นาทีเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1289";
+	close;
+	
+	
+	OnInit:
+	waitingroom "Ant Hell F1",0;
+	//close;		
+
+	
+	
+}
+
+anthell01,38,262,3	duplicate(Ant Hell F1)	Ant Hell F1#alb1	1005
+

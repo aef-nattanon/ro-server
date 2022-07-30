@@ -1,0 +1,66 @@
+
+-	script	Clock Tower F2	-1,{
+
+	mes "^0066FF[Clock Tower F1]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Mimic",Mimic,"Rideword",Rideword,"Punk",Punk,"Clock",Clock,"Clock Tower Manager",Clock_Tower_Manager,
+	"Elder",Elder;
+	close;
+	
+	Mimic:
+	mes "^0066FF[Clock Tower F2]^000000";	
+	mes "^ff0066 Mimic ^000000 รหัสมันเตอร์  1191 จำนวนเกิด 3 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1191";
+	close;	
+	
+	Rideword:
+	mes "^0066FF[Clock Tower F2]^000000";	
+	mes "^ff0066 Rideword ^000000 รหัสมันเตอร์  1195 จำนวนเกิด 7 ตัว ตายแล้วเกิดทันที และ เกิด 1 ตัว  ตาย 1-2 นาทีเกิด และเกิด 2 ตัว ตายแล้ว 2-3 นาทีเกิด และ อีก2ตัว 5-7 นาทีตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1195";
+	close;	
+	
+	Punk:
+	mes "^0066FF[Clock Tower F2]^000000";	
+	mes "^ff0066 Mimic ^000000 รหัสมันเตอร์  1199 จำนวนเกิด 40 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1199";
+	close;	
+	
+	Clock:
+	mes "^0066FF[Clock Tower F2]^000000";	
+	mes "^ff0066 Clock ^000000 รหัสมันเตอร์  1269 จำนวนเกิด 40 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1269";
+	close;	
+	
+	Clock_Tower_Manager:
+	mes "^0066FF[Clock Tower F2]^000000";	
+	mes "^ff0066 Clock Tower Manager ^000000 รหัสมันเตอร์  1270 จำนวนเกิด 1 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1270";
+	close;
+	
+	Elder:
+	mes "^0066FF[Clock Tower F2]^000000";	
+	mes "^ff0066 Elder ^000000 รหัสมันเตอร์  1377 จำนวนเกิด 2 ตัว ตายแล้ว 60-90 นาทีเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1377";
+	close;
+	
+	
+	OnInit:
+	waitingroom "Clock Tower F2",0;
+	//close;		
+
+	
+	
+}
+
+c_tower2,148,283,3	duplicate(Clock Tower F2)	Clock Tower F2#alb1	1191
+

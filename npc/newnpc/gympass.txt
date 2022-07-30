@@ -1,0 +1,82 @@
+//===== rAthena Script ======================================= 
+//= Gym Pass Cash Item NPC
+//===== By: ================================================== 
+//= Kisuka
+//===== Current Version: ===================================== 
+//= 1.3
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= [Official Conversion]
+//= Exchange Gym Passes to learn "Enlarge Weight Limit"
+//= iRO NPC situated in Payon beside Kafra Shop.
+//===== Additional Comments: ================================= 
+//= 1.0 First version [L0ne_W0lf]
+//= 1.1 Fixed the NPC saying you "00" [L0ne_W0lf]
+//= 1.2 Replaced effect numerics with constants. [Samuray22]
+//= 1.3 Updated script, and fixed potential errors. [L0ne_W0lf]
+//============================================================ 
+morocc,127,83,4	script	GymPass	847,{
+//payon,173,141,4	script	Ripped Cabus#GymPass	899,{
+	mes "[Ripped]";
+	mes "สวัสดี.";
+	mes "ข้าคือพนักงานเพิ่มน้่ำหนัก";
+	mes "เพียงท่านมีไอเท็ม ^FF0000Gym Pass^000000";
+	next;
+	mes "[Ripped]";
+	mes "สามารถอัพได้ถึง skill Lv ^FF000010^000000.";
+	mes "สกิวอยู่ในช่องแทป Misc";
+	mes "คุณพร้อมหรือยัง?";
+	next;
+	//switch(select("Yes:No:Um, my workouts wore off.")) {
+	switch(select("Yes:No:")) {
+	case 1:
+		if (gympassmemory < 10) {
+			set .@add_carry,gympassmemory + 1;
+			set .@remain_carry,10 - .@add_carry;
+			if (countitem(7776) > 0) {
+				mes "[Ripped]";
+				mes "โอ้ สุดยอด เจอกันอีกแล้ว";
+				mes "พร้อม? ลงมือทำกันเถอะ.";
+				next;
+				specialeffect2 EF_EARTHSPIKE;
+				next;
+				specialeffect2 EF_DEVIL;
+				next;
+				specialeffect2 EF_COIN;
+				next;
+				specialeffect2 EF_SIGHTRASHER;
+				next;
+				mes "[Ripped]";
+				mes "เรียบร้อย";
+				mes "คุณเหลือการอัพสกิวเพิ่มน้ำหนักอีก";
+				mes "^FF00000" + .@remain_carry + "^000000 ครั้ง";
+				delitem 7776,1; //Max_Weight_Up_Scroll
+				set gympassmemory,.@add_carry;
+				skill "ALL_INCCARRY",.@add_carry,SKILL_PERM_GRANT;
+				close;
+			}
+			else {
+				mes "[Ripped]";
+				mes "คุณไม่มีไอเท็ม ^FF0000Gym Pass^000000";
+				mes "ในการเพิ่มน้ำหนัก";
+				mes "ซื้อได้ใน NPC #CashShop";
+				close;
+			}
+		}
+		else {
+			mes "[Ripped]";
+			mes "คุณไม่มีไอเท็ม ^FF0000Gym Pass^000000";
+			mes "ในการเพิ่มน้ำหนัก";
+			close;
+		}
+	case 2:
+		mes "[Ripped]";
+		mes "ไว้ท่านพร้อม";
+		mes "โอกาศหน้าเจอกันใหม่!";
+		close;
+	}
+	OnInit:
+	waitingroom "เพิ่มน้ำหนัก(GymPass)",0;
+	end;
+}

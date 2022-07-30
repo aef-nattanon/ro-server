@@ -1,0 +1,50 @@
+//https://ratemyserver.net/
+//==================================================
+// c_tower1 - Clock Tower F1
+//==================================================
+c_tower1,0,0,0,0	monster	Archer Skeleton	1016,10,0,0,0
+c_tower1,0,0,0,0	monster	Baphomet Jr.	1101,26,0,0,0
+c_tower1,0,0,0,0	monster	Bathory	1102,40,0,0,0
+c_tower1,0,0,0,0	monster	Punk	1199,65,0,0,0
+
+//==================================================
+// c_tower2 - Clock Tower F2
+//==================================================
+c_tower2,0,0,0,0	monster	Archer Skeleton	1016,48,0,0,0
+c_tower2,0,0,0,0	monster	Deviruchi	1109,6,360000,0,0
+c_tower2,0,0,0,0	monster	Punk	1199,50,0,0,0
+c_tower2,0,0,0,0	monster	Clock	1269,105,0,0,0
+c_tower2,0,0,0,0	monster	Clock Tower Manager	1270,1800000,0,0,0
+
+
+
+//==================================================
+// c_tower3 - Clock Tower F3
+//==================================================
+c_tower3,0,0,0,0	monster	Archer Skeleton	1016,40,0,0,0
+c_tower3,0,0,0,0	monster	Alarm	1193,85,0,0,0
+c_tower3,0,0,0,0	monster	Clock Tower Manager	1270,3,1800000,0,0
+
+
+
+
+//==================================================
+// c_tower4 - Clock Tower F4
+//==================================================
+c_tower4,0,0,0,0	monster	Archer Skeleton	1016,30,0,0,0
+c_tower4,0,0,0,0	monster	Horong	1129,1,300000,0,0
+c_tower4,0,0,0,0	monster	Whisper	1179,10,0,0,0
+c_tower4,0,0,0,0	monster	Mimic	1191,16,1800000,0,0
+c_tower4,0,0,0,0	monster	Alarm	1193,90,0,0,0
+c_tower4,0,0,0,0	monster	Rideword	1195,15,360000,0,0
+c_tower4,0,0,0,0	monster	Executioner	1205,1,7200000,0,0
+c_tower4,0,0,0,0	monster	Abysmal Knight	1219,1,3600000,0,0
+c_tower4,0,0,0,0	monster	Clock	1269,45,0,0,0
+c_tower4,0,0,0,0	monster	Clock Tower Manager	1270,3,3600000,0,0
+c_tower4,0,0,0,0	monster	Owl Duke	1320,3,0,0,0
+c_tower4,0,0,0,0	monster	Elder	1377,2,0,0,0
+
+
+
+
+

@@ -1,0 +1,21 @@
+-	script	Play	-1,{
+
+	
+	mes "^0066FF[ Play ]^000000";
+	mes "ลุยกันเลย !!!";
+	
+	switch(select("- > เข้าเมือง")) {
+	next;
+	case 1:
+		mes "^0066FF[ Play ]^000000";
+		savepoint "morocc",173,43;
+		warp "morocc",173,43;
+	close;
+	}
+	OnInit:
+	waitingroom "เข้าเมือง",0;
+	end;
+}
+
+new_1-3,96,174,3	duplicate(Play)	Play#new1	85
+new_2-3,96,175,3	duplicate(Play)	Play#new2	85

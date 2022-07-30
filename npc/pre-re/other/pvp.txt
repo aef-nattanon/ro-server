@@ -1,0 +1,34 @@
+//===== rAthena Script ======================================= 
+//= PvP NPCs
+//===== By: ==================================================
+//= Euphy
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= PvP NPCs that are found in the Inns in major cities.
+//= Includes Yoyo Mode, Nightmare Mode, and Event Mode.
+//===== Additional Comments: ================================= 
+//= 1.0 First version, Pre-Renewal.
+//============================================================
+
+// PVP Warpers
+//============================================================ 
+//morocc,188,93,4	script	Fight Square Reception#8	105,{
+	callfunc "F_PVP_FSRS";
+	end;
+
+OnInit:
+	waitingroom "PVP",0;
+	end;
+}
+
+//morocc,193,93,4	script	Fight Square Reception#n	105,{
+	callfunc "F_PVP_FSRS";
+	end;
+
+OnInit:
+	waitingroom "PVP",0;
+	end;
+}

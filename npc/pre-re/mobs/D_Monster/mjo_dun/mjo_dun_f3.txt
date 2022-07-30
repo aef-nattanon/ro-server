@@ -1,0 +1,57 @@
+
+-	script	Mjolnir Dead Pit F3	-1,{
+
+	mes "^0066FF[Mjolnir Dead Pit F3]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Giearth",Giearth,"Martin",Martin,"Myst",Myst,"Skeleton Worker",Worker,"Cramp",Cramp;
+	close;
+	
+	Giearth:
+	mes "^0066FF[Mjolnir Dead Pit F3]^000000";	
+	mes "^ff0066 Giearth ^000000 รหัสมันเตอร์  1121 จำนวนเกิด 5 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1121";
+	close;	
+	
+	Martin:
+	mes "^0066FF[Mjolnir Dead Pit F3]^000000";	
+	mes "^ff0066 Martin ^000000 รหัสมันเตอร์  1145 จำนวนเกิด 5 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1145";
+	close;	
+	
+	Myst:
+	mes "^0066FF[Mjolnir Dead Pit F3]^000000";	
+	mes "^ff0066 Myst ^000000 รหัสมันเตอร์  1151 จำนวนเกิด 35 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1151";
+	close;
+	
+	Worker:
+	mes "^0066FF[Mjolnir Dead Pit F3]^000000";	
+	mes "^ff0066 Skeleton Worker ^000000 รหัสมันเตอร์  1169 จำนวนเกิด 70 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1169";
+	close;
+	
+	Cramp:
+	mes "^0066FF[Mjolnir Dead Pit F3]^000000";	
+	mes "^ff0066 Cramp ^000000 รหัสมันเตอร์  1209 จำนวนเกิด 3 ตัว ตายแล้ว 5-8 นาทีเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1209";
+	close;
+	
+	OnInit:
+	waitingroom "Mjolnir Dead Pit F3",0;
+	//close;		
+
+	
+	
+}
+
+mjo_dun03,302,262,3	duplicate(Mjolnir Dead Pit F3)	Mjolnir Dead Pit F3#alb1	1145
+

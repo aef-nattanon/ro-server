@@ -1,0 +1,47 @@
+//https://ratemyserver.net/
+//==================================================
+// iz_dun00 - Undersea Tunnel F1
+//==================================================
+iz_dun00,0,0,0,0	monster	Vadon	1066,45,0,0,0
+iz_dun00,0,0,0,0	monster	Hydra	1068,40,0,0,0
+iz_dun00,0,0,0,0	monster	Kukre	1070,45,0,0,0
+iz_dun00,0,0,0,0	monster	Black Mushroom	1084,5,180000,300000,0
+iz_dun00,0,0,0,0	monster	Marina	1141,35,0,0,0
+
+//==================================================
+// iz_dun01 - Undersea Tunnel F2
+//==================================================
+iz_dun01,0,0,0,0	monster	Thara Frog	1034,57,0,0,0
+iz_dun01,0,0,0,0	monster	Vadon	1066,55,0,0,0
+iz_dun01,0,0,0,0	monster	Cornutus	1067,15,300000,480000,0
+iz_dun01,0,0,0,0	monster	Hydra	1068,45,0,0,0
+iz_dun01,0,0,0,0	monster	Kukre	1070,35,0,0,0
+iz_dun01,0,0,0,0	monster	Black Mushroom	1084,10,180000,300000,0
+iz_dun01,0,0,0,0	monster	Marina	1141,45,0,0,0
+iz_dun01,0,0,0,0	monster	Plankton	1161,20,0,0,0
+
+
+//==================================================
+// iz_dun02 - Undersea Tunnel F3
+//==================================================
+iz_dun02,0,0,0,0	monster	Thara Frog	1034,50,0,0,0
+iz_dun02,0,0,0,0	monster	Obeaune	1044,70,0,0,0
+iz_dun02,0,0,0,0	monster	Cornutus	1067,60,0,0,0
+iz_dun02,0,0,0,0	monster	Hydra	1068,50,0,0,0
+iz_dun02,0,0,0,0	monster	Black Mushroom	1084,15,180000,300000,0
+iz_dun02,0,0,0,0	monster	Marse	1144,50,0,0,0
+iz_dun02,0,0,0,0	monster	Merman	1264,15,0,0,0
+
+
+//==================================================
+// iz_dun03 - Undersea Tunnel F4
+//==================================================
+iz_dun03,0,0,0,0	monster	Marc	1045,85,0,0,0
+iz_dun03,203,59,0,0	monster	Hydra	1068,2,300000,420000,0
+iz_dun03,203,59,0,0	monster	Hydra	1068,28,300000,480000,0
+iz_dun03,203,59,0,0	monster	Hydra	1068,10,0,0,0
+iz_dun03,0,0,0,0	monster	Swordfish	1069,50,0,0,0
+iz_dun03,0,0,0,0	monster	Marine Sphere	1142,25,0,0,0
+iz_dun03,0,0,0,0	monster	Phen	1158,60,0,0,0
+iz_dun03,0,0,0,0	monster	Merman	1264,30,0,0,0
+

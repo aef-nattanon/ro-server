@@ -1,0 +1,48 @@
+//===== eAthena Script =======================================
+//= Morocc Sphinx Dungeon Monster Spawn Script
+//===== By: ==================================================
+
+
+//==================================================
+// In_sphinx1 - Sphinx F1
+//==================================================
+in_sphinx1,0,0,0,0	monster	Drainliar	1111,40,0,0,0
+in_sphinx1,0,0,0,0	monster	Matyr	1146,20,0,0,0
+in_sphinx1,0,0,0,0	monster	Requiem	1164,30,0,0,0
+in_sphinx1,0,0,0,0	monster	Zerom	1178,50,0,0,0
+
+//==================================================
+// In_sphinx2 - Sphinx F2
+//==================================================
+in_sphinx2,0,0,0,0	monster	Drainliar	1111,25,0,0,0
+in_sphinx2,0,0,0,0	monster	Matyr	1146,40,0,0,0
+in_sphinx2,0,0,0,0	monster	Requiem	1164,90,0,0,0
+in_sphinx2,0,0,0,0	monster	Zerom	1178,65,0,0,0
+
+
+
+//==================================================
+// In_sphinx3 - Sphinx F3
+//==================================================
+in_sphinx3,0,0,0,0	monster	Marduk	1140,70,0,0,0
+in_sphinx3,0,0,0,0	monster	Matyr	1146,15,0,0,0
+in_sphinx3,0,0,0,0	monster	Pasana	1154,10,0,0,0
+in_sphinx3,0,0,0,0	monster	Requiem	1164,70,0,0,0
+in_sphinx3,0,0,0,0	monster	Mimic	1191,5,600000,0,0
+
+//==================================================
+// In_sphinx4 - Sphinx F4
+//==================================================
+in_sphinx4,0,0,0,0	monster	Anubis	1098,25,0,0,0
+in_sphinx4,0,0,0,0	monster	Minorous	1149,60,0,0,0
+in_sphinx4,0,0,0,0	monster	Pasana	1154,25,0,0,0
+in_sphinx4,0,0,0,0	monster	Mimic	1191,4,600000,0,0
+//==================================================
+// In_sphinx5 - Sphinx F5
+//==================================================
+in_sphinx5,0,0,0,0	monster	Side Winder	1037,20,0,0,0
+in_sphinx5,0,0,0,0	monster	Anubis	1098,25,0,0,0
+in_sphinx5,0,0,0,0	monster	Matyr	1146,25,0,0,0
+in_sphinx5,0,0,0,0	monster	Pasana	1154,65,0,0,0
+in_sphinx5,0,0,0,0	boss_monster	Pharaoh	1157,1,3600000,0,1
+in_sphinx5,0,0,0,0	monster	Mimic	1191,7,600000,0,0

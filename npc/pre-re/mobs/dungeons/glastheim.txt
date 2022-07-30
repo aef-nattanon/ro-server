@@ -1,0 +1,186 @@
+//==================================================
+// gl_cas01 - Glast Heim F1
+//==================================================
+gl_cas01,0,0,0,0	monster	Whisper	1185,15,0,0,0
+gl_cas01,0,0,0,0	monster	Rideword	1195,10,0,0,0
+gl_cas01,0,0,0,0	monster	Dark Frame	1260,20,0,0,0
+gl_cas01,0,0,0,0	monster	Carat	1267,50,0,0,0
+gl_cas01,0,0,0,0	monster	Sage Worm	1281,50,0,0,0
+gl_cas01,0,0,0,0	monster	Owl Duke	1320,6,0,0,0
+//==================================================
+// gl_cas02 - Glast Heim F2
+//==================================================
+gl_cas02,0,0,0,0	boss_monster	Baphomet	1039,1,7200000,0,1
+gl_cas02,0,0,0,0	monster	Nightmare	1061,15,0,0,0
+gl_cas02,0,0,0,0	monster	Khalitzburg	1132,6,360000,0,0
+gl_cas02,0,0,0,0	monster	Marionette	1143,8,360000,0,0
+gl_cas02,0,0,0,0	monster	Raydric	1163,55,0,0,0
+gl_cas02,0,0,0,0	monster	Whisper	1179,2,1800000,0,0
+gl_cas02,0,0,0,0	monster	Mimic	1191,2,360000,0,0
+gl_cas02,0,0,0,0	monster	Rideword	1195,19,120000,0,0
+gl_cas02,0,0,0,0	monster	Mysteltainn	1203,2,7200000,0,0
+gl_cas02,0,0,0,0	monster	Wanderer	1208,30,0,0,0
+gl_cas02,0,0,0,0	monster	Abysmal Knight	1219,11,0,0,0
+gl_cas02,0,0,0,0	monster	Alice	1275,3,0,0,0
+gl_cas02,0,0,0,0	monster	Raydric Archer	1276,41,0,0,0
+//==================================================
+// gl_in01 - Inside Glast Heim
+//==================================================
+gl_in01,41,155,40,45	monster	Marionette	1143,5,0,0,0
+gl_in01,156,147,34,42	monster	Marionette	1143,5,0,0,0
+gl_in01,42,154,40,45	monster	Rideword	1195,2,0,0,0
+gl_in01,155,143,34,42	monster	Rideword	1195,2,0,0,0
+gl_in01,41,47,41,32	monster	Rideword	1195,3,0,0,0
+gl_in01,152,44,36,33	monster	Rideword	1195,3,0,0,0
+gl_in01,0,0,0,0	monster	Wanderer	1208,1,0,0,0
+gl_in01,0,0,0,0	monster	Alice	1275,1,0,0,0
+gl_in01,41,154,40,45	monster	Sage Worm	1281,5,0,0,0
+gl_in01,155,147,34,42	monster	Sage Worm	1281,5,0,0,0
+gl_in01,42,47,41,32	monster	Sage Worm	1281,5,0,0,0
+gl_in01,153,44,36,33	monster	Sage Worm	1281,5,0,0,0
+gl_in01,0,0,0,0	monster	Owl Duke	1320,12,0,0,0
+gl_in01,0,0,0,0	monster	Dark Frame	1260,10,0,0,0
+
+gl_in01,0,0,0,0	monster	Marionette	1143,10,20000,10000,0
+gl_in01,0,0,0,0	monster	Owl Duke	1320,8,20000,10000,0
+gl_in01,0,0,0,0	monster	Dark Frame	1260,30,20000,10000,0
+
+//==================================================
+// gl_prison - Glast Heim Underprison F1
+//==================================================
+gl_prison,0,0,0,0	monster	Hunter Fly	1035,10,0,0,0
+gl_prison,0,0,0,0	monster	Whisper	1179,10,0,0,0
+gl_prison,0,0,0,0	monster	Zombie Prisoner	1197,100,0,0,0
+gl_prison,0,0,0,0	monster	Skeleton Prisoner	1196,100,0,0,0
+gl_prison,0,0,0,0	monster	Brilight	1211,20,0,0,0
+
+//==================================================
+// gl_prison1 - Glast Heim Underprison F2
+//==================================================
+gl_prison1,0,0,0,0	monster	Arclouse	1194,20,0,0,0
+gl_prison1,0,0,0,0	monster	Zealotus	1200,1,3600000,0,0
+gl_prison1,0,0,0,0	monster	Rybio	1201,35,0,0,0
+gl_prison1,0,0,0,0	monster	Cramp	1209,30,0,0,0
+gl_prison1,0,0,0,0	monster	Brilight	1211,20,0,0,0
+gl_prison1,0,0,0,0	monster	Injustice	1257,65,0,0,0
+
+
+
+//==================================================
+// glast_01 - Glast Heim
+//==================================================
+glast_01,0,0,0,0	monster	Poison Spore	1077,10,0,0,0
+glast_01,0,0,0,0	monster	Blue Plant	1079,2,720000,0,0
+glast_01,0,0,0,0	monster	Green Plant	1080,8,480000,0,0
+glast_01,0,0,0,0	monster	Shining Plant	1083,1,60000,0,0
+glast_01,0,0,0,0	monster	Bathory	1102,5,300000,0,0
+glast_01,0,0,0,0	monster	Jakk	1130,5,180000,0,0
+glast_01,0,0,0,0	monster	Myst	1151,15,0,0,0
+glast_01,0,0,0,0	monster	Abysmal Knight	1219,1,0,0,0
+
+
+
+//==================================================
+// gl_church - Glast Heim St. Abbey
+//==================================================
+gl_church,0,0,0,0	monster	Ghoul	1036,55,0,0,0
+gl_church,0,0,0,0	monster	Evil Druid	1117,115,0,0,0
+gl_church,0,0,0,0	monster	Mimic	1191,10,0,0,0
+gl_church,0,0,0,0	monster	Wraith	1192,10,0,0,0
+gl_church,0,0,0,0	monster	Dark Illusion	1302,10,0,0,0
+
+
+//==================================================
+// gl_chyard - Glast Heim Churchyard
+//==================================================
+gl_chyard,0,0,0,0	monster	Zombie	1015,25,0,0,0
+gl_chyard,0,0,0,0	monster	Hunter Fly	1035,15,0,0,0
+gl_chyard,0,0,0,0	monster	Ghoul	1036,45,0,0,0
+gl_chyard,0,0,0,0	monster	Evil Druid	1117,10,0,0,0
+gl_chyard,0,0,0,0	monster	Mimic	1191,3,0,0,0
+gl_chyard,0,0,0,0	monster	Wraith	1192,70,0,0,0
+gl_chyard,0,0,0,0	boss_monster	Dark Lord	1272,1,3600000,0,1
+
+//==================================================
+// gl_sew01 - Glast Heim Culvert F1
+//==================================================
+gl_sew01,0,0,0,0	monster	Drainliar	1111,80,0,0,0
+gl_sew01,0,0,0,0	monster	Anolian	1206,50,0,0,0
+gl_sew01,0,0,0,0	monster	Cramp	1209,40,0,0,0
+
+//==================================================
+// gl_sew02 - Glast Heim Culvert F2
+//==================================================
+gl_sew02,0,0,0,0	monster	Anolian	1206,50,0,0,0
+gl_sew02,0,0,0,0	monster	Cramp	1209,30,0,0,0
+gl_sew02,0,0,0,0	monster	Gargoyle	1253,55,0,0,0
+
+//==================================================
+// gl_sew03 - Glast Heim Culvert F3
+//==================================================
+gl_sew03,0,0,0,0	monster	Sting	1207,80,0,0,0
+gl_sew03,0,0,0,0	monster	Cramp	1209,15,0,0,0
+gl_sew03,0,0,0,0	monster	Gargoyle	1253,35,0,0,0
+
+
+//==================================================
+// gl_sew04 - Glast Heim Culvert F4
+//==================================================
+gl_sew04,0,0,0,0	monster	Sting	1207,40,0,0,0
+gl_sew04,0,0,0,0	monster	Cramp	1209,50,0,0,0
+gl_sew04,0,0,0,0	monster	Wind Ghost	1263,40,0,0,0
+
+
+//==================================================
+// gl_step - Glast Heim Staircase Dungeon
+//==================================================
+gl_step,0,0,0,0	monster	Mimic	1191,35,60000,0,0
+gl_step,0,0,0,0	monster	Wraith	1192,100,0,0,0
+gl_step,0,0,0,0	monster	Wind Ghost	1263,20,0,0,0
+gl_step,0,0,0,0	monster	Raydric Archer	1276,30,0,0,0
+
+
+//==================================================
+// gl_knt01 - Inside Glast Heim Chivalry F1
+//==================================================
+gl_knt01,9,184,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,8,184,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,7,184,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,6,184,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,5,184,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,4,184,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,9,185,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,8,185,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,7,185,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,6,185,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,5,185,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,4,185,0,0	monster	Black Mushroom	1084,1,3600000,1800000,1
+gl_knt01,0,0,0,0	monster	Flora	1118,1,120000,0,0
+gl_knt01,0,0,0,0	monster	Raydric	1163,60,0,0,0
+gl_knt01,0,0,0,0	monster	Giant Whisper	1186,1,3600000,0,0	
+gl_knt01,0,0,0,0	monster	Rideword	1195,41,120000,0,0
+gl_knt01,0,0,0,0	monster	Brilight	1211,10,60000,0,0
+gl_knt01,0,0,0,0	monster	Abysmal Knight	1219,14,0,0,0
+gl_knt01,0,0,0,0	monster	Raydric Archer	1276,20,0,0,0
+//==================================================
+// gl_knt02 - Inside Glast Heim Chivalry F2
+//==================================================
+gl_knt02,0,0,0,0	monster	Joker	1131,20,0,0,0
+gl_knt02,0,0,0,0	monster	Khalitzburg	1132,40,1800000,0,0
+gl_knt02,0,0,0,0	monster	Raydric	1163,90,0,0,0
+gl_knt02,0,0,0,0	monster	Abysmal Knight	1219,20,0,0,0
+gl_knt02,0,0,0,0	boss_monster	Bloody Knight	1268,1,3600000,0,1
+gl_knt02,0,0,0,0	monster	Alice	1275,1,0,0,0
+gl_knt02,0,0,0,0	monster	Raydric Archer	1276,55,0,0,0
+
+//==================================================
+// gl_dun01 - The Lowest Cave in Glast Heim F1
+//==================================================
+gl_dun01,0,0,0,0	monster	Arclouze	1194,50,0,0,0
+gl_dun01,0,0,0,0	monster	Sting	1207,90,0,0,0
+
+//==================================================
+// gl_dun02 - The Lowest Cave in Glast Heim F2
+//==================================================
+gl_dun02,0,0,0,0	monster	Gargoyle	1253,20,0,0,0
+gl_dun02,0,0,0,0	monster	Majoruros	1310,50,0,0,0

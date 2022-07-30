@@ -1,0 +1,416 @@
+//===== Hercules Script ======================================
+//= Cool Event Corp. Staff
+//===== By: ==================================================
+//= Gepard
+//===== Current Version: =====================================
+//= 1.5
+//===== Description: =========================================
+//= Cool Event Corp. Staff (Save, Storage & Pushcart Service)
+//= in Arunafeltz Region.
+//===== Additional Comments: =================================
+//= 1.0 First version, iRO Sakray X.4 [Gepard]
+//= 1.1 Optimized, fixed a conditional bug [Lupus]
+//= 1.1a Redo back. It wasn't a bug [Lupus]
+//= 1.2 Added Rachel Cool Event Corp. Staff [Playtester]
+//= 1.3 Added cutins, closed Kafra Password exploit
+//=     until we got a client/packet based password support [Lupus]
+//= 1.4 Added Veins Cool Event Corp. Staff. [L0ne_W0lf]
+//= 1.5 Cool Event Corp staff is now more iRO like. [L0ne_W0lf]
+//============================================================
+
+hugel,88,168,4	script	Cool Event Corp. Staff::CoolEventCorpStaffHugel	4_M_ZONDAMAN,{
+	cutin "zonda_01",2;
+	mes "[Cool Event Corp. Staff]";
+	mes "พนักงานของเราจะทำงานกันสม่ำเสมอ";
+	mes "ด้วยบริการที่เต็มไปด้วยคุณภาพ";
+	mes "มีอะไรให้ช่วยใหม?";
+	next;
+	switch(select("เซฟ:เก็บของ:เช่ารถเข็น:ใส่รหัส คลังเก็บของ:ยกเลิก")){
+	case 1:
+		mes "[Cool Event Corp. Staff]";
+		mes "จุดเซิฟของคุณได้ถูกบันทึกแล้ว";
+		mes "ขอบคุณที่ใช้บริการ";
+		mes "Cool Event Corp. service~";
+		savepoint "hugel",96,155;
+		close2;
+		break;
+	case 2:
+		mes "[Cool Event Corp. Staff]";
+		if(basicskillcheck() && getskilllv("NV_BASIC") < 6){
+			mes "ขออภัย";
+			mes "ไม่สามารถให้บริการได้";
+			mes "เนื่องจากท่านต้องมีทักษะ Level6";
+			mes "ในการใช้บริการเก็บของ";
+			close2;
+			break;
+		}
+		if(Zeny < 40){
+			mes "ขออภัย";
+			mes "จำนวนเงินของท่านไม่เพียงพอ";
+			mes "สำหรับใช้บริการ";
+			mes "ต้องการเงินจำนวน 40 zeny.";
+			close2;
+			break;
+		}
+		Zeny -= 40;
+		mes "บริการเก็บของ";
+		mes "นี่คือห้องเก็บของสำหรับคุณ";
+		mes "ขอบคุณที่ใช้บริการ";
+		mes "Cool Event Corp services.";
+		callfunc("F_CheckKafCode");	//check your storage password, if set
+		close2;
+		openstorage;
+		break;
+	case 3:
+		mes "[Cool Event Corp. Staff]";
+		if(BaseClass != Job_Merchant){
+			mes "ขออภัย";
+			mes "บริการเช่ารถเข็น";
+			mes "จะใช้ได้เฉพาะกับอาชิพ,";
+			mes "พ่อค้าเท่านั้น";
+			close2;
+			break;
+		}
+		if(getskilllv("MC_PUSHCART") == 0){
+			mes "คุณจำเป็นต้องมีสกิลเช่ารถเข็น";
+			close2;
+			break;
+		}
+		if(checkcart() == 1){
+			mes "ท่านมีรถเข็นอยู่แล้ว";
+			mes "และต้องการเพิ่ม";
+			mes "เราไม่สามารถให้ท่านได้";
+			mes "มากกว่าหนึ่ง";
+			mes "โปรดมาใหม่ภายหลัง";
+			close2;
+			break;
+		}
+		if(countitem(7061)){
+			delitem 7061,1;
+			setcart;
+			close2;
+			break;
+		}
+		mes "บริการเช่ารถเข็น";
+		mes "ค่าบริการ 800 zeny.";
+		mes "ท่านต้องการเช่ารถเข็นใช่หรือไม่?";
+		next;
+		if(select("เช่ารถเข็น:ยกเลิก") == 1){
+			if(Zeny < 800){
+				mes "[Cool Event Corp. Staff]";
+				mes "ขออภัย";
+				mes "จำนวนเงินของท่านไม่เพียงพอ";
+				mes "ในการใช้บริการเช่ารถเข็น";
+				mes "ต้องการเงินจำนวน 800 zeny";
+			} else {
+				Zeny -= 800;
+				setcart;
+			}
+		}
+		close2;
+		break;
+	case 4:
+		callfunc("F_SetKafCode","[Cool Event Corp. Staff]","Cool Event Corp.");
+		//the function closes msg and remoes cutins
+	case 5:
+	default:
+		mes "[Cool Event Corp. Staff]";
+		mes "บริษัท Cool Event Corp";
+		mes "พวกเรามุ่งมั่นที่จะบริการลูกค้า";
+		mes "ให้ดีที่สุดเสมอ เพื่องานบริการที่เป็นหนึ่ง";
+		mes "ขอบคุณที่ใช้บริการ";
+		close2;
+	}
+	cutin "", 255;
+	end;
+}
+
+rachel,109,138,5	script	Cool Event Corp. Staff::CoolEventCorpStaffRachel	4_M_ZONDAMAN,{
+	cutin "zonda_01",2;
+	mes "[Cool Event Corp. Staff]";
+	mes "ยินดีต้อนรับสู่ Cool Event Corp";
+	mes "พนักงานของเราจะทำงานกันสม่ำเสมอ";
+	mes "ด้วยบริการที่เต็มไปด้วยคุณภาพ";
+	mes "มีอะไรให้ช่วยใหม?";
+	next;
+	switch(select("เซฟ:เก็บของ:ใช้บริการ Teleport:เช่ารถเข็น:ใส่รหัส คลังเก็บของ:ยกเลิก")){
+	case 1:
+		mes "[Cool Event Corp. Staff]";
+		mes "จุดเซิฟของคุณได้ถูกบันทึกแล้ว";
+		mes "ขอบคุณที่ใช้บริการ";
+		mes "Cool Event Corp. service~";
+		savepoint "rachel",113,137;
+		close2;
+		break;
+	case 2:
+		mes "[Cool Event Corp. Staff]";
+		if(basicskillcheck() && getskilllv("NV_BASIC") < 6){
+			mes "ขออภัย";
+			mes "ไม่สามารถให้บริการได้";
+			mes "เนื่องจากท่านต้องมีทักษะ Level6";
+			mes "ในการใช้บริการเก็บของ";
+			close2;
+			break;
+		}
+		if(Zeny < 40){
+			mes "ขออภัย";
+			mes "จำนวนเงินของท่านไม่เพียงพอ";
+			mes "สำหรับใช้บริการ";
+			mes "ต้องการเงินจำนวน 40 zeny.";
+			close2;
+			break;
+		}
+		Zeny -= 40;
+		mes "บริการเก็บของ";
+		mes "นี่คือห้องเก็บของสำหรับคุณ";
+		mes "ขอบคุณที่ใช้บริการ";
+		mes "Cool Event Corp services.";
+		callfunc("F_CheckKafCode");	//check your storage password, if set
+		close2;
+		openstorage;
+		break;
+	case 3:
+		mes "โปรดเลือกพื้นที่ที่คุณต้องการจะไป";
+		next;
+		if (select("Veins -> 2200 z:ยกเลิก") == 1) {
+			if ((countitem(7060) != 0) || (Zeny >= 2200)) {
+				if (countitem(7060) != 0) {
+					delitem 7060,1;
+				}
+				else {
+					Zeny -= 2200;
+				}
+				warp "veins",205,101;
+				cutin "",255;
+				end;
+			}
+			else {
+				mes "[Cool Event Corp. Staff]";
+				mes "ขออภัยไม่สามารถให้บริการได้";
+				mes "เนื่องจากท่านมีเงินไม่เพียงพอ";
+				mes "ค่าบริการในการ Teleport";
+				mes "ไป  Rachel ค่าบริการจำนวน 2200 zeny.";
+			}
+		}
+		close2;
+		break;
+	case 4:
+		mes "[Cool Event Corp. Staff]";
+		if(BaseClass != Job_Merchant){
+			mes "ขออภัย";
+			mes "บริการเช่ารถเข็น";
+			mes "จะใช้ได้เฉพาะกับอาชิพ,";
+			mes "พ่อค้าเท่านั้น";
+			close2;
+			break;
+		}
+		if(getskilllv("MC_PUSHCART") == 0){
+			mes "คุณจำเป็นต้องมีสกิลเช่ารถเข็น";
+			close2;
+			break;
+		}
+		if(checkcart() == 1){
+			mes "ท่านมีรถเข็นอยู่แล้ว";
+			mes "และต้องการเพิ่ม";
+			mes "เราไม่สามารถให้ท่านได้";
+			mes "มากกว่าหนึ่ง";
+			mes "โปรดมาใหม่ภายหลัง";
+			close2;
+			break;
+		}
+		if(countitem(7061)){
+			delitem 7061,1;
+			setcart;
+			close2;
+			break;
+		}
+		mes "บริการเช่ารถเข็น";
+		mes "ค่าบริการ 800 zeny.";
+		mes "ท่านต้องการเช่ารถเข็นใช่หรือไม่?";
+		next;
+		if(select("เช่ารถเข็น:ยกเลิก") == 1){
+			if(Zeny < 800){
+				mes "[Cool Event Corp. Staff]";
+				mes "ขออภัย";
+				mes "จำนวนเงินของท่านไม่เพียงพอ";
+				mes "ในการใช้บริการเช่ารถเข็น";
+				mes "ต้องการเงินจำนวน 800 zeny";
+			} else {
+				Zeny -= 800;
+				setcart;
+			}
+		}
+		close2;
+		break;
+	case 5:
+		callfunc("F_SetKafCode","[Cool Event Corp. Staff]","Cool Event Corp.");
+		//the function closes msg and remoes cutins
+	case 6:
+	default:
+		mes "[Cool Event Corp. Staff]";
+		mes "บริษัท Cool Event Corp";
+		mes "พวกเรามุ่งมั่นที่จะบริการลูกค้า";
+		mes "ให้ดีที่สุดเสมอ เพื่องานบริการที่เป็นหนึ่ง";
+		mes "ขอบคุณที่ใช้บริการ";
+		close2;
+	}
+	cutin "", 255;
+	end;
+}
+
+veins,208,128,5	script	Cool Event Corp. Staff::CoolEventCorpStaffVeins	4_M_ZONDAMAN,{
+	cutin "zonda_01",2;
+	mes "[Cool Event Corp. Staff]";
+	mes "ยินดีต้อนรับสู่ Cool Event Corp";
+	mes "พนักงานของเราจะทำงานกันสม่ำเสมอ";
+	mes "ด้วยบริการที่เต็มไปด้วยคุณภาพ";
+	mes "มีอะไรให้ช่วยใหม?";
+	next;
+	switch(select("เซฟ:เก็บของ:ใช้บริการ Teleport:เช่ารถเข็น:ใส่รหัส คลังเก็บของ:ยกเลิก")){
+	case 1:
+		mes "[Cool Event Corp. Staff]";
+		mes "จุดเซิฟของคุณได้ถูกบันทึกแล้ว";
+		mes "ขอบคุณที่ใช้บริการ";
+		mes "Cool Event Corp. service~";
+		savepoint "veins",204,103;
+		close2;
+		break;
+	case 2:
+		mes "[Cool Event Corp. Staff]";
+		if(basicskillcheck() && getskilllv("NV_BASIC") < 6){
+			mes "ขออภัย";
+			mes "ไม่สามารถให้บริการได้";
+			mes "เนื่องจากท่านต้องมีทักษะ Level6";
+			mes "ในการใช้บริการเก็บของ";
+			close2;
+			break;
+		}
+		if(Zeny < 40){
+			mes "ขออภัย";
+			mes "จำนวนเงินของท่านไม่เพียงพอ";
+			mes "สำหรับใช้บริการ";
+			mes "ต้องการเงินจำนวน 40 zeny.";
+			close2;
+			break;
+		}
+		Zeny -= 40;
+		mes "บริการเก็บของ";
+		mes "นี่คือห้องเก็บของสำหรับคุณ";
+		mes "ขอบคุณที่ใช้บริการ";
+		mes "Cool Event Corp services.";
+		callfunc("F_CheckKafCode");	//check your storage password, if set
+		close2;
+		openstorage;
+		break;
+	case 3:
+		mes "โปรดเลือกพื้นที่ที่คุณต้องการจะไป";
+		next;
+		switch (select("Rachel -> 2200 z:Nameless Island -> 5600 z:ยกเลิก") ) {
+			case 1:
+			if ((countitem(7060) != 0) || (Zeny >= 2200)) {
+				if (countitem(7060) != 0) {
+					delitem 7060,1;
+				}
+				else {
+					Zeny -= 2200;
+				}
+				warp "rachel",115,125;
+				cutin "",255;
+				end;
+			}
+			else {
+				mes "[Cool Event Corp. Staff]";
+				mes "ขออภัยไม่สามารถให้บริการได้";
+				mes "เนื่องจากท่านมีเงินไม่เพียงพอ";
+				mes "ค่าบริการในการ Teleport";
+				mes "ไป  Rachel ค่าบริการจำนวน 2200 zeny.";
+			}
+			case 2:
+			if ((countitem(7060) != 0) || (Zeny >= 5600)) {
+				if (countitem(7060) != 0) {
+					delitem 7060,1;
+				}
+				else {
+					Zeny -= 5600;
+				}
+				warp "nameless_n",256,215;
+				cutin "",255;
+				end;
+			}
+			else {
+				mes "[Cool Event Corp. Staff]";
+				mes "ขออภัยไม่สามารถให้บริการได้";
+				mes "เนื่องจากท่านมีเงินไม่เพียงพอ";
+				mes "ค่าบริการในการ Teleport";
+				mes "ไป  Rachel ค่าบริการจำนวน 5600 zeny.";
+			}
+			case 3:
+			cutin "",255;
+			close;
+		}
+		close2;
+		break;
+	case 4:
+		mes "[Cool Event Corp. Staff]";
+		if(BaseClass != Job_Merchant){
+			mes "ขออภัย";
+			mes "บริการเช่ารถเข็น";
+			mes "จะใช้ได้เฉพาะกับอาชิพ,";
+			mes "พ่อค้าเท่านั้น";
+			close2;
+			break;
+		}
+		if(getskilllv("MC_PUSHCART") == 0){
+			mes "คุณจำเป็นต้องมีสกิลเช่ารถเข็น";
+			close2;
+			break;
+		}
+		if(checkcart() == 1){
+			mes "ท่านมีรถเข็นอยู่แล้ว";
+			mes "และต้องการเพิ่ม";
+			mes "เราไม่สามารถให้ท่านได้";
+			mes "มากกว่าหนึ่ง";
+			mes "โปรดมาใหม่ภายหลัง";
+			close2;
+			break;
+		}
+		if(countitem(7061)){
+			delitem 7061,1;
+			setcart;
+			close2;
+			break;
+		}
+		mes "บริการเช่ารถเข็น";
+		mes "ค่าบริการ 800 zeny.";
+		mes "ท่านต้องการเช่ารถเข็นใช่หรือไม่?";
+		next;
+		if(select("เช่ารถเข็น:ยกเลิก") == 1){
+			if(Zeny < 800){
+				mes "[Cool Event Corp. Staff]";
+				mes "ขออภัย";
+				mes "จำนวนเงินของท่านไม่เพียงพอ";
+				mes "ในการใช้บริการเช่ารถเข็น";
+				mes "ต้องการเงินจำนวน 800 zeny";
+				close2;
+			} else {
+				Zeny -= 800;
+				setcart;
+			}
+		}
+		close2;
+		break;
+	case 5:
+		callfunc("F_SetKafCode","[Cool Event Corp. Staff]","Cool Event Corp.");
+		//the function closes msg and remoes cutins
+	case 6:
+	default:
+		mes "[Cool Event Corp. Staff]";
+		mes "บริษัท Cool Event Corp";
+		mes "พวกเรามุ่งมั่นที่จะบริการลูกค้า";
+		mes "ให้ดีที่สุดเสมอ เพื่องานบริการที่เป็นหนึ่ง";
+		mes "ขอบคุณที่ใช้บริการ";
+		close2;
+	}
+	cutin "", 255;
+	end;
+}

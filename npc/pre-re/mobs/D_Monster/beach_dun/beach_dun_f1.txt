@@ -1,0 +1,62 @@
+
+-	script	Beach Dungeon F1	-1,{
+
+	mes "^0066FF[Beach Dungeon F1]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+
+	menu "Medusa",Medusa,"Nereid",Nereid,"Pest",Pest,"Merman",Merman,"Tao Gunka (บอส MVP)",Tao_Gunka;
+	close;
+	
+	Medusa:
+	mes "^0066FF[Beach Dungeon F1]^000000";	
+	mes "^ff0066 Medusa ^000000 รหัสมันเตอร์  1148 จำนวนเกิด 60 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1148";
+	close;	
+	
+	Nereid:
+	mes "^0066FF[Beach Dungeon F1]^000000";	
+	mes "^ff0066 Nereid ^000000 รหัสมันเตอร์  1255 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1255";
+	close;	
+	
+	Pest:
+	mes "^0066FF[Beach Dungeon F1]^000000";	
+	mes "^ff0066 Pest ^000000 รหัสมันเตอร์  1256 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1256";
+	close;	
+	
+	Merman:
+	mes "^0066FF[Beach Dungeon F1]^000000";	
+	mes "^ff0066 Merman ^000000 รหัสมันเตอร์  1264 จำนวนเกิด 3 ตัว ตายแล้ว 10-15 เนาที เกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1264";
+	close;	
+	
+	Tao_Gunka:
+	mes "^0066FF[Beach Dungeon F1]^000000";	
+	mes "^ff0066 Tao_Gunka ^000000 รหัสมันเตอร์  1583 จำนวนเกิด 1 ตัว ตายแล้ว 300-310 นาที เกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1583";
+	close;	
+	
+	
+	
+	
+	
+	
+	OnInit:
+	waitingroom "Beach Dungeon F1 ",0;
+	//close;		
+
+	
+	
+}
+
+beach_dun,266,67,3	duplicate(Beach Dungeon F1)	Beach Dungeon F1#alb1	1148
+

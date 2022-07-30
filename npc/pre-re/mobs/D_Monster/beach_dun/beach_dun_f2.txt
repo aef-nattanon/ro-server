@@ -1,0 +1,59 @@
+
+-	script	Beach Dungeon F2	-1,{
+
+	mes "^0066FF[Beach Dungeon F2]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+		
+	
+	menu "Hydra (ไฮดร้า)",Hydra,"Nereid",Nereid,"Megalith",Megalith,
+	"Stalactic Golem",Stalactic_Golem,"Tri Joint",Tri_Joint;
+	close;
+	
+	Hydra:
+	mes "^0066FF[Beach Dungeon F2]^000000";	
+	mes "^ff0066 Hydra ^000000 รหัสมันเตอร์  1068 จำนวนเกิด 10 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1068";
+	close;	
+	
+	Nereid:
+	mes "^0066FF[Beach Dungeon F2]^000000";	
+	mes "^ff0066 Nereid ^000000 รหัสมันเตอร์  1255 จำนวนเกิด 10 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1255";
+	close;	
+	
+	Megalith:
+	mes "^0066FF[Beach Dungeon F2]^000000";	
+	mes "^ff0066 Megalith ^000000 รหัสมันเตอร์  1274 จำนวนเกิด 15 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1274";
+	close;	
+	
+	Stalactic_Golem:
+	mes "^0066FF[Beach Dungeon F2]^000000";	
+	mes "^ff0066 Megalith ^000000 รหัสมันเตอร์  1278 จำนวนเกิด 65 ตัว ตายแล้ว5วินาทีเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1278";
+	close;	
+	
+	Tri_Joint:
+	mes "^0066FF[Beach Dungeon F2]^000000";	
+	mes "^ff0066 Tri Joint ^000000 รหัสมันเตอร์  1279 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1279";
+	close;
+	
+	OnInit:
+	waitingroom "Beach Dungeon F2 ",0;
+	//close;		
+
+	
+	
+}
+
+beach_dun2,255,244,3	duplicate(Beach Dungeon F2)	Beach Dungeon F2#alb1	1068
+

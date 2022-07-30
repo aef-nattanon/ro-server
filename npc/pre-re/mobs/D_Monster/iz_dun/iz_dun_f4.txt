@@ -1,0 +1,66 @@
+
+-	script	Byalan Dungeon F4	-1,{
+
+	mes "^0066FF[Byalan Dungeon F4]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+		
+	menu "Marc",Marc,"Hydra",Hydra,"Swordfish",Swordfish,"Marine Sphere",Marine_Sphere,
+	"Phen",Phen,"Merman",Merman;
+	close;
+	
+	Marc:
+	mes "^0066FF[Byalan Dungeon F4]^000000";
+	mes "^ff0066 Marc ^000000 รหัสมันเตอร์  1045 จำนวนเกิด 40 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1045";
+	close;	
+	
+	Hydra:
+	mes "^0066FF[Byalan Dungeon F4]^000000";
+	mes "^ff0066 Hydra ^000000 รหัสมันเตอร์  1068 จำนวนเกิด 2 ตัว ตายแล้ว 5-7นาทีเกิด แลัวจำนวน 28 ตัว ตายแล้ว 5-8 นาทีเกิด แล้ว 10 ตัว ตายแล้วเกิด";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1045";
+	close;	
+	
+	Swordfish:
+	mes "^0066FF[Byalan Dungeon F4]^000000";
+	mes "^ff0066 Swordfish ^000000 รหัสมันเตอร์  1069 จำนวนเกิด 40 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1069";
+	close;	
+	
+	Marine_Sphere:
+	mes "^0066FF[Byalan Dungeon F4]^000000";
+	mes "^ff0066 Marine Sphere ^000000 รหัสมันเตอร์  1142 จำนวนเกิด 20 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1142";
+	close;	
+	
+	Phen:
+	mes "^0066FF[Byalan Dungeon F4]^000000";
+	mes "^ff0066 Phen ^000000 รหัสมันเตอร์  1158 จำนวนเกิด 45 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1158";
+	close;	
+	
+	Merman:
+	mes "^0066FF[Byalan Dungeon F4]^000000";
+	mes "^ff0066 Merman ^000000 รหัสมันเตอร์  1264 จำนวนเกิด 3 ตัว ตายแล้ว 30-50 นาทีเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1264";
+	close;	
+	
+	
+	OnInit:
+	waitingroom "Byalan Dungeon F4 ",0;
+	//close;		
+
+	
+	
+}
+
+iz_dun03,32,63,3	duplicate(Byalan Dungeon F4)	Byalan Dungeon F4#alb1	1264
+

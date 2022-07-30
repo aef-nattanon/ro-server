@@ -1,0 +1,72 @@
+
+-	script	Byalan Dungeon F2	-1,{
+
+	mes "^0066FF[Byalan Dungeon F2]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+		
+	menu "Vadon",Vadon,"Cornutus",Cornutus,"Hydra",Hydra,
+	"Kukre",Kukre,"Black Mushroom",Black_Mushroom,"Marina",Marina,"Plankton",Plankton;
+	close;
+	
+	Vadon:
+	mes "^0066FF[Byalan Dungeon F2]^000000";	
+	mes "^ff0066 Vadon ^000000 รหัสมันเตอร์  1066 จำนวนเกิด 60 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1066";
+	close;	
+	
+	Cornutus:
+	mes "^0066FF[Byalan Dungeon F2]^000000";	
+	mes "^ff0066 Cornutus ^000000 รหัสมันเตอร์  1067 จำนวนเกิด 15 ตัว ตายแล้ว 5-8 นาทีเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1067";
+	close;	
+	
+	Hydra:
+	mes "^0066FF[Byalan Dungeon F2]^000000";	
+	mes "^ff0066 Hydra ^000000 รหัสมันเตอร์  1068 จำนวนเกิด 30 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1068";
+	close;	
+	
+	Kukre:
+	mes "^0066FF[Byalan Dungeon F2]^000000";	
+	mes "^ff0066 Hydra ^000000 รหัสมันเตอร์  1070 จำนวนเกิด 50 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1070";
+	close;	
+	
+	Black_Mushroom:
+	mes "^0066FF[Byalan Dungeon F2]^000000";	
+	mes "^ff0066 Black Mushroom ^000000 รหัสมันเตอร์  1084 จำนวนเกิด 10 ตัว ตายแล้ว 3-5 นาทีเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1084";
+	close;
+	
+	Marina:
+	mes "^0066FF[Byalan Dungeon F2]^000000";	
+	mes "^ff0066 Marina ^000000 รหัสมันเตอร์  1141 จำนวนเกิด 15 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1141";
+	close;
+	
+	Plankton:
+	mes "^0066FF[Byalan Dungeon F2]^000000";	
+	mes "^ff0066 Plankton ^000000 รหัสมันเตอร์  1161 จำนวนเกิด 10 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1161";
+	close;
+	
+	OnInit:
+	waitingroom "Byalan Dungeon F2 ",0;
+	//close;		
+
+	
+	
+}
+
+iz_dun01,253,252,3	duplicate(Byalan Dungeon F2)	Byalan Dungeon F2#alb1	1161
+

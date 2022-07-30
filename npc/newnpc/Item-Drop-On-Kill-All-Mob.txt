@@ -1,0 +1,49 @@
+/**
+ * Item Drop On Kill All Mob
+ * But It's Drop on player nor Mob location
+ * Please Fix it and send back
+ * Thanks you
+ * Striker Presentation
+ * But It's Okay
+ * I will waiting for Fixed version
+ */
+ 
+-	script	#droptest	-1,{
+OnNPCKillEvent:
+	if ( rand(10000) < .ichance) 
+		for (set .@i,0; .@i < .itz; set .@i,.@i+2) {
+			getmapxy(.@map$,.@x,.@y,BL_PC);
+			makeitem .itemroll[.@i],.itemroll[.@i+1],.@map$,.@x,.@y;
+			//if (!.ianouncement)
+				//announce "This is my message just for you",bc_blue|bc_All;
+		}
+Oninit:
+	set .ianouncement,0;		// ถ้าอยากเปิดให้ใส่เลข 0
+	set .ichance,200;			//ตั้งค่า % ดรอป 1 = 0.01%
+	set .itz,getarraysize(.itemroll);
+	setarray .itemroll[0],671,1;
+	setarray .itemroll[0],25250,1;	//ตั้งค่า ID Item ที่จะให้ดรอปและจำนวนเช่น 501,3 ดรอป 501 จำนวน 3 อัน
+	end;
+}
+
+-	script	#selectdropboss	-1,{
+OnNPCKillEvent:
+	for(set .@i,0; .@i < .cmmob; set .@i,.@i+1)
+		if(killedrid == .choosemobid[.@i])
+			if ( rand(10000) < .choosechance)
+				for (.@j = 0; .@j < .cmitm; .@j +=2) {
+					getmapxy(.@map$,.@x,.@y,BL_PC);
+					makeitem .chooseitemdrop[.@j],.chooseitemdrop[.@j+1],.@map$,rand(.@x-5,.@x+5),rand(.@y-5,.@y+5);
+					if (!.cmanouncement)
+						announce "This is my message just for you",bc_blue|bc_All;
+				}
+	end;
+Oninit:
+	set .cmanouncement,1;		// ถ้าอยากเปิดให้ใส่เลข 0
+	set .choosechance,10000;	// โอกาศที่ของแต่ละชิ้นจะตก 1 = 0.01%
+	set .choosemobid[0],1201,1202;	//ใส่เลข Monster Boss ที่อยากให้ดรอปของตามใจขอบ
+	set .chooseitemdrop[0],501,1;	//ใส่เลขของกับจำนวนของดรอป  	IDของดรอป,จำนวน
+	set .cmmob,getarraysize(.choosemobid);
+	set .cmitm,getarraysize(.chooseitemdrop);
+	end;
+}

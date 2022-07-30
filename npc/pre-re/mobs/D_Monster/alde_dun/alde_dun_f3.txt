@@ -1,0 +1,43 @@
+
+-	script	Clock Tower B3	-1,{
+
+	mes "^0066FF[Clock Tower B3]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Drainliar",Drainliar,"Cramp",Cramp,"Penomena",Penomena;
+	close;
+	
+	Drainliar:
+	mes "^0066FF[Clock Tower B3]^000000";	
+	mes "^ff0066 Drainliar ^000000 รหัสมันเตอร์  1111 จำนวนเกิดประมาณ 40 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1111";
+	close;	
+	
+	Cramp:
+	mes "^0066FF[Clock Tower B3]^000000";	
+	mes "^ff0066 Cramp ^000000 รหัสมันเตอร์  1209 จำนวนเกิดประมาณ 30 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1209";
+	close;	
+	
+	Penomena:
+	mes "^0066FF[Clock Tower B3]^000000";	
+	mes "^ff0066 Penomena ^000000 รหัสมันเตอร์  1216 จำนวนเกิดประมาณ 40 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1216";
+	close;	
+	
+	OnInit:
+	waitingroom "Clock Tower B3",0;
+	//close;		
+
+	
+	
+}
+
+alde_dun03,277,178,3	duplicate(Clock Tower B3)	Clock Tower B3#alb1	1209
+

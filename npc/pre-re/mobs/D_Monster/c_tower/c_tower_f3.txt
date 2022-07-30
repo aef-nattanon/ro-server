@@ -1,0 +1,50 @@
+
+-	script	Clock Tower F3	-1,{
+
+	mes "^0066FF[Clock Tower F3]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Mimic",Mimic,"Alarm",Alarm,"Rideword",Rideword,"Clock Tower Manager",Tower_Manager;
+	close;
+	
+	Mimic:
+	mes "^0066FF[Clock Tower F3]^000000";	
+	mes "^ff0066 Mimic ^000000 รหัสมันเตอร์  1191 จำนวนเกิด 7 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1191";
+	close;	
+	
+	Alarm:
+	mes "^0066FF[Clock Tower F3]^000000";	
+	mes "^ff0066 Alarm ^000000 รหัสมันเตอร์  1193 จำนวนเกิด 80 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1193";
+	close;	
+
+	Rideword:
+	mes "^0066FF[Clock Tower F3]^000000";	
+	mes "^ff0066 Rideword ^000000 รหัสมันเตอร์  1195 จำนวนเกิด 5 ตัว ตายแล้วเกิด แล้วอีก 1 ตัว 2-4 นาที ตายเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1195";
+	close;
+	
+	Tower_Manager:
+	mes "^0066FF[Clock Tower F3]^000000";	
+	mes "^ff0066 Alarm ^000000 รหัสมันเตอร์  1270 จำนวนเกิด 3 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1270";
+	close;
+	
+	OnInit:
+	waitingroom "Clock Tower F3",0;
+	//close;		
+
+	
+	
+}
+
+c_tower3,65,147,3	duplicate(Clock Tower F3)	Clock Tower F3#alb1	1016
+

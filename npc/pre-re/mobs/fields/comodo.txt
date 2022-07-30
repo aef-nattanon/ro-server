@@ -1,0 +1,131 @@
+//Dun1
+odin_tem01,250,150,0,0	monster	Orc Archer	1189,10,0,0,0
+odin_tem01,287,164,0,0	monster	Orc Archer	1189,10,0,0,0
+odin_tem01,345,184,0,0	monster	Orc Archer	1189,10,0,0,0
+odin_tem01,329,243,0,0	monster	Orc Archer	1189,10,0,0,0
+odin_tem01,348,314,0,0	monster	Orc Archer	1189,10,0,0,0
+//Dun2
+odin_tem02,94,226,0,0	monster	Eddga	1115,1,0,0,0
+odin_tem02,142,179,0,0	monster	Whisper	1179,20,0,0,0
+odin_tem02,182,157,0,0	monster	Whisper	1179,20,0,0,0
+odin_tem02,194,236,0,0	monster	Whisper	1179,20,0,0,0
+//dun3
+odin_tem03,96,115,0,0	monster	Golem	1040,20,0,0,0
+
+
+//kn_rossi,35,96,0,0	monster	Golem	1040,20,0,0,0
+
+
+//==================================================
+// cmd_fild01 - Papuchicha Forest
+//==================================================
+cmd_fild01,0,0,0,0	monster	Poporing	1031,50,0,0,0
+cmd_fild01,0,0,0,0	monster	Poison Spore	1077,60,0,0,0
+cmd_fild01,0,0,0,0	monster	Savage	1166,30,0,0,0
+cmd_fild01,0,0,0,0	monster	Alligator	1271,80,0,0,0
+
+cmd_fild01,313,213,10,10	monster	Shining Plant	1083,1,1800000,900000,1
+cmd_fild01,313,213,10,10	monster	Blue Plant	1079,1,1800000,900000,1
+cmd_fild01,171,339,10,10	monster	Blue Plant	1079,2,1800000,900000,1
+cmd_fild01,72,78,10,10	monster	Blue Plant	1079,2,1800000,900000,1
+cmd_fild01,194,176,20,20	monster	Blue Plant	1079,1,1800000,900000,1
+cmd_fild01,0,0,0,0	monster	Green Plant	1080,5,1800000,900000,1
+
+//==================================================
+// cmd_fild02 - Kokomo Beach
+//==================================================
+cmd_fild02,0,0,0,0	monster	Cornutus	1067,15,180000,0,0
+cmd_fild02,0,0,0,0	monster	Crab	1073,30,0,0,0
+cmd_fild02,0,0,0,0	monster	Shellfish	1074,40,0,0,0
+cmd_fild02,0,0,0,0	monster	Raggler	1254,32,0,0,0
+cmd_fild02,0,0,0,0	monster	Aster	1266,20,0,0,0
+cmd_fild02,0,0,0,0	monster	Alligator	1271,15,0,0,0
+cmd_fild02,0,0,0,0	monster	Mobster	1313,1,2400000,0,0
+cmd_fild02,200,130,150,40	monster	Seal	1317,35,0,0,0
+cmd_fild02,93,82,40,80	monster	Seal	1317,20,0,0,0
+cmd_fild02,0,0,0,0	monster	Galapago	1391,30,0,0,0
+
+//cmd_fild02,200,130,150,40	monster	Seal	1317,18
+//cmd_fild02,93,82,40,80	monster	Seal	1317,2,180000
+
+//==================================================
+// cmd_fild03 - Zenhai Marsh
+//==================================================
+cmd_fild03,0,0,0,0	monster	Poporing	1031,11,0,0,0
+cmd_fild03,0,0,0,0	monster	Toad	1089,1,3600000,0,0
+cmd_fild03,0,0,0,0	monster	Anolian	1206,100,0,0,0
+cmd_fild03,0,0,0,0	monster	Pest	1256,40,0,0,0
+cmd_fild03,0,0,0,0	monster	Mutant Dragonoid	1262,1,3600000,0,0
+
+cmd_fild03,356,232,3,3	monster	Shining Plant	1083,1,1800000,900000,1
+cmd_fild03,262,289,3,3	monster	Shining Plant	1083,1,1800000,900000,1
+cmd_fild03,145,191,3,3	monster	Shining Plant	1083,1,1800000,900000,1
+
+//==================================================
+// cmd_fild04 - Kokomo Beach
+//==================================================
+cmd_fild04,0,0,0,0	monster	Crab	1073,30,0,0,0
+cmd_fild04,0,0,0,0	monster	Shellfish	1074,30,0,0,0
+cmd_fild04,0,0,0,0	monster	Raggler	1254,20,0,0,0
+cmd_fild04,0,0,0,0	monster	Aster	1266,50,0,0,0
+cmd_fild04,0,0,0,0	monster	Alligator	1271,40,0,0,0
+cmd_fild04,221,120,120,40	monster	Sea Otter	1323,70,0,0,0
+//cmd_fild04,221,120,120,40	monster	Sea Otter	1323,20
+
+
+//==================================================
+// cmd_fild05 - Border of Papuchica Forest ไม่มีข้อมูล
+//==================================================
+cmd_fild05,0,0,0,0	monster	Frilldora	1119,45,0,0,0
+cmd_fild05,0,0,0,0	monster	Alligator	1271,20,0,0,0
+cmd_fild05,0,0,0,0	monster	Stem Worm	1215,5,0,0,0
+cmd_fild05,0,0,0,0	monster	Poporing	1031,10,0,0,0
+cmd_fild05,0,0,0,0	monster	Pest	1256,5,0,0,0
+cmd_fild05,0,0,0,0	monster	Frilldora	1119,10,0,0,0
+cmd_fild05,0,0,0,0	monster	Alligator	1271,20,0,0,0
+cmd_fild05,63,158,10,10	monster	Shining Plant	1083,1,1800000,900000,1
+cmd_fild05,318,277,10,10	monster	Yellow Plant	1081,3,1800000,900000,1
+cmd_fild05,282,49,20,20	monster	Yellow Plant	1081,3,1800000,900000,1
+cmd_fild05,0,0,0,0	monster	Green Plant	1080,5,1800000,900000,1
+//==================================================
+// cmd_fild06 - Fortress Saint Darmain (West)
+//==================================================
+cmd_fild06,0,0,0,0	monster	Drops	1113,20,0,0,0
+cmd_fild06,0,0,0,0	monster	Goblin Archer	1258,87,0,0,0
+cmd_fild06,0,0,0,0	monster	Kobold Archer	1282,57,0,0,0
+cmd_fild06,0,0,0,0	monster	Harpy	1376,1,1500000,0,0
+
+cmd_fild06,293,235,5,5	monster	Yellow Plant	1081,2,1800000,900000,1
+cmd_fild06,84,375,10,10	monster	Yellow Plant	1081,3,1800000,900000,1
+
+//==================================================
+// cmd_fild07 - Beacon Island, Pharos
+//==================================================
+cmd_fild07,0,0,0,0	monster	Crab	1073,5,60000,0,0
+cmd_fild07,0,0,0,0	monster	Shellfish	1074,5,60000,0,0
+cmd_fild07,0,0,0,0	monster	Drops	1113,40,0,0,0
+cmd_fild07,0,0,0,0	monster	Raggler	1254,4,180000,0,0
+cmd_fild07,0,0,0,0	monster	Aster	1266,5,60000,0,0
+
+//==================================================
+// cmd_fild08 - Fortress Saint Darmain (East)
+//==================================================
+cmd_fild08,0,0,0,0	monster	Side Winder	1037,20,0,0,0
+cmd_fild08,0,0,0,0	monster	Drops	1113,10,0,0,0
+cmd_fild08,0,0,0,0	monster	Sandman	1165,15,0,0,0
+cmd_fild08,0,0,0,0	monster	Stem Worm	1215,25,60000,0,0
+cmd_fild08,0,0,0,0	monster	Goblin Archer	1258,28,0,0,0
+cmd_fild08,0,0,0,0	monster	Gryphon	1259,1,3600000,0,0
+cmd_fild08,0,0,0,0	monster	Kobold Archer	1282,109,60000,0,0
+
+cmd_fild08,60,143,10,10	monster	Yellow Plant	1081,4,1800000,900000,1
+cmd_fild08,130,201,10,10	monster	Yellow Plant	1081,4,1800000,900000,1
+//==================================================
+// cmd_fild09 - ratemyserver
+//==================================================
+cmd_fild09,0,0,0,0	monster	Condor	1009,20,0,0,0
+cmd_fild09,0,0,0,0	monster	Anacondaq	1030,60,0,0,0
+cmd_fild09,0,0,0,0	monster	Steel Chonchon	1042,20,0,0,0
+cmd_fild09,0,0,0,0	monster	Drops	1113,30,0,0,0
+cmd_fild09,0,0,0,0	monster	Hode	1127,30,180000,0,0
+cmd_fild09,0,0,0,0	monster	Gargoyle	1253,2,180000,0,0

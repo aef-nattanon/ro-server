@@ -1,0 +1,51 @@
+
+-	script	Beach Dungeon F3	-1,{
+
+	mes "^0066FF[Beach Dungeon F3]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+		
+	
+	menu "Thara Frog (กบแดง)",Thara_Frog,"Megalodon",Megalodon,"Hydra (ไฮดร้า)",Hydra,"Nereid",Nereid;	
+	close;
+	
+	Thara_Frog:
+	mes "^0066FF[Beach Dungeon F3]^000000";	
+	mes "^ff0066 Hydra ^000000 รหัสมันเตอร์  1034 จำนวนเกิด 50 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1034";
+	close;	
+	
+	Megalodon:
+	mes "^0066FF[Beach Dungeon F3]^000000";	
+	mes "^ff0066 Megalodon ^000000 รหัสมันเตอร์  1064 จำนวนเกิด 30ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1064";
+	close;	
+	
+	Hydra:
+	mes "^0066FF[Beach Dungeon F3]^000000";	
+	mes "^ff0066 Hydra ^000000 รหัสมันเตอร์  1068 จำนวนเกิด 30ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1068";
+	close;	
+	
+	Nereid:
+	mes "^0066FF[Beach Dungeon F3]^000000";	
+	mes "^ff0066 Nereid ^000000 รหัสมันเตอร์  1255 จำนวนเกิด 1ตัว ตายแล้ว 3-5 นาทีเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1255";
+	close;	
+	
+	OnInit:
+	waitingroom "Beach Dungeon F3 ",0;
+	//close;		
+
+	
+	
+}
+
+beach_dun3,23,260,3	duplicate(Beach Dungeon F3)	Beach Dungeon F3#alb1	1034
+

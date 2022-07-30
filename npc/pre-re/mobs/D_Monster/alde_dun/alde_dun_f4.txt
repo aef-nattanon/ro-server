@@ -1,0 +1,65 @@
+
+-	script	Clock Tower B4	-1,{
+
+	mes "^0066FF[Clock Tower B4]^000000";		
+	mes "มอนเตอร์ทั้งหมดภายในพื้นที่นี้";
+	mes "โปรดเลือกรายการชื่อมอนเตอร์";
+	mes "เพื่อเช็คจำนวนและเวลาเกิด";
+	next;
+	
+	menu "Bathory",Bathory,"Joker",Joker,"Whisper",Whisper,"Mysteltainn (มินิบอส MiniBoss)",Mysteltainn,
+	"Tirfing (มินิบอส MiniBoss) ",Tirfing,"Executioner (มินิบอส MiniBoss)",Executioner;
+	close;
+	
+	Bathory:
+	mes "^0066FF[Clock Tower B4]^000000";	
+	mes "^ff0066 Bathory ^000000 รหัสมันเตอร์  1102 จำนวนเกิดประมาณ 50 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1102";
+	close;	
+	
+	Joker:
+	mes "^0066FF[Clock Tower B4]^000000";	
+	mes "^ff0066 Joker ^000000 รหัสมันเตอร์  1131 จำนวนเกิดประมาณ 10 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1131";
+	close;	
+	
+	Whisper:
+	mes "^0066FF[Clock Tower B4]^000000";	
+	mes "^ff0066 Whisper ^000000 รหัสมันเตอร์  1179 จำนวนเกิดประมาณ 10 ตัว ตายแล้วเกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1179";
+	close;	
+	
+	Mysteltainn:
+	mes "^0066FF[Clock Tower B4]^000000";	
+	mes "^ff0066 Mysteltainn ^000000 รหัสมันเตอร์  1203 จำนวนเกิดประมาณ 1 ตัว ตายแล้ว 60-90 นาที เกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1203";
+	close;	
+	
+	Tirfing:
+	mes "^0066FF[Clock Tower B4]^000000";	
+	mes "^ff0066 Tirfing ^000000 รหัสมันเตอร์  1204 จำนวนเกิดประมาณ 1 ตัว ตายแล้ว 60-90 นาที เกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1204";
+	close;	
+	
+	Executioner:
+	mes "^0066FF[Clock Tower B4]^000000";	
+	mes "^ff0066 Executioner ^000000 รหัสมันเตอร์  1205 จำนวนเกิดประมาณ 1 ตัว ตายแล้ว 60-90 นาที เกิด ";
+	mes "ดูข้อมูลการดอปและ Exp มอนเตอร์ ";
+	mes "@mi 1205";
+	close;	
+	
+	OnInit:
+	waitingroom "Clock Tower B4",0;
+	//close;		
+
+	
+	
+}
+
+alde_dun04,268,74,3	duplicate(Clock Tower B4)	Clock Tower B4#alb1	1102
+
