@@ -473,7 +473,7 @@ CREATE TABLE IF NOT EXISTS `guild` (
   PRIMARY KEY  (`guild_id`,`char_id`),
   UNIQUE KEY `guild_id` (`guild_id`),
   KEY `char_id` (`char_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=tis620 AUTO_INCREMENT=150000 ; 
+) ENGINE=MyISAM;
 
 --
 -- Table structure for table `guild_alliance`

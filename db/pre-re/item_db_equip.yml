@@ -8962,6 +8962,53 @@ Body:
       bonus bCritical,getskilllv("PR_MACEMASTERY")*2;
       bonus bInt,1;
       bonus bLuk,1;
+  - Id: 31315
+    AegisName: C_Stall_Of_Angel
+    Name: C Stall of Angel
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1664
+    Script: |
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,8;
+  - Id: 19985
+    AegisName: C_Aura_Quartz_Crown
+    Name: Costume Aura Quartz
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 866
+    Script: |
+      bonus2 bAddMonsterDropItem,603,10;
+      bonus bLuk,7;    
+  - Id: 31566
+    AegisName: C_Stole_Of_Dominion
+    Name: C Stole Of Dominion
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1784
+    Script: |
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,8;    
+  - Id: 31121
+    AegisName: C_Stall_Of_Bat
+    Name: Costume Stall Of Bat
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1549     
   - Id: 1549
     AegisName: Pilebuncker
     Name: Pile Bunker
@@ -9571,6 +9618,15 @@ Body:
       bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,25;
       bonus2 bIgnoreMdefRaceRate,RC_Player_Human,25;
       bonus bUnbreakableWeapon;
+  - Id: 31488
+    AegisName: C_MVP
+    Name: Costume MVP
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1738
   - Id: 1576
     AegisName: Krieger_Book1
     Name: Glorious Tablet
@@ -19896,12 +19952,12 @@ Body:
     View: 907 
     Script: |
       bonus bAllStats,1;
-      bonus bBaseAtk,readparam(bStr)/10;
-      bonus bMatk,readparam(bInt)/10;
-      bonus2 bSubEle,Ele_Neutral,readparam(bVit)/10;
-      bonus bAspdRate,(readparam(bAgi)/10);
-      bonus bLongAtkRate,readparam(bDex)/10;
-      bonus bCritAtkRate,readparam(bLuk)/10;     
+      bonus bBaseAtk,readparam(bStr)/30;
+      bonus bMatk,readparam(bInt)/30;
+      bonus2 bSubEle,Ele_Neutral,readparam(bVit)/30;
+      bonus bAspdRate,(readparam(bAgi)/30);
+      bonus bLongAtkRate,readparam(bDex)/30;
+      bonus bCritAtkRate,readparam(bLuk)/30;     
   - Id: 2509
     AegisName: Clack_Of_Servival
     Name: Survivor's Manteau
@@ -26740,7 +26796,6 @@ Body:
     Locations:
       Head_Top: true
     ArmorLevel: 1
-    EquipLevelMin: 15
     Refineable: true
     View: 678
     Script: |
@@ -33497,7 +33552,7 @@ Body:
     Type: Armor
     Buy: 20
     Weight: 400
-    Defense: 3
+    Defense: 6
     Slots: 1
     Jobs:
       All: true
@@ -33506,17 +33561,19 @@ Body:
     Locations:
       Head_Top: true
     ArmorLevel: 1
-    EquipLevelMin: 30
+    EquipLevelMin: 1
     Refineable: true
     View: 495
     Trade:
       NoDrop: true
-      NoSell: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       bonus bStr,2;
+      bonus bDex,2;
+      bonus2 bAddRace,RC_Brute,10;
+      bonus2 bAddRace,RC_Player_Doram,10;
+      .@r = getrefine();
+      autobonus "{ bonus2 bSPLossRate,5,1000; bonus bBaseAtk,25*getrefine(); }",3*.@r,3000,BF_NORMAL,"{ active_transform 1115,3000; specialeffect2 EF_POTION_BERSERK; showscript \"Eddga Power !\"; }";
+      autobonus2 "{ bonus2 bSPLossRate,5,1000; bonus bBaseAtk,25*getrefine(); }",.@r,3000,BF_NORMAL,"{ active_transform 1115,3000; specialeffect2 EF_POTION_BERSERK; showscript \"Eddga Power !\"; }";
   - Id: 5498
     AegisName: Wondering_Wolf_Helm
     Name: Wandering Wolf Helm
@@ -36339,6 +36396,15 @@ Body:
       bonus bDex,2;
       bonus bAgi,2;
       bonus bMdef,5;
+  - Id: 31419
+    AegisName: C_Angel_Of_Happiness
+    Name: Costume Angel of Happiness
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1251      
   - Id: 5827
     AegisName: Book_File_Hat
     Name: Book File Hat
@@ -41315,6 +41381,14 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 1
     View: 334
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
     Script: |
       bonus2 bExpAddRace,RC_All,10;
       bonus2 bDropAddRace,RC_All,5;
@@ -41905,7 +41979,7 @@ Body:
       bonus2 bAddMonsterDropItem,25250,7;
   - Id: 20079
     AegisName: C_Love_Daddy_2013
-    Name: Costume Forgotten Angel Wing
+    Name: Angel Wing
     Type: Armor
     Locations:
       Costume_Head_Top: true
@@ -41915,9 +41989,10 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,30;
       bonus2 bDropAddRace,RC_All,30;
+      bonus2 bAddMonsterDropItem,25250,10;
   - Id: 20727
     AegisName: Brilliant_Golden_Wings
-    Name: Brilliant Golden Wings
+    Name: Golden Wings
     Type: Armor
     Buy: 10
     Locations:
@@ -41930,6 +42005,7 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,30;
       bonus2 bDropAddRace,RC_All,30;
+      bonus2 bAddMonsterDropItem,25250,10;
   - Id: 19769
     AegisName: C_Elf_Ears
     Name: Costume Elf Ears
@@ -42045,12 +42121,12 @@ Body:
     View: 264
     Script: |
       bonus bAllStats,1;
-      bonus bBaseAtk,readparam(bStr)/10;
-      bonus bMatk,readparam(bInt)/10;
-      bonus2 bSubEle,Ele_Neutral,readparam(bVit)/10;
-      bonus bAspdRate,(readparam(bAgi)/10);
-      bonus bLongAtkRate,readparam(bDex)/10;
-      bonus bCritAtkRate,readparam(bLuk)/10;     
+      bonus bBaseAtk,readparam(bStr)/30;
+      bonus bMatk,readparam(bInt)/30;
+      bonus2 bSubEle,Ele_Neutral,readparam(bVit)/30;
+      bonus bAspdRate,(readparam(bAgi)/30);
+      bonus bLongAtkRate,readparam(bDex)/30;
+      bonus bCritAtkRate,readparam(bLuk)/30;     
   - Id: 20146
     AegisName: C_Angel_Spirit
     Name: Costume Angel of Ghost
@@ -42529,6 +42605,37 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,10;
       bonus2 bDropAddRace,RC_All,10;
+  - Id: 18510
+    AegisName: Blood_Angel_Hair_Band
+    Name: Blood Angel Hair Band
+    Type: Armor
+    Defense: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 60
+    View: 679
+    Script: |
+      bonus2 bSubRace,RC_Player_Human,10;
+      bonus2 bSubRace,RC_DemiHuman,10;      
+  - Id: 20761
+    AegisName: C_Wing_Of_Happiness
+    Name: Costume Happiness Wings
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 9
+  - Id: 20762
+    AegisName: C_GreatDevilWing
+    Name: Costume Great Devil Wings
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 10      
   - Id: 20180
     AegisName: C_Westren_Grace
     Name: Costume Western Grace

@@ -1,0 +1,147 @@
+/*
+=================== TERMS OF SERVICES. ===================
+1. ALL RIGHT RESERVED RE-SELLER OR SHARE SCRIPT TO PUBLISH.
+2. BUT YOU RE-SELLER OR SHARE SCRIPT WITH OUT UNAUTHORIZRD
+   I WILL ALL CANCEL MY SUPPORT FOR YOU.
+3. MAINTENANCE SCRIPTS WILL BE FREE SERVICES.
+4. I WILL NOT KEEP ANY INFORMATIONS FROMS YOU SERVER THAT
+   YOU SEND FOR ME.
+5. I HOPE YOU WILL ALL ACCEPT TERMS OF SERVICES.
+==========================================================
+Script. Apprentice Craftsman		
+Create By. Daegaladh, Euphy, L0ne_W0lf																 
+Translator By. Athena Studio
+Bug Report. Kittisak Sarounram [ FB ]																					 
+Contact Us. Kittisak Sarounram [ FB ]																					 
+TEL. 0909183008 [ TRUE MOVE H ]																					 
+==========================================================
+*/
+
+morocc,133,79,4	script	Apprentice Craftsman	4_M_CHILD,{
+	disable_items;
+	mes "[คุณค้องการทำอะไร]";
+	if (Zeny >= 200000) {
+		mes "ฉันเคยได้ศึกษาวิธีที่สามารถจะเพิ่มความสามารถให้กับเหล่าอุปกรณ์ต่างๆ.";
+		next;
+		switch(select("อุปกรณ์ เสื้อ", "อุปกรณ์ โล่+ประดับ", "อุปกรณ์ มัฟ-เท้า", "Costume Class S","Costume Class SS","Costume ที่ได้จากกิจกรรม+สุ่มใข่","ไว้พบกันครั้งหน้า")) {
+		case 1:
+			setarray .@items[0],2311,2318,2319,2320,2308,2310,2315,2317,2322,2324,2326,2331,2333,2336,2342;
+			.@j = 50;
+			break;
+		case 2:
+			setarray .@items[0],2104,2102,2108,2106,2125,2621,2625,2607,2622,2624,2626;
+			.@j = 55;
+			.@k = 1;
+			break;
+		case 3:
+			setarray .@items[0],2502,2506,2504,2406,2402,2404,2573,2589;
+			.@j = 60;
+			break;
+		case 4:
+			setarray .@items[0],19512,19550,19551,19611,19788,19853,19886,19954,19989,20145,31047,31168,31570,19876,19587,19678,31205,19654,19607,19884;
+			.@j = 60;
+			break;
+		case 5:
+			setarray .@items[0],31529,19586,31139,19721,19784,31050,19546,20197,31160,19621,19769,19787,19810,20005,20047,20136,20142,20144,20146,20255,20270,31120,31472,31527;
+			.@j = 60;
+			break;
+		case 6:
+			setarray .@items[0],20727,20079,5374,18509,19859,19589,31566,31315;
+			.@j = 60;
+			break;
+		case 7:
+			mes "[Apprentice Craftsman]";
+			mes "โปรดกลับมาอีกครั้งถ้าหากคุณเปลี่ยนใจ.";
+			close;
+		}
+		.@menu$ = "";
+		for(.@i = 0; .@i<getarraysize(.@items); ++.@i)
+			.@menu$ += getitemname(.@items[.@i])+((.@k)?" [1]":"")+":";
+		callsub S_EnchantArmor, .@items[select(.@menu$)-1], .@j;
+		end;
+	}
+	mes "[Apprentice Craftsman]";
+	mes "ถ้าหากคุณต้องการใช้บริการ, คุณจะต้องนำเงินจำนวน 200,000 เซนี สำหรับค่าบริการ.";
+	close;
+
+S_EnchantArmor:
+	.@itemid = getarg(0);
+	.@failrate = getarg(1);
+	mes "[Apprentice Craftsman]";
+	if (countitem(.@itemid) == 1) {
+		mes "สำหรับการเพิ่มขีดความสามารถ ค่าบริการคือ 200,000 เซนี. และ คุณจะได้รับขีดความสามารถแบบสุ่ม. และ แน่นอน, อุปกรณ์ของคุณจะถูกทำลายหากมันล้มเหลว.";
+		next;
+		mes "[Apprentice Craftsman]";
+		mes "สิ่งแรกที่สำคัญที่สุด.";
+		mes "^ff5555หากอุปกรณ์ของคุณเคยผ่านการอัพเกรดมา";
+		mes "หรือ มีการ์ดอยู่ภายในนั้น โปรดจำไว้ว่ามันจะหายไปหลังจากการเพิ่มขีดความสามารถ.^000000";
+		mes "คุณแน่ใจหรือว่าต้องการที่จะดำเนินการต่อ ?";
+		next;
+		if(select("ดำเนินการต่อ.") == 1) 
+		mes "[Apprentice Craftsman]";
+		mes "คุณชอบการผจญภัยใช่มั้ย ?";
+		close2;
+		specialeffect EF_MAPPILLAR, AREA, playerattached();
+		if (Zeny < 200000) {
+			mes "[Apprentice Craftsman]";
+			mes "เสียใจด้วยนะ, แต่ดูเหมือนว่าจำนวนเงินของคุณไม่เพียงพอ.";
+			close;
+		}
+		progressbar "ffff00",7;
+		Zeny -= 200000;
+		delitem .@itemid,1;
+		switch (rand(1,.@failrate)) {
+			case 1: .@addpart = 4702;break; //Str+3
+			case 2: .@addpart = 4703;break; //Str+4
+			case 3: .@addpart = 4704;break; //Str+5
+			case 4: .@addpart = 4732;break; //Agi+3
+			case 5: .@addpart = 4733;break; //Agi+4
+			case 6: .@addpart = 4734;break; //Agi+5
+			case 7: .@addpart = 4742;break; //Vit+3
+			case 8: .@addpart = 4743;break; //Vit+4
+			case 9: .@addpart = 4744;break; //Vit+5
+			case 10: .@addpart = 4712;break; //Int+3
+			case 11: .@addpart = 4713;break; //Int+4
+			case 12: .@addpart = 4714;break; //Int+5
+			case 13:.@addpart = 4722;break; //Dex+3
+			case 14: .@addpart = 4723;break; //Dex+4
+			case 15:.@addpart = 4724;break; //Dex+5
+			case 16: .@addpart = 4752;break; //LUK+3
+			case 17: .@addpart = 4753;break;//LUK+4
+			case 18: .@addpart = 4754;break;//LUK+5
+			case 19: .@addpart = 4869;break; //DelayafterAttack1Lv 
+			case 20: .@addpart = 4872;break; //DelayafterAttack2Lv 
+			case 21: .@addpart = 4873;break;  //DelayafterAttack3Lv 
+			case 22: .@addpart = 4863;break; //Fatal1Lv  cri
+			case 23:.@addpart = 4864;break;//Fatal2Lv  cri
+			case 24: .@addpart = 4865;break;//Fatal3Lv  cri
+			case 25:.@addpart = 4832;break; // Sni atk2%
+			case 26:.@addpart = 4833;break; //Sni atk4%
+			case 27: .@addpart = 4834;break; //Sniatk 6%
+
+			default:
+		}
+		getitem2 .@itemid, 1, 1, 0, 0, 0, 0, 0, .@addpart;
+	}
+	else {
+		mes "หืม ? ดูเหมือนว่าคุณไม่ได้มีอุปกรณ์ที่ฉันสามารถเพิ่มขีดความสามารถได้ !";
+		mes "โปรดกลับมาใหม่อีกครั้งถ้าหากคุณมี.";
+		close;
+	}
+	
+OnInit:
+	setarray .messages$,"Option อุปกรณ์";
+	while( 1 )
+	{
+		set .Display$,"";
+		for( set .i,0; .i < getarraysize( .messages$ ); set .i,.i + 1 )
+		{
+			set .Display$,.Display$ + .messages$[.i];
+			delwaitingroom;
+			waitingroom .Display$,0;
+			sleep 100;
+		}
+	sleep 1000;
+	}
+	end;
+}

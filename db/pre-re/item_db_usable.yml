@@ -9126,20 +9126,32 @@ Body:
       rentitem 2841,270000;
   - Id: 12480
     AegisName: Attend_3Day_Box
-    Name: Attend 3Day Box
+    Name: EvilYak Scroll
     Type: Usable
     Weight: 10
     Trade:
       NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
     Script: |
       getgroupitem(IG_ANGEL_SCROLL);
   - Id: 12481
     AegisName: Attend_7Day_Box
-    Name: Attend 7Day Box
+    Name: AngelYak Scroll
     Type: Usable
     Weight: 10
     Trade:
       NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
     Script: |
       getgroupitem(IG_SQUAD_PRIZE1);
   - Id: 12482

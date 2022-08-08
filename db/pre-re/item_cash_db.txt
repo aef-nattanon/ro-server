@@ -3,7 +3,7 @@
 //
 // Structure of Database:
 // Type,ItemID,Price
-//
+
 // Type:
 //    0: New
 //    1: Hot

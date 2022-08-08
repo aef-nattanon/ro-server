@@ -25,9 +25,9 @@
 # - Jobs:                    List of jobs associated to group.
 #     Job                    Job name.
 #   MaxWeight                Base maximum weight. (Default: 20000)
-#   HPFactor                 HP increase per base level. Floor(HPFactor / 100) * BaseLv. Used when macro HP_SP_TABLES is disabled. (Default: 20000)
-#   HPMultiplicator          Base HP value. 35 + BaseLv * (HPMultiplicator / 100). Used when macro HP_SP_TABLES is disabled. (Default: 500)
-#   SPFactor                 SP increase per job level. Floor(SPFactor / 100) * BaseLv. Used when macro HP_SP_TABLES is disabled. (Default: 100)
+#   HpFactor                 Exponential HP increase. Per base level: [HpFactor * BaseLv / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 0)
+#   HpIncrease               Linear HP increase. Per base level: [HpIncrease / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 500)
+#   SpIncrease               Linear SP increase. Per base level: [SpIncrease / 100]. Used when macro HP_SP_TABLES is disabled. (Default: 100)
 #   BaseASPD:                Base ASPD for each weapon type. (Default: 2000)
 #     Weapon                 Weapon type with associated ASPD.
 #   BonusStats:              Job level bonus stats/traits.
@@ -78,7 +78,7 @@
 
 Header:
   Type: JOB_STATS
-  Version: 1
+  Version: 2
 
 Body:
   - Jobs:
@@ -313,27 +313,27 @@ Body:
       - Level: 88
         Exp: 7121664
       - Level: 89
-        Exp: 7602600
+        Exp: 76026000
       - Level: 90
-        Exp: 9738720
+        Exp: 97387200
       - Level: 91
-        Exp: 11649960
+        Exp: 116499600
       - Level: 92
-        Exp: 13643520
+        Exp: 136435200
       - Level: 93
-        Exp: 18339300
+        Exp: 183393000
       - Level: 94
-        Exp: 23836800
+        Exp: 238368000
       - Level: 95
-        Exp: 35658000
+        Exp: 356580000
       - Level: 96
-        Exp: 48687000
+        Exp: 486870000
       - Level: 97
-        Exp: 70000000
+        Exp: 999999970
       - Level: 98
-        Exp: 90000000
+        Exp: 999999980
       - Level: 99
-        Exp: 90000000
+        Exp: 999999990
   - Jobs:
       Novice_High: true
       Swordman_High: true

@@ -1,0 +1,44 @@
+/*
+	Script : PVP1VS1
+	Support : rAthena
+	Editor by : DurexzOfficial
+	Commit Version :
+		Ver.1.0 สิทธิ์ในการรับไอเทมจาก account_id ที่กรอกลงไปเท่านั้น
+		Ver.1.1 เพิ่มข้อความคำอธิบาย
+*/
+
+morocc,190,72,4	script	PVP1VS1	686,{
+	setarray .@acc_id[0],20; //account_id ที่ต้องการให้รับไอเทม
+	setarray .@item_id[0],5374,18509; // item_id ที่ต้องการแจก
+	setarray .@amount[0],1,1; // จำนวนไอเทมที่ต้องการแจก
+	
+	if(#PVP1VS1 == 1){
+		mes "ท่านเคยรับไอเทมไปแล้ว";
+		end;
+	}
+	
+	mes .NPCname$;
+	mes "ยินดีต้อนรับท่าน ^FF0000"+strcharinfo(0)+"^000000";
+	mes "ท่านต้องการรับไอเทมใช่หรือไม่??";
+	next;
+	switch(select("~ แน่นอน :~ ยังก่อน...")){
+		case 1:
+			for( .@i = 0; .@i < getarraysize(.@acc_id); .@i++ ){
+				if( getcharid(3) == .@acc_id[.@i]){
+					for( .@k = 0; .@k < getarraysize(.@item_id); .@k++){
+						getitem .@item_id[.@k],.@amount[.@k];
+						dispbottom "ท่านได้รับไอเทม "+getitemname(.@item_id[.@k])+" จำนวน "+.@amount[.@k]+" Ea.";
+					}
+					#PVP1VS1 = 1;
+					end;
+				}
+			}
+		mes "ท่านไม่สิทธิ์ในการรับไอเทม";
+		end;
+	}
+	
+OnInit:
+	.NPCname$ = "[^0000FF "+strnpcinfo(1)+" ^000000]";
+waitingroom "กิจกรรมPVP CBT",0;
+	end;
+}

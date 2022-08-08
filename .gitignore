@@ -61,7 +61,7 @@ Thumbs.db
 /3rdparty/httplib/obj
 
 # /db/
-# /db/import
+/db/import
 
 # /conf/
 /conf/import
@@ -74,35 +74,35 @@ Thumbs.db
 /log/*.log
 /log/*.leaks
 
-# # /src/char/
-# /src/char/Makefile
-# /src/char/obj_sql
+# /src/char/
+/src/char/Makefile
+/src/char/obj_sql
 
-# # /src/common/
-# /src/common/Makefile
-# /src/common/obj_all
-# /src/common/obj_sql
-# /src/common/version.hpp
+# /src/common/
+/src/common/Makefile
+/src/common/obj_all
+/src/common/obj_sql
+/src/common/version.hpp
 
-# # /src/custom/
-# /src/custom
+# /src/custom/
+/src/custom
 
-# # /src/login/
-# /src/login/Makefile
-# /src/login/obj_sql
+# /src/login/
+/src/login/Makefile
+/src/login/obj_sql
 
-# # /src/map/
-# /src/map/Makefile
-# /src/map/obj_sql
-# /src/map/pcre.hpp
+# /src/map/
+/src/map/Makefile
+/src/map/obj_sql
+/src/map/pcre.hpp
 
-# # /src/web
-# /src/web/Makefile
-# /src/web/obj
+# /src/web
+/src/web/Makefile
+/src/web/obj
 
-# # /src/tool/
-# /src/tool/Makefile
-# /src/tool/obj_all
+# /src/tool/
+/src/tool/Makefile
+/src/tool/obj_all
 
 # /tools/
 /tools/convert

@@ -69,9 +69,9 @@ Body:
             Rate: 1
           - Item: Megaphone
             Rate: 10
-          - Item: Blue_Potion_Box
+          - Item: Light_White_Pot
             Rate: 9
-          - Item: Light_White_Pot_Box
+          - Item: Light_Blue_Pot
             Rate: 9
           - Item: E_Str_Dish10_
             Rate: 10
@@ -118,9 +118,9 @@ Body:
             Rate: 10
           - Item: Megaphone
             Rate: 10
-          - Item: Blue_Potion_Box
+          - Item: Light_Blue_Pot
             Rate: 8
-          - Item: Light_White_Pot_Box
+          - Item: Light_White_Pot
             Rate: 8
           - Item: E_Str_Dish10_
             Rate: 10
@@ -160,91 +160,93 @@ Body:
       - SubGroup: 1
         List:
           - Item: C_Gloomy_Pumpkin_Hat
-            Rate: 1
+            Rate: 3
           - Item: C_Ear_Mufs
-            Rate: 1
+            Rate: 3
           - Item: C_Antler
-            Rate: 1
+            Rate: 3
           - Item: C_Lion_Mask
-            Rate: 1
+            Rate: 3
           - Item: C_Blue_Magicianhat
-            Rate: 1
+            Rate: 3
           - Item: C_Fried_Egg
-            Rate: 1
+            Rate: 3
           - Item: C_Bone_Helm
-            Rate: 1
+            Rate: 3
           - Item: C_Beret
-            Rate: 1
+            Rate: 3
           - Item: C_Lunatic_Hat
-            Rate: 1
+            Rate: 3
           - Item: C_Joker_Jester
-            Rate: 1
+            Rate: 3
           - Item: C_Soft_Sheep_Hat
-            Rate: 1
+            Rate: 3
           - Item: C_Goat_Hat
-            Rate: 1
+            Rate: 3
           - Item: C_Sombrero
-            Rate: 1
+            Rate: 3
           - Item: C_Black_Ramen_Hat_
-            Rate: 1
+            Rate: 3
           - Item: C_Alice_Doll
-            Rate: 1
+            Rate: 3
           - Item: C_Amistr_Cap
-            Rate: 1
+            Rate: 3
           - Item: C_Poison_Spore_Hat
-            Rate: 1
+            Rate: 3
           - Item: C_Boys_Cap
-            Rate: 1
+            Rate: 3
           - Item: C_Bunny_Band
-            Rate: 1
+            Rate: 3
           - Item: C_Chick_Hat_J
+            Rate: 3
+          - Item: C_Stall_Of_Angel
             Rate: 1
-          - Item: C_Cowboy_Hat
-            Rate: 1
+            Announced: true
 
   - Group: BS_SHA_M_S_8
     SubGroups:
       - SubGroup: 1
         List:
           - Item: C_Westren_Grace
-            Rate: 1
+            Rate: 3
           - Item: C_Eye_Bandage
-            Rate: 1
+            Rate: 3
           - Item: C_Divers_Goggles
-            Rate: 1
+            Rate: 3
           - Item: C_Smile_Mask_Middle
-            Rate: 1
+            Rate: 3
           - Item: C_False_Ears
-            Rate: 1
+            Rate: 3
           - Item: C_Glasses_Without_Lens
-            Rate: 1
+            Rate: 3
           - Item: C_Under_Rim_Glasses_Red
-            Rate: 1
+            Rate: 3
           - Item: C_Under_Rim_Glasses
-            Rate: 1
+            Rate: 3
           - Item: C_Glasses
-            Rate: 1
+            Rate: 3
           - Item: C_One_Eyed_Glass
-            Rate: 1
+            Rate: 3
           - Item: C_Black_Glasses
-            Rate: 1
+            Rate: 3
           - Item: C_Red_Glasses
-            Rate: 1
+            Rate: 3
           - Item: C_Zorro_Mask
-            Rate: 1
+            Rate: 3
           - Item: C_Fillet_Blue
-            Rate: 1
+            Rate: 3
           - Item: C_Bongun_Hat
-            Rate: 1
+            Rate: 3
           - Item: T_Munak_Hat
-            Rate: 1
+            Rate: 3
           - Item: C_Combat_Vestige
-            Rate: 1
+            Rate: 3
           - Item: C_Nurse_Cap
-            Rate: 1
+            Rate: 3
           - Item: C_Mini_Propeller
-            Rate: 1
+            Rate: 3
           - Item: C_Big_Sis_Ribbon
+            Rate: 3
+          - Item: C_Stole_Of_Dominion
             Rate: 1
-          - Item: C_Santa_Poring_Hat
-            Rate: 1
+            Announced: true
