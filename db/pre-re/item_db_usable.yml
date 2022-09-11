@@ -1076,7 +1076,7 @@ Body:
     AegisName: Wing_Of_Fly
     Name: Fly Wing
     Type: Delayconsume
-    Buy: 250
+    Buy: 69
     Weight: 50
     Flags:
       BuyingStore: true
@@ -1086,7 +1086,7 @@ Body:
     AegisName: Wing_Of_Butterfly
     Name: Butterfly Wing
     Type: Delayconsume
-    Buy: 1000
+    Buy: 250
     Weight: 50
     Flags:
       BuyingStore: true
@@ -1176,7 +1176,7 @@ Body:
     AegisName: Leaf_Of_Yggdrasil
     Name: Yggdrasil Leaf
     Type: Delayconsume
-    Buy: 12000
+    Buy: 3800
     Weight: 100
     Flags:
       BuyingStore: true
@@ -1577,7 +1577,7 @@ Body:
     AegisName: Center_Potion
     Name: Concentration Potion
     Type: Usable
-    Buy: 1200
+    Buy: 600
     Weight: 100
     Flags:
       BuyingStore: true
@@ -1587,7 +1587,7 @@ Body:
     AegisName: Awakening_Potion
     Name: Awakening Potion
     Type: Usable
-    Buy: 2200
+    Buy: 1200
     Weight: 150
     Jobs:
       Alchemist: true
@@ -1624,7 +1624,7 @@ Body:
     AegisName: Berserk_Potion
     Name: Berserk Potion
     Type: Usable
-    Buy: 4500
+    Buy: 2800
     Weight: 200
     Jobs:
       Alchemist: true
@@ -1779,15 +1779,6 @@ Body:
     AegisName: Gold_Coin
     Name: Gold Coin
     Type: Usable
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       atcommand "@cash +1 "+strcharinfo(0);
   - Id: 673
@@ -5949,14 +5940,6 @@ Body:
     Delay:
       Duration: 60000
       Status: Reuse_Limit_D
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       sc_start SC_ITEMBOOST,1800000,100;
   - Id: 12211
@@ -6588,7 +6571,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      sc_start SC_EXPBOOST,1800000,200;
+      sc_start SC_EXPBOOST,1800000,100;
   - Id: 12264
     AegisName: Comp_Bubble_Gum
     Name: Bubble Gum
@@ -6600,11 +6583,12 @@ Body:
       NoTrade: true
       NoSell: true
       NoCart: true
+      NoStorage: true
       NoGuildStorage: true
       NoMail: true
       NoAuction: true
     Script: |
-      sc_start SC_ITEMBOOST,1800000,200;
+      sc_start SC_ITEMBOOST,1800000,100;
   - Id: 12265
     AegisName: Comp_Insurance
     Name: Life Insurrance
@@ -31436,14 +31420,6 @@ Body:
     Type: Usable
     Buy: 2
     Weight: 10
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       sc_start SC_EXPBOOST,3600000,100;
   - Id: 14534
@@ -32385,14 +32361,6 @@ Body:
     Weight: 10
     NoUse:
       Sitting: true
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       sc_start SC_JEXPBOOST,1800000,50;
   - Id: 14593
@@ -32615,6 +32583,7 @@ Body:
       NoTrade: true
       NoSell: true
       NoCart: true
+      NoStorage: true
       NoGuildStorage: true
       NoMail: true
       NoAuction: true

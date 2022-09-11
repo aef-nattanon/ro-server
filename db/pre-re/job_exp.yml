@@ -313,27 +313,27 @@ Body:
       - Level: 88
         Exp: 7121664
       - Level: 89
-        Exp: 76026000
+        Exp: 7602600
       - Level: 90
-        Exp: 97387200
+        Exp: 9738720
       - Level: 91
-        Exp: 116499600
+        Exp: 11649960
       - Level: 92
-        Exp: 136435200
+        Exp: 13643520
       - Level: 93
-        Exp: 183393000
+        Exp: 18339300
       - Level: 94
-        Exp: 238368000
+        Exp: 23836800
       - Level: 95
-        Exp: 356580000
+        Exp: 35658000
       - Level: 96
-        Exp: 486870000
+        Exp: 48687000
       - Level: 97
-        Exp: 999999970
+        Exp: 58135000
       - Level: 98
-        Exp: 999999980
+        Exp: 99999998
       - Level: 99
-        Exp: 999999990
+        Exp: 99999999
   - Jobs:
       Novice_High: true
       Swordman_High: true

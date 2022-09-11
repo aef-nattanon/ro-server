@@ -866,3 +866,19 @@ Body:
         bonus2 bSubEle,Ele_Fire,2;
         bonus2 bAddEle,Ele_Fire,2;
       }
+  - Mob: TAMRUAN
+    TameItem: Flaming_Ice
+    EggItem: Imp_Egg
+    EquipItem: Horn_Protector
+    FoodItem: Tassel
+    Fullness: 3
+    IntimacyFed: 10
+    CaptureRate: 200
+    SpecialPerformance: false
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      
+      if( .@i >= PET_INTIMATE_LOYAL ){
+        bonus2 bSubEle,Ele_Fire,2;
+        bonus2 bAddEle,Ele_Fire,2;
+      }

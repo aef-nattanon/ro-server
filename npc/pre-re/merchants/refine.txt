@@ -523,20 +523,6 @@ ein_in01,38,29,0	script	Paul Spanner	63,{
 
 // Weapon/Armor Refiners
 //============================================================
-prt_in,63,60,0	script	Hollgrehenn	4_M_03,{
-	if( getbattleflag( "feature.refineui" ) ){
-		mes "[Hollgrehenn]";
-		mes "ฉันเป็นช่างตีเหล็กที่สามารถปรับแต่งอาวุธและอุปกรณ์ได้";
-		mes "คุณมีรายการที่ต้องการปรับแต่งหรือไม่";
-		close2;
-		refineui();
-		end;
-	}else{
-		callfunc "refinemain","Hollgrehenn",0;
-		end;
-	}
-}
-
 morocc,106,84,6	script	Aragham	813,{
 	if( getbattleflag( "feature.refineui" ) ){
 		mes "[Aragham]";
@@ -548,75 +534,6 @@ morocc,106,84,6	script	Aragham	813,{
 		end;
 	}else{
 		callfunc "refinemain","Aragham",0;
-		end;
-	}
-}
-
-payon,144,173,5	script	Antonio	4_M_ORIENT01,{
-	if( getbattleflag( "feature.refineui" ) ){
-		mes "[Antonio]";
-		mes "หยุดจู้จี้และหาอุปกรณ์ที่คุณต้องการปรับแต่งให้ฉัน";
-		close2;
-		refineui();
-		end;
-	}else{
-		callfunc "refinemain","Antonio",0;
-		end;
-	}
-}
-
-alberta_in,28,58,0	script	Fredrik	4_M_03,{
-	if( getbattleflag( "feature.refineui" ) ){
-		mes "[Fredrik Hermanthorn]";
-		mes "ฉันเป็นช่างตีเหล็กที่สามารถปรับแต่งอาวุธหรืออุปกรณ์ของคุณได้";
-		mes "คุณมีอะไรที่อยากปรับแต่งไหม";
-		close2;
-		refineui();
-		end;
-	}else{
-		callfunc "refinemain","Fredrik",0;
-		end;
-	}
-}
-
-yuno_in01,171,21,4	script	Lambert	4_M_ORIENT01,{
-	if( getbattleflag( "feature.refineui" ) ){
-		mes "[Lambert]";
-		mes "ยินดีต้อนรับ...นี่คือ...โรงตีเหล็กที่ดีที่สุด...ใน Juno";
-		close2;
-		refineui();
-		end;
-	}else{
-		callfunc "refinemain","Lambert",0;
-		end;
-	}
-}
-
-ein_in01,24,87,5	script	Manthasman	4_M_DWARF,{
-	if( getbattleflag( "feature.refineui" ) ){
-		mes "[Manthasman Pruhag]";
-		mes "ฮ่าๆๆ คุณรู้แล้วคุณต้องการปรับแต่งบางสิ่งหรือไม่";
-		mes "วันนี้มาลองเสี่ยงๆ กันเถอะ!";
-		close2;
-		refineui();
-		end;
-	}else{
-		callfunc "refinemain","Manthasman Pruhag",0;
-		end;
-	}
-}
-
-lhz_in02,282,20,7	script	Fulerr	4_M_LGTMAN,{
-	if( getbattleflag( "feature.refineui" ) ){
-		mes "[Fulerr]";
-		mes "เหอเหอ...อยากปรับแต่ง?";
-		mes "อิอิ..พิจารณาเสร็จ..";
-		mes "อิอิ....";
-		close2;
-		refineui();
-		end;
-	}else{
-		callfunc "refinemain","Fulerr",0;
 		end;
 	}
 }

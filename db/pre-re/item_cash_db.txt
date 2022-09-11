@@ -3,7 +3,7 @@
 //
 // Structure of Database:
 // Type,ItemID,Price
-
+//
 // Type:
 //    0: New
 //    1: Hot
@@ -17,3 +17,5 @@
 //
 // Price:
 //    Item cost, in cash points (#CASHPOINTS).
+1,12480,100
+1,12481,100

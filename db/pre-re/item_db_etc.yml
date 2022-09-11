@@ -250,7 +250,7 @@ Body:
     AegisName: Blue_Gemstone
     Name: Blue Gemstone
     Type: Etc
-    Buy: 1500
+    Buy: 600
     Weight: 1
     Flags:
       BuyingStore: true
@@ -370,7 +370,7 @@ Body:
     AegisName: Crystal_Jewel__
     Name: 3carat Diamond
     Type: Etc
-    Buy: 55000
+    Buy: 30000
     Weight: 100
     Flags:
       BuyingStore: true
@@ -4438,6 +4438,7 @@ Body:
       Garment: true
     Flags:
       BuyingStore: true
+      DropAnnounce: true
       DropEffect: CLIENT
     Script: |
       bonus2 bSubEle,Ele_Neutral,20;
@@ -6665,7 +6666,7 @@ Body:
       DropEffect: CLIENT
     Script: |
       bonus bInt,2;
-      if (getrefine()>8)
+      if (getrefine()>6)
          bonus bMaxSP,150;
   - Id: 4289
     AegisName: Caterpillar_Card
@@ -7922,7 +7923,7 @@ Body:
       bonus bDex,2;
       bonus2 bIgnoreMdefClassRate,Class_Boss,30;
   - Id: 4375
-    AegisName: Orc_Baby_Card_Card
+    AegisName: Orc_Baby_Card
     Name: Orc Baby Card
     Type: Card
     Buy: 20
@@ -13372,13 +13373,14 @@ Body:
     Script: |
       bonus bMdef,8;
   - Id: 4790
-    AegisName: Mdef10
-    Name: MDEF+10
+    AegisName: Alldef10
+    Name: AllDEF+10
     Type: Card
     SubType: Enchant
     Buy: 20
     Script: |
       bonus bMdef,10;
+      bonus bDef,10;
   - Id: 4791
     AegisName: Def3
     Name: DEF+3
@@ -14272,7 +14274,7 @@ Body:
     Buy: 10
     Script: |
       bonus bMatk,20;
-      bonus bVariableCastrate,-3;
+      bonus bVariableCastrate,-4;
   - Id: 4889
     AegisName: Conjure5
     Name: Spell 5
@@ -35258,8 +35260,11 @@ Body:
       NoAuction: true
   - Id: 25250
     AegisName: Coin_Of_Rr
-    Name: Rock Ridge Coin
+    Name: YAK-COIN
     Type: Etc
+    Flags:
+      DropEffect: CLIENT
+      DropAnnounce: true
   - Id: 25251
     AegisName: Fermented_Grapes
     Name: Fermented Grape Juice

@@ -6558,8 +6558,6 @@ Body:
       Crusader: true
       Knight: true
       Swordman: true
-    Classes:
-      Upper: true
     Locations:
       Right_Hand: true
     WeaponLevel: 4
@@ -21090,7 +21088,7 @@ Body:
     AegisName: Silver_Ring
     Name: Silver Ring
     Type: Armor
-    Buy: 20000
+    Buy: 12500
     Weight: 100
     Locations:
       Both_Accessory: true
@@ -23959,7 +23957,7 @@ Body:
     ArmorLevel: 1
     Script: |
       bonus bVit,1;
-      if (Class == Job_Swordman)
+      if (BaseJob == Job_Swordman || BaseJob == Job_Knight)
          bonus bDef,2;
   - Id: 2767
     AegisName: Acolyte_Figure
@@ -23970,7 +23968,7 @@ Body:
     ArmorLevel: 1
     Script: |
       bonus bInt,1;
-      if (Class == Job_Acolyte)
+      if (BaseJob == Job_Acolyte || BaseJob == Job_Priest)
          bonus bMaxSP,50;
   - Id: 2768
     AegisName: Mage_Figure
@@ -23981,7 +23979,7 @@ Body:
     ArmorLevel: 1
     Script: |
       bonus bInt,1;
-      if (Class == Job_Mage)
+      if (BaseJob == Job_Mage || BaseJob == Job_Wizard)
          bonus bSPrecovRate,5;
   - Id: 2769
     AegisName: Archer_Figure
@@ -23992,7 +23990,7 @@ Body:
     ArmorLevel: 1
     Script: |
       bonus bDex,1;
-      if (Class == Job_Archer)
+      if (BaseJob == Job_Archer || BaseJob == Job_Hunter)
          bonus bBaseAtk,10;
   - Id: 2770
     AegisName: Thief_Figure
@@ -24003,7 +24001,7 @@ Body:
     ArmorLevel: 1
     Script: |
       bonus bAgi,1;
-      if (Class == Job_Thief)
+      if (BaseJob == Job_Thief || BaseJob == Job_Assassin)
          bonus bAspdRate,3;
   - Id: 2771
     AegisName: Merchant_Figure
@@ -24014,8 +24012,8 @@ Body:
     ArmorLevel: 1
     Script: |
       bonus bStr,1;
-      if (Class == Job_Merchant)
-         bonus bCritical,5;
+      if (BaseJob == Job_Merchant || BaseJob == Job_Blacksmith)
+       bonus bCritical,5;
   - Id: 2772
     AegisName: Krieger_Ring1
     Name: Glorious Ring
@@ -31539,8 +31537,7 @@ Body:
       NoSell: true
       NoGuildStorage: true
     Script: |
-      bonus bMaxSP,120;
-      bonus2 bAddEff2,Eff_Curse,300;
+      bonus bMaxSP,140;
   - Id: 5377
     AegisName: Antique_Pipe
     Name: Gentleman's Pipe
@@ -41356,8 +41353,8 @@ Body:
     EquipLevelMin: 1
     View: 1294
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
       bonus2 bAddMonsterDropItem,25250,7;
   - Id: 31160
     AegisName: C_RuneHelm
@@ -41403,8 +41400,9 @@ Body:
     EquipLevelMin: 1
     View: 521
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19865
     AegisName: C_Joker_Jester
     Name: Costume Joker Jester
@@ -41488,8 +41486,9 @@ Body:
     EquipLevelMin: 1
     View: 208
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 19827
     AegisName: C_Amistr_Cap
     Name: Costume Amistr
@@ -41502,6 +41501,7 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,20;
       bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 20151
     AegisName: C_Poison_Spore_Hat
     Name: Costume Poison Spore Hat
@@ -41512,8 +41512,9 @@ Body:
     EquipLevelMin: 1
     View: 899
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19545
     AegisName: C_Boys_Cap
     Name: Costume Boy's Cap
@@ -41525,8 +41526,9 @@ Body:
     EquipLevelMin: 1
     View: 102
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 19625
     AegisName: C_Bunny_Band
     Name: Costume Bunny Band
@@ -41560,8 +41562,9 @@ Body:
     EquipLevelMin: 1
     View: 411
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 20013
     AegisName: C_Chef_Hat
     Name: Costume Chef Hat
@@ -41644,8 +41647,9 @@ Body:
     EquipLevelMin: 1
     View: 408
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19526
     AegisName: C_Helm
     Name: Costume Helm
@@ -41656,8 +41660,9 @@ Body:
     EquipLevelMin: 1
     View: 40
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19861
     AegisName: C_Heart_Hair_Pin
     Name: Costume Heart Hairpin
@@ -41692,8 +41697,9 @@ Body:
     EquipLevelMin: 1
     View: 115
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19851
     AegisName: C_Brown_Bear_Cap
     Name: Costume Teddybear Hat
@@ -41729,8 +41735,9 @@ Body:
     EquipLevelMin: 1
     View: 361
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19738
     AegisName: C_Detective_Hat_K
     Name: Costume Renown Detective's Cap
@@ -41765,8 +41772,9 @@ Body:
     EquipLevelMin: 1
     View: 696
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 19734
     AegisName: C_Binoculars
     Name: Costume Binoculars
@@ -41777,8 +41785,9 @@ Body:
     EquipLevelMin: 1
     View: 83
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19735
     AegisName: C_Fin_Helm
     Name: Costume Fin Helm
@@ -41790,8 +41799,9 @@ Body:
     EquipLevelMin: 1
     View: 100
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 19830
     AegisName: C_Sunglasses
     Name: Costume Sunglasses
@@ -41803,8 +41813,9 @@ Body:
     EquipLevelMin: 1
     View: 12
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19846
     AegisName: C_Opera_Ghost_Mask
     Name: Costume Opera Masque
@@ -41853,8 +41864,9 @@ Body:
     EquipLevelMin: 1
     View: 807
     Script: |
-      bonus2 bExpAddRace,RC_All,20;
-      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 20101
     AegisName: C_Bragi_Wing_Ears
     Name: Costume Bragi Wing Ears
@@ -41928,6 +41940,7 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,20;
       bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 31185
     AegisName: C_Engineer_Cap
     Name: Costume Engineer Cap
@@ -41964,6 +41977,7 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,20;
       bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 19621
     AegisName: C_Ear_Of_Devils_Wing
     Name: Costume Evil Wing Ear
@@ -41974,9 +41988,9 @@ Body:
     EquipLevelMin: 1
     View: 152
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
-      bonus2 bAddMonsterDropItem,25250,7;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 20079
     AegisName: C_Love_Daddy_2013
     Name: Angel Wing
@@ -42016,9 +42030,834 @@ Body:
     EquipLevelMin: 1
     View: 405
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
-      bonus2 bAddMonsterDropItem,25250,7;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
+  - Id: 19828
+    AegisName: C_Fedora
+    Name: Costume Bucket Hat
+    Type: Armor
+    Buy: 20
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 195
+  - Id: 20057
+    AegisName: C_Feather_Bonnet
+    Name: Costume Feather Bonnet
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 104
+  - Id: 19833
+    AegisName: C_Fillet
+    Name: Costume Fillet
+    Type: Armor
+    Buy: 20
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 34
+  - Id: 19852
+    AegisName: C_Galapago_Cap
+    Name: Costume Galapago Cap
+    Type: Armor
+    Buy: 20
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 192
+  - Id: 19524
+    AegisName: C_Green_Feeler
+    Name: Costume Green Feeler
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 85
+    Script: |
+      bonus bUnbreakableHelm;
+  - Id: 19813
+    AegisName: C_Icecream_Hat
+    Name: Costume Icecream Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 488
+  - Id: 19525
+    AegisName: C_Jack_A_Dandy
+    Name: Costume Jack A Dandy
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 58
+    Script: |
+      bonus bUnbreakableHelm;
+  - Id: 19695
+    AegisName: C_Kettle_Hat
+    Name: Costume Kettle Hat
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 318
+  - Id: 19724
+    AegisName: C_Deprotai_Doll_Hat
+    Name: Costume Deprote Doll Hat
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 354
+  - Id: 19665
+    AegisName: C_Poring_Cake_Hat
+    Name: Costume Poring Cake Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 417
+  - Id: 19701
+    AegisName: C_Red_Bonnet
+    Name: Costume Red Bonnet
+    Type: Armor
+    Buy: 10
+    Weight: 100
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 190
+  - Id: 20216
+    AegisName: C_Rideword_Hat
+    Name: Costume Rideword Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 890
+  - Id: 31601
+    AegisName: C_Under_Rim_Glasses_Blue
+    Name: C Under Rim Glasses Blue
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1805
+  - Id: 20123
+    AegisName: C_Eagle_Eyes
+    Name: Costume Eagle Eyes
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 63
+  - Id: 31184
+    AegisName: C_Hawkeye
+    Name: Costume Hawkeye
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 609
+  - Id: 20124
+    AegisName: C_Masquerade
+    Name: Costume Masquerade
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 78
+  - Id: 19514
+    AegisName: Charlie_Beard
+    Name: Charlies Beard
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 700
+    Trade:
+      NoDrop: true
+    Script: |
+      bonus bUnbreakableHelm;
+  - Id: 19513
+    AegisName: Chicken_Beak
+    Name: Chicken Bill
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 699
+    Trade:
+      NoDrop: true
+    Script: |
+      bonus bUnbreakableHelm;
+  - Id: 19651
+    AegisName: C_RWC_Shouting_Mouth
+    Name: Costume RWC Shouting Mouth
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 194
+  - Id: 20054
+    AegisName: C_Baby_Pacifier
+    Name: Costume Baby Pacifier
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 191
+  - Id: 19902
+    AegisName: C_Cigar
+    Name: Costume Cigarette
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 54
+  - Id: 19636
+    AegisName: C_Pierrot_Nose
+    Name: Costume Clown Nose
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 49
+  - Id: 31087
+    AegisName: C_Dwarf_Beard
+    Name: Costume Dwarf Beard
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1349
+  - Id: 31712
+    AegisName: Costume_Oxygen_Mask
+    Name: C Oxygen Mask
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 90
+  - Id: 20264
+    AegisName: C_Blood_Sucker
+    Name: Costume Blood Sucker
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 893
+  - Id: 19582
+    AegisName: C_Cowboy_Hat
+    Name: Costume Cowboy Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 411
+  - Id: 31061
+    AegisName: C_Nipper_Hairpin
+    Name: Costume Nipper Hairpin
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 470
+  - Id: 20041
+    AegisName: C_Earth_Goddess_Flower
+    Name: Costume Rose Headband
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 864
+  - Id: 19832
+    AegisName: C_Poring_Hat
+    Name: Costume Poring Hat
+    Type: Armor
+    Buy: 20
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 120
+  - Id: 19585
+    AegisName: C_Feather_Beret
+    Name: Costume Feather Beret
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 224
+  - Id: 31385
+    AegisName: C_Gothic_Pumpkin_Head
+    Name: Costume Gothic Pumpkin Head
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1685
+  - Id: 19659
+    AegisName: C_Brown_Beanie
+    Name: Costume Brown Beanie
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 279
+  - Id: 19863
+    AegisName: C_Inccubus_Horn
+    Name: Costume Incubus Horn
+    Type: Armor
+    Buy: 20
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 156
+  - Id: 19662
+    AegisName: C_Magician_Hat
+    Name: Costume Magician Hat
+    Type: Armor
+    Buy: 20
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 130
+  - Id: 19953
+    AegisName: C_Parade_Cap
+    Name: Costume Parade Cap
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 465
+  - Id: 19624
+    AegisName: C_Round_Eyes
+    Name: Costume Blank Eyes
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    View: 185
+  - Id: 20213
+    AegisName: C_Sirt_Evil_Eye
+    Name: Costume Robot Eyes
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 345
+  - Id: 19511
+    AegisName: Heart_Eye_Patch1
+    Name: Heart Eye Patch 1
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 697
+    Trade:
+      NoDrop: true
+    Script: |
+      bonus bUnbreakableHelm;
+  - Id: 19604
+    AegisName: C_Invisible_Mask
+    Name: Costume Invisible Flu Mask
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+  - Id: 20015
+    AegisName: Lincoln_Beard
+    Name: Costume Lincoln Beard
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 1205
+  - Id: 20169
+    AegisName: C_Long_Tongue
+    Name: Costume Long Tongue
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 773
+  - Id: 31162
+    AegisName: C_Shaving_Foam
+    Name: Costume Shaving Foam
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1129
+  - Id: 20223
+    AegisName: C_Centimental_Leaf
+    Name: Costume Romantic Leaf
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 57
+  - Id: 31473
+    AegisName: C_Tipsy
+    Name: C Tipsy
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1724
+  - Id: 20280
+    AegisName: C_Well-Chewed_Pencil
+    Name: Costume Well-Chewed Pencil
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 555
+  - Id: 20029
+    AegisName: C_Donut_in_Mouth
+    Name: Costume Donut in Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 569
+    Script: |
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
+  - Id: 19553
+    AegisName: C_Assassin_Mask_
+    Name: Costume Assassin Mask
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 180
+    Script: |
+      bonus bUnbreakableHelm;
+  - Id: 19783
+    AegisName: C_Granpa_Beard
+    Name: Costume Grampa Beard
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 25
+  - Id: 20313
+    AegisName: C_CD_in_Mouth
+    Name: Costume CD in Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 815
+  - Id: 19768
+    AegisName: C_Sakura_Coronet
+    Name: Costume Sakura Coronet
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 645
+  - Id: 19848
+    AegisName: C_Angeling_Hat
+    Name: Costume Angeling Hat
+    Type: Armor
+    Buy: 20
+    Weight: 10
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 204
+  - Id: 19657
+    AegisName: C_Captain_Hat
+    Name: Costume Captain Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 236
+  - Id: 19972
+    AegisName: C_Protect_Of_Crown
+    Name: Costume Protect Of Crown
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1140
+  - Id: 20500
+    AegisName: T_Archangel_Wing
+    Name: Archangel Wing
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1
+  - Id: 20500
+    AegisName: T_Archangel_Wing
+    Name: Archangel Wing
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1
+  - Id: 19742
+    AegisName: C_Small_Golden_Wings
+    Name: Costume Small Golden Wings
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    View: 724
+    Script: |
+      bonus2 bExpAddRace,RC_All,1;
+  - Id: 20107
+    AegisName: C_Fish_In_Mouth
+    Name: Costume Fish In Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 406
+  - Id: 19552
+    AegisName: C_Centimental_Flower
+    Name: Costume Centimental Flower
+    Type: Armor
+    Buy: 20
+    Weight: 100
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 56
+    Script: |
+      bonus bUnbreakableHelm;
+  - Id: 19605
+    AegisName: C_Gang_Scarf
+    Name: Costume Gang Scarf
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 369
+  - Id: 20034
+    AegisName: C_Jack_Castle_Bat
+    Name: Costume Jack Castle Bat
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1041
+  - Id: 19726
+    AegisName: C_Scarlet_Rose
+    Name: Costume Scarlet Rose
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 534
+  - Id: 19952
+    AegisName: C_Bubble_Gum_in_Mouth
+    Name: Costume Bubble Gum in Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 572
+  - Id: 31695
+    AegisName: Costume_Stem_In_Mouth
+    Name: C Stem in Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 848
+  - Id: 20030
+    AegisName: C_Choco_Donut_in_Mouth
+    Name: Costume Choco Donut in Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 653
+  - Id: 19785
+    AegisName: C_Well_Baked_Toast
+    Name: Costume Crunch Toast
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 188
+  - Id: 19934
+    AegisName: C_10Gallon_Hat_Of_Flame
+    Name: Costume Alive Ten Gallon Hat Of Flame
+    Type: Armor
+    Buy: 10
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1075
+  - Id: 20069
+    AegisName: C_Gryphon_Hairband
+    Name: Costume Gryphon Hairband
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1233
+  - Id: 20191
+    AegisName: C_Black_Cat_Ears_Beret
+    Name: Costume Black Cat Ears Beret
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1071
+  - Id: 20398
+    AegisName: C_Niflheim_Bunny_Hat
+    Name: Costume Niffleheim Bunny Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1285
+  - Id: 19539
+    AegisName: C_Reginleif_Hairband
+    Name: Costume Hairband Of Reginleif
+    Type: Armor
+    Buy: 20
+    Locations:
+      Costume_Head_Top: true
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 468
+    Script: |
+      bonus bAllStats,1;
+  - Id: 20221
+    AegisName: C_Eyes_Of_Ifrit
+    Name: C Eyes Of Ifrit
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 886
+  - Id: 31439
+    AegisName: C_Fluffy_Heart_Earmuffs
+    Name: C Fluffy Heart Earmuffs
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1707
+  - Id: 20295
+    AegisName: C_Poring_Sunglasses
+    Name: Costume Poring Sunglasses
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 954
+  - Id: 31186
+    AegisName: C_Black_Cat
+    Name: Costume Black Cat
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1582
+  - Id: 31600
+    AegisName: C_Kishu_Inu
+    Name: C Kishu Dog
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1804
+  - Id: 19776
+    AegisName: C_Tomboy_Fairy
+    Name: Costume Tomboy Fairy
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 998
+  - Id: 20314
+    AegisName: C_New_Wave_Sunglasses
+    Name: Costume New Wave Sunglasses
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 856
+  - Id: 31593
+    AegisName: C_Yellow_Scarf
+    Name: C Yellow Scarf
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1170
+  - Id: 20193
+    AegisName: C_Foxtail
+    Name: Costume Foxtail
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 711
+  - Id: 31251
+    AegisName: C_Cat_Mouth
+    Name: C Cats Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1637
+  - Id: 19992
+    AegisName: C_Chilly_Breath
+    Name: Costume Chilly Breath
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 885
+  - Id: 20035
+    AegisName: C_Miracle_Blue_Rose
+    Name: Costume Miracle Blue Rose
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1064
+  - Id: 20043
+    AegisName: C_Red_Cherry_Blossom
+    Name: Costume Cherryblossom in Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 823
+  - Id: 19584
+    AegisName: C_Pirate_Dagger
+    Name: Costume Dagger In Mouth
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 327
+  - Id: 20328
+    AegisName: C_Mackerel_Pike
+    Name: Costume Mackerel Pike
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1081
+  - Id: 19541
+    AegisName: C_Romantic_White_Flower
+    Name: Costume Romantic White Flower
+    Type: Armor
+    Buy: 20
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 259
+    Script: |
+      bonus bUnbreakableHelm;
   - Id: 19787
     AegisName: C_Devoted_Eyes
     Name: Costume Devoted Eyes
@@ -42029,8 +42868,8 @@ Body:
     EquipLevelMin: 1
     View: 1021
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
       bonus2 bAddMonsterDropItem,25250,7;
   - Id: 19810
     AegisName: C_Ifrit_Ear
@@ -42042,8 +42881,8 @@ Body:
     EquipLevelMin: 1
     View: 422
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
       bonus2 bAddMonsterDropItem,25250,7;
   - Id: 20005
     AegisName: C_Pegasus_Wing_Ears
@@ -42094,9 +42933,9 @@ Body:
     EquipLevelMin: 1
     View: 92
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
-      bonus2 bAddMonsterDropItem,25250,7;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 20144
     AegisName: C_Ancient_Elven_Ear
     Name: Costume Ancient Elven Ear
@@ -42107,9 +42946,9 @@ Body:
     EquipLevelMin: 1
     View: 665
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
-      bonus2 bAddMonsterDropItem,25250,7;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 19859
     AegisName: C_Flying_Angel
     Name: Costume Flying Angel
@@ -42150,8 +42989,8 @@ Body:
     EquipLevelMin: 1
     View: 1318
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
       bonus2 bAddMonsterDropItem,25250,7;
   - Id: 20270
     AegisName: C_Gryphon_Wing_Ears
@@ -42163,9 +43002,9 @@ Body:
     EquipLevelMin: 1
     View: 1328
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
-      bonus2 bAddMonsterDropItem,25250,7;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 31120
     AegisName: C_Vampire_Familiar
     Name: Costume Vampire Familiar
@@ -42228,8 +43067,9 @@ Body:
     EquipLevelMin: 1
     View: 905
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 19678
     AegisName: C_Bell_Ribbon
     Name: Costume Bell Ribbon
@@ -42240,8 +43080,9 @@ Body:
     EquipLevelMin: 1
     View: 388
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 31205
     AegisName: C_Large_Orc_Hero_Helm
     Name: C Large Orc Hero Helm
@@ -42265,8 +43106,9 @@ Body:
     EquipLevelMin: 1
     View: 367
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 19607
     AegisName: C_Love_Chick_Hat
     Name: Costume Love Chick Hat
@@ -42289,8 +43131,9 @@ Body:
     EquipLevelMin: 1
     View: 804
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 19512
     AegisName: Heart_Eye_Patch2
     Name: Heart Eye Patch 2
@@ -42301,8 +43144,9 @@ Body:
     EquipLevelMin: 1
     View: 698
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 19550
     AegisName: C_Blush
     Name: Costume Blush
@@ -42351,8 +43195,9 @@ Body:
     EquipLevelMin: 1
     View: 779
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,10;
+      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bAddMonsterDropItem,25250,2;
   - Id: 19853
     AegisName: C_Filir_Wing_Ears
     Name: Costume Filir Wings
@@ -42423,8 +43268,9 @@ Body:
     EquipLevelMin: 1
     View: 1494
     Script: |
-      bonus2 bExpAddRace,RC_All,30;
-      bonus2 bDropAddRace,RC_All,30;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+      bonus2 bAddMonsterDropItem,25250,3;
   - Id: 31168
     AegisName: C_Mouton_Life_BL
     Name: Costume Blue Mouton Life
@@ -42471,8 +43317,9 @@ Body:
     EquipLevelMin: 1
     View: 316
     Script: |
-      bonus2 bExpAddRace,RC_All,10;
-      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19722
     AegisName: C_Black_Glasses
     Name: Costume Black Glasses
@@ -42483,8 +43330,9 @@ Body:
     EquipLevelMin: 1
     View: 404
     Script: |
-      bonus2 bExpAddRace,RC_All,10;
-      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19885
     AegisName: C_Blinker
     Name: Costume Blinker
@@ -42495,8 +43343,9 @@ Body:
     EquipLevelMin: 1
     View: 82
     Script: |
-      bonus2 bExpAddRace,RC_All,10;
-      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19887
     AegisName: C_One_Eyed_Glass
     Name: Costume Cyclops Glasses
@@ -42507,8 +43356,9 @@ Body:
     EquipLevelMin: 1
     View: 23
     Script: |
-      bonus2 bExpAddRace,RC_All,10;
-      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19888
     AegisName: C_Glasses
     Name: Costume Glasses
@@ -42519,8 +43369,9 @@ Body:
     EquipLevelMin: 1
     View: 3
     Script: |
-      bonus2 bExpAddRace,RC_All,10;
-      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 20115
     AegisName: C_Under_Rim_Glasses
     Name: Under Rim Glasses
@@ -42567,8 +43418,9 @@ Body:
     EquipLevelMin: 1
     View: 1684
     Script: |
-      bonus2 bExpAddRace,RC_All,10;
-      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 31442
     AegisName: C_Smile_Mask_Middle
     Name: C Smile Mask Middle
@@ -42698,8 +43550,9 @@ Body:
     EquipLevelMin: 1
     View: 1460
     Script: |
-      bonus2 bExpAddRace,RC_All,10;
-      bonus2 bDropAddRace,RC_All,10;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus2 bAddMonsterDropItem,25250,1;
   - Id: 19637
     AegisName: C_Nurse_Cap
     Name: Costume Nurse Cap
@@ -42890,3 +43743,8 @@ Body:
       bonus bAspdRate,(readparam(bAgi)/30);
       bonus bLongAtkRate,readparam(bDex)/30;
       bonus bCritAtkRate,readparam(bLuk)/30;
+  - Id: 9088
+    AegisName: Flaming_Ice
+    Name: Imp_Egg
+    Type: Petegg
+    Buy: 20
