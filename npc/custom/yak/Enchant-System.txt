@@ -1,0 +1,666 @@
+morocc,132,78,4	script	Enchant#New	508,{
+	// ===== Setup Enchant System By Gusjungsza =====
+
+	// ไอเทมที่ใช้ในการออฟ ขอเป็นประเภท ETC ขยะ
+	setarray .@en_itemus[0],0;	// ไอเทมที่ใช้
+	setarray .@en_itemam[0],0;	// จำนวนที่ใช้ (ให้ตรงกับไอเทมที่ใช้)
+	set .@en_zeny,200000;		// เงินที่ใช้
+	set .@en_itemfreeus,0;		// ไอเทมใบกันแตก จะไม่เสียไอเทมด้านบนในการออฟ
+	set .@en_itemfreeam,0;		// จำนวนไอเทมใบกันแตกที่ใช้
+	set .@en_nodelete,0;		// ไม่ลบไอเทม ไม่มีหลอดโหลด (เหมาะสำหรับ Beta Test)
+
+	// รหัสไอเทม ขอเป็นประเภท ETC ขยะ ที่ใช้ออฟสำหรับ 0 = ปิด (หมวก,ชุดเกาะ,อาวุธมือซ้ายหรือโล่,อาวุธมือเดียวหรือสองมือ,ผ้าคลุม,รองเท้า,ประดับซ้าย,ประดับขวา,ส่วนหู,ส่วนปาก)
+	setarray .@en_itemaccus[1],0,0,0,0,0,0,0,0,0,0;	// ไอเทมที่ใช้ออฟ 0 = ปิด
+	setarray .@en_itemaccam[1],0,0,0,0,0,0,0,0,0,0;	// จำนวนที่ใช้ออฟ 0 = ปิด 
+
+	// เปอร์เซนในการออฟ 10 = 1% (ควรระวังเพราะ ช่อง 1 - 4 แยกกันทำงาน)
+	// *ขอยกตัวอย่างระบบ ช่องสามารถออฟได้เฉพาะ นิดหน่อย
+	// ถ้าช่อง 1 เปิดไว้ คือ ช่อง 1 ต้องไม่มีรูถึงจะสามารถยัดลูกแก้วได้
+	// ถ้าช่อง 2 เปิดไว้ คือ ช่อง 2 ต้องไม่มีรูถึงจะสามารถยัดลูกแก้วได้
+	// ถ้าช่อง 3 เปิดไว้ คือ ช่อง 3 ต้องไม่มีรูถึงจะสามารถยัดลูกแก้วได้
+	// ถ้าช่อง 4 เปิดไว้ คือ ช่อง 4 ต้องไม่มีรูถึงจะสามารถยัดลูกแก้วได้
+	// ถ้าปิดระบบคือ จะมีรู หรือ ไม่มีรูก็ ยัดลูกแก้วได้
+	set .@en_slotone,500;	// ช่อง 1 เปอร์เซน
+	set .@en_slotoneo,1;	// ช่อง 1 สามารถออฟได้เฉพาะ ( 1 = เฉพาะไอเทมไม่มีรู เฉพาะช่อง 1 , 0 = ได้ทุกชิ้น)
+	set .@en_slottwo,500;	// ช่อง 2 เปอร์เซน
+	set .@en_slottwoo,1;	// ช่อง 2 สามารถออฟได้เฉพาะ ( 1 = เฉพาะไอเทมไม่มีรู เฉพาะช่อง 2 , 0 = ได้ทุกชิ้น)
+	set .@en_slotthree,500;	// ช่อง 3 เปอร์เซน
+	set .@en_slotthreeo,1;	// ช่อง 3 สามารถออฟได้เฉพาะ ( 1 = เฉพาะไอเทมไม่มีรู เฉพาะช่อง 3 , 0 = ได้ทุกชิ้น)
+	set .@en_slotfour,500;	// ช่อง 4 เปอร์เซน
+	set .@en_slotfouro,1;	// ช่อง 4 สามารถออฟได้เฉพาะ ( 1 = เฉพาะไอเทมไม่มีรู เฉพาะช่อง 4 , 0 = ได้ทุกชิ้น)
+	set .@en_slotfail,50;	// โอกาศเสียหาย
+	set .@en_permax,1000;	// เปอร์เซนสูงสุด อย่าปรับเลยแนะนำ
+	set .@en_cardone,1;	// ถ้ามีการ์ดช่อง 1 จะไม่ออฟทับ จะข้ามไปช่องไม่มีการ์ดทันที ( 1 = เปิด , 0 = ปิด )
+	set .@en_cardtwo,1;	// ถ้ามีการ์ดช่อง 2 จะไม่ออฟทับ จะข้ามไปช่องไม่มีการ์ดทันที ( 1 = เปิด , 0 = ปิด )
+	set .@en_cardthree,1;	// ถ้ามีการ์ดช่อง 3 จะไม่ออฟทับ จะข้ามไปช่องไม่มีการ์ดทันที ( 1 = เปิด , 0 = ปิด )
+	set .@en_cardfour,1;	// ถ้ามีการ์ดช่อง 4 จะไม่ออฟทับ จะข้ามไปช่องไม่มีการ์ดทันที ( 1 = เปิด , 0 = ปิด )
+	set .@en_refine,1;		// เก็บค่าตีบวกไว้ ( 1 = เก็บ , 0 = ไม่เก็บ)
+
+	// ลูกแก้วในการออฟ เลเวลแต่ละเลเวลสามารถใส่ลูกแก้วได้เพียง 127 ลูกเท่านั้น !!
+	// สำคัญมากครับ ลูกแก้วต้อง db ประเภทการ์ด และ รหัสไอเทมต้องไม่ต่ำกว่า 4700 เน้อ
+	
+	// Accessory 1
+	// Accessory 2
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[1],1;
+	setarray .@en_enslot1_1[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_1[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_1[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_1[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+	// Footgear
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[2],1;
+	setarray .@en_enslot1_2[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_2[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_2[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_2[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+	// Garment
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[3],1;
+	setarray .@en_enslot1_3[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_3[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_3[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_3[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+
+	// Lower Headgear
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[4],1;
+	setarray .@en_enslot1_4[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_4[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_4[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_4[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+
+	// Middle Headgear
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[5],1;
+	setarray .@en_enslot1_5[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_5[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_5[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_5[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+
+	// Upper Headgear
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[6],1;
+	setarray .@en_enslot1_6[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_6[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_6[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_6[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+	// Armor
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[7],1;
+	setarray .@en_enslot1_7[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_7[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_7[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_7[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+
+	// Left hand
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[8],1;
+	setarray .@en_enslot1_8[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_8[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_8[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_8[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+
+	// Right hand
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[9],1;
+	setarray .@en_enslot1_9[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_9[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_9[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_9[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+	
+	// Upper Costume
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[10],1;
+	setarray .@en_enslot1_10[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_10[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_10[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_10[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+	
+	// Middle Costume
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[11],1;
+	setarray .@en_enslot1_11[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_11[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_11[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_11[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+	
+	// Lower Costume
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[12],1;
+	setarray .@en_enslot1_12[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_12[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_12[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_12[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+	
+	// Costume Garment
+	// เปิดระบบออฟไอเทม
+	setarray .@en_accept[13],1;
+	setarray .@en_enslot1_13[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 1 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot2_13[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 2 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot3_13[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 3 สุ่มลูกแก้วได้ถึง 127 ลูก
+	setarray .@en_enslot4_13[0],4702,4703,4704,4732,4733,4734,4742,4743,4744,4712,4713,4714,4722,4723,4724,4752,4753,4754,4867,4868,4900,4863,4864,4865,4832,4833,4834,4869,4872,4873,4887,4888,4889,4907,4905,4790;	// ช่องการ์ด 4 สุ่มลูกแก้วได้ถึง 127 ลูก
+
+
+	// ===== End Setup =====
+
+	mes "[ Option Item ]";
+	mes "กรุณาเลือกเมนู";
+	next;
+	switch(select("- Option Item","- วิธีใช้งาน","- ยกเลิก")) {
+		case 1:
+			disable_items;
+			mes "[ Option Item ]";
+			mes "ฉันแนะนำให้อ่าน วิธีใช้งาน ในหน้าแรก สำหรับผู้ที่ไม่เคยใช้ระบบนี้มาก่อน";
+			if (.@en_nodelete)
+				mes "โหมดทดสอบทำงานออฟชั่นฟรีทุกฟังชั่น";
+			next;
+			set .@en_custom,select("- Option Item [โอกาศสำเร็จ 95% เสียหาย5%","- ยกเลิก")-1;
+			if (.@en_custom == 2) close;
+			mes "[ Option Item ]";
+			mes "กรุณาเลือกไอเทมที่ต้องการออฟ";
+			mes "เมนูจะแสดงไอเทมที่สวมใส่อยู่เท่านั้น !!";
+			next;
+			set .@EE_ACCESSORY$,"";
+			set .@EE_SELECT$,"";
+			setarray .@EE_ACCESSORY$[0], "Accessory 1","Accessory 2","Footgear","Garment","Lower","Middle","Upper","Armor","Left hand","Right hand","Upper Costume","Middle Costume","Lower Costume","Costume Garment";
+			for( set .@i,0; .@i <= 13; set .@i,.@i+1 ){
+				if( getequipisequiped(.@i) )
+					set .@EE_SELECT$,.@EE_SELECT$ + .@EE_ACCESSORY$[.@i] + " - " + "[" + getequipname(.@i) + "]" + "";
+				if (.@i != 13) set .@EE_SELECT$,.@EE_SELECT$ + ":";
+			}
+			set .@EE_EQUIP,select(.@EE_SELECT$)-1;
+			mes "[ Option Item ]";
+			if (getequipid(8) == getequipid(9) && .@en_accept[.@EE_EQUIP] != 1) {
+				mes "ฉันว่าไอเทมส่วน "+.@EE_ACCESSORY$[.@EE_EQUIP]+" ห้ามนำมาใช้งานนะ";
+				close;
+			}
+			if (.@en_accept[.@EE_EQUIP] != 1){
+				mes "ฉันว่าไอเทมส่วน "+.@EE_ACCESSORY$[.@EE_EQUIP]+" ห้ามนำมาใช้งานนะ";
+				close;
+			}
+			if (countitem(getequipid(.@EE_EQUIP)) > 1 && !.@en_nodelete){
+				mes "ห้ามมีไอเทมชิ้นนี้มากกว่า 1 ชิ้นนะ";
+				close;
+			}
+			if (.@en_itemaccus[.@EE_EQUIP] != 0 && !.@en_nodelete) {
+				mes "คุณต้องใช้ "+getitemname(.@en_itemaccus[.@EE_EQUIP])+" "+.@en_itemaccam[.@EE_EQUIP]+" ea. ในการดำเนินการต่อ";
+				if (select("- ตกลง, ดำเนินการต่อ","- ยกเลิก") == 2) close;
+				if (countitem(.@en_itemaccus[.@EE_EQUIP]) < .@en_itemaccam[.@EE_EQUIP]) {
+					mes "คุณมี "+getitemname(.@en_itemaccus[.@EE_EQUIP])+" ไม่ถึง "+.@en_itemaccam[.@EE_EQUIP]+"";
+					mes "ไม่สามารถดำเนินการต่อได้";
+					close;
+				}
+			}
+			if (.@en_custom && !.@en_nodelete) {
+				if (countitem(.@en_itemfreeus) < .@en_itemfreeam) {
+					mes "คุณมี "+getitemname(.@en_itemfreeus)+" ไม่ถึง "+.@en_itemfreeam+" ea.";
+					close;
+				} else if (.@en_itemfreeus && countitem(.@en_itemfreeus) >= .@en_itemfreeam)
+					delitem .@en_itemfreeus,.@en_itemfreeam;
+			} else if (!.@en_custom && !.@en_nodelete) {
+				for(set .@i,0; .@i < getarraysize(.@en_itemus); set .@i,.@i+1)
+					if (getitemname(.@en_itemus[.@i]) != "null")
+						if (countitem(.@en_itemus[.@i]) < .@en_itemam[.@i] || .@en_zeny > Zeny) {
+							mes "คุณมี "+getitemname(.@en_itemus[.@i])+" ("+.@en_itemus[.@i]+") ไม่ถึง "+.@en_itemam[.@i]+" ea. หรือ Zeny ไม่ถึง "+.@en_zeny+" zeny.";
+							close;
+						}
+				if (Zeny > .@en_zeny)
+					set Zeny,Zeny-.@en_zeny;
+				for(set .@i,0; .@i < getarraysize(.@en_itemus); set .@i,.@i+1)
+					if (getitemname(.@en_itemus[.@i]) != "null")
+						if (countitem(.@en_itemus[.@i]) >= .@en_itemam[.@i])
+							delitem .@en_itemus[.@i],.@en_itemam[.@i];
+			}
+			mes "กำลังดำเนินการ Option Item ";
+			// calc
+			set .@EE_EQUIPE,getequipid(.@EE_EQUIP);
+			if (.@en_cardone)
+				set .@en_randorb_1,getequipcardid(.@EE_EQUIP,0);
+			if (.@en_cardtwo)
+				set .@en_randorb_2,getequipcardid(.@EE_EQUIP,1);
+			if (.@en_cardthree)
+				set .@en_randorb_3,getequipcardid(.@EE_EQUIP,2);
+			if (.@en_cardfour)
+				set .@en_randorb_4,getequipcardid(.@EE_EQUIP,3);
+			if (.@en_refine)
+				set .@EE_EQUIPRF,getequiprefinerycnt(.@EE_EQUIP);
+			if (!.@en_nodelete) {
+				specialeffect2 259;
+				progressbar "ffff00",11;
+			}
+			set .@en_randper,rand(.@en_permax);
+			if (.@en_slotfail >= .@en_randper && !.@en_custom) {
+				mes "Option Item Fail.";
+				close;
+			}
+			// check slot 1
+			if (.@en_cardone && (getequipcardid(.@EE_EQUIP,0) < 4000 || getequipcardid(.@EE_EQUIP,0) >= 4700) || !.@en_cardone) {
+				if ((.@en_slotoneo && getitemslots(getequipid(.@EE_EQUIP)) < 1) || !.@en_slotoneo) {
+					set .@en_randper,rand(.@en_permax);
+					if (.@en_slotone >= .@en_randper) {
+						set .@en_randall,getarraysize(getd(".@en_enslot1_"+.@EE_EQUIP+""));
+						set .@en_randorb_1,getd(".@en_enslot1_"+.@EE_EQUIP+"["+rand(.@en_randall)+"]");
+						if (getequipid(8) == getequipid(9)) {
+							set .@en_randall,getarraysize(.@en_enslot1_9);
+							set .@en_randorb_1,.@en_enslot1_9[rand(.@en_randall)];
+						}
+						if (.@EE_EQUIP == 0) {
+							set .@en_randall,getarraysize(.@en_enslot1_1);
+							set .@en_randorb_1,.@en_enslot1_1[rand(.@en_randall)];
+						}
+						mes "Option Item Slot 1 Success !!";
+						mes "Orb : "+getitemname(.@en_randorb_1)+"";
+					} else if (.@en_slotone < .@en_randper) {
+						mes "Option Item Slot 1 Fail !!";
+						mes "สงสัยคุณจะดวงไม่ดี";
+						set .@en_randorb_1,0;
+					}
+				} else if (.@en_slotoneo) {
+					mes "Option Item Slot 1 Fail !!";
+					mes "ไอเทมคุณมี 1 ช่อง";
+					set .@en_randorb_1,0;
+				}
+			} else if (.@en_cardone && (getequipcardid(.@EE_EQUIP,0) >= 4000 || getequipcardid(.@EE_EQUIP,0) < 4700)) {
+				mes "Option Item Slot 1 Fail !!";
+				mes "มีการ์ด ช่อง 1 ไม่สามารถทับได้ โปรดอ่านที่ เมนูอธิบายอีกครั้ง";
+			}
+			// check slot 2
+			if (.@en_cardtwo && (getequipcardid(.@EE_EQUIP,1) < 4000 || getequipcardid(.@EE_EQUIP,1) >= 4700) || !.@en_cardtwo) {
+				if ((.@en_slottwoo && getitemslots(getequipid(.@EE_EQUIP)) < 2) || !.@en_slottwoo) {
+					set .@en_randper,rand(.@en_permax);
+					if (.@en_slottwo >= .@en_randper) {
+						set .@en_randall,getarraysize(getd(".@en_enslot2_"+.@EE_EQUIP+""));
+						set .@en_randorb_2,getd(".@en_enslot2_"+.@EE_EQUIP+"["+rand(.@en_randall)+"]");
+						if (getequipid(8) == getequipid(9)) {
+							set .@en_randall,getarraysize(.@en_enslot2_9);
+							set .@en_randorb_2,.@en_enslot2_9[rand(.@en_randall)];
+						}
+						if (.@EE_EQUIP == 0) {
+							set .@en_randall,getarraysize(.@en_enslot2_1);
+							set .@en_randorb_2,.@en_enslot2_1[rand(.@en_randall)];
+						}
+						mes "Option Item Slot 2 Success !!";
+						mes "Orb : "+getitemname(.@en_randorb_2)+"";
+					} else if (.@en_slottwo < .@en_randper) {
+						mes "Option Item Slot 2 Fail !!";
+						mes "สงสัยคุณจะดวงไม่ดี";
+						set .@en_randorb_2,0;
+					}
+				} else if (.@en_slottwoo) {
+					mes "Option Item Slot 2 Fail !!";
+					mes "ไอเทมคุณมี 2 ช่อง ไม่สามารถใช้งานได้";
+					set .@en_randorb_2,0;
+				}
+			} else if (.@en_cardtwo && (getequipcardid(.@EE_EQUIP,1) >= 4000 || getequipcardid(.@EE_EQUIP,1) < 4700)) {
+				mes "Option Item Slot 2 Fail !!";
+				mes "มีการ์ด ช่อง 2 ไม่สามารถทับได้ โปรดอ่านที่ เมนูอธิบายอีกครั้ง";
+			}
+			// check slot 3
+			if (.@en_cardthree && (getequipcardid(.@EE_EQUIP,2) < 4000 || getequipcardid(.@EE_EQUIP,2) >= 4700) || !.@en_cardthree) {
+				if ((.@en_slotthreeo && getitemslots(getequipid(.@EE_EQUIP)) < 3) || !.@en_slotthreeo) {
+					set .@en_randper,rand(.@en_permax);
+					if (.@en_slotthree >= .@en_randper) {
+						set .@en_randall,getarraysize(getd(".@en_enslot3_"+.@EE_EQUIP+""));
+						set .@en_randorb_3,getd(".@en_enslot3_"+.@EE_EQUIP+"["+rand(.@en_randall)+"]");
+						if (getequipid(8) == getequipid(9)) {
+							set .@en_randall,getarraysize(.@en_enslot3_9);
+							set .@en_randorb_3,.@en_enslot3_9[rand(.@en_randall)];
+						}
+						if (.@EE_EQUIP == 0) {
+							set .@en_randall,getarraysize(.@en_enslot3_1);
+							set .@en_randorb_3,.@en_enslot3_1[rand(.@en_randall)];
+						}
+						mes "Option Item Slot 3 Success !!";
+						mes "Orb : "+getitemname(.@en_randorb_3)+"";
+					} else if (.@en_slotthree < .@en_randper) {
+						mes "Option Item Slot 3 Fail !!";
+						mes "สงสัยคุณจะดวงไม่ดี";
+						set .@en_randorb_3,0;
+					}
+				} else if (.@en_slotthreeo) {
+					mes "Option Item Slot 3 Fail !!";
+					mes "ไอเทมคุณมี 3 ช่อง ไม่สามารถใช้งานได้";
+					set .@en_randorb_3,0;
+				}
+			} else if (.@en_cardthree && (getequipcardid(.@EE_EQUIP,2) >= 4000 || getequipcardid(.@EE_EQUIP,2) < 4700)) {
+				mes "Option Item Slot 3 Fail !!";
+				mes "มีการ์ด ช่อง 3 ไม่สามารถทับได้ โปรดอ่านที่ เมนูอธิบายอีกครั้ง";
+			}
+			// check slot 4
+			if (.@en_cardfour && (getequipcardid(.@EE_EQUIP,3) < 4000 || getequipcardid(.@EE_EQUIP,3) >= 4700) || !.@en_cardfour) {
+				if ((.@en_slotfouro && getitemslots(getequipid(.@EE_EQUIP)) < 4) || !.@en_slotfouro) {
+					set .@en_randper,rand(.@en_permax);
+					if (.@en_slotfour >= .@en_randper) {
+						set .@en_randall,getarraysize(getd(".@en_enslot4_"+.@EE_EQUIP+""));
+						set .@en_randorb_4,getd(".@en_enslot4_"+.@EE_EQUIP+"["+rand(.@en_randall)+"]");
+						if (getequipid(8) == getequipid(9)) {
+							set .@en_randall,getarraysize(.@en_enslot4_9);
+							set .@en_randorb_4,.@en_enslot4_9[rand(.@en_randall)];
+						}
+						if (.@EE_EQUIP == 0) {
+							set .@en_randall,getarraysize(.@en_enslot4_1);
+							set .@en_randorb_4,.@en_enslot4_1[rand(.@en_randall)];
+						}
+						mes "Option Item Slot 4 Success !!";
+						mes "Orb : "+getitemname(.@en_randorb_4)+"";
+					} else if (.@en_slotfour < .@en_randper) {
+						mes "Option Item Slot 4 Fail !!";
+						mes "สงสัยคุณจะดวงไม่ดี";
+						set .@en_randorb_4,0;
+					}
+				} else if (.@en_slotfouro) {
+					mes "Option Item Slot 4 Fail !!";
+					mes "ไอเทมคุณมี 4 ช่อง ไม่สามารถใช้งานได้";
+					set .@en_randorb_4,0;
+				}
+			} else if (.@en_cardfour && (getequipcardid(.@EE_EQUIP,3) >= 4000 || getequipcardid(.@EE_EQUIP,3) < 4700)) {
+				mes "Option Item Slot 4 Fail !!";
+				mes "มีการ์ด ช่อง 4 ไม่สามารถทับได้ โปรดอ่านที่ เมนูอธิบายอีกครั้ง";
+			}
+			// option item success 
+			if (!.@en_nodelete)
+				delitem2 getequipid(.@EE_EQUIP),1,1,getequiprefinerycnt(.@EE_EQUIP),0,getequipcardid(.@EE_EQUIP,0),getequipcardid(.@EE_EQUIP,1),getequipcardid(.@EE_EQUIP,2),getequipcardid(.@EE_EQUIP,3);
+			getitem2 .@EE_EQUIPE,1,1,.@EE_EQUIPRF,0,.@en_randorb_1,.@en_randorb_2,.@en_randorb_3,.@en_randorb_4;
+			break;
+		case 2:
+			mes "[ Option Item ]";
+			mes "ไอเทมที่ใช้ในการออฟ";
+			for(set .@i,0; .@i < getarraysize(.@en_itemus); set .@i,.@i+1)
+				if (getitemname(.@en_itemus[.@i]) != "null")
+					mes ""+(.@i+1)+". "+getitemname(.@en_itemus[.@i])+" ("+.@en_itemus[.@i]+") "+.@en_itemam[.@i]+" ea.";
+			mes "เซนนีจำนวน : "+.@en_zeny+" zeny.";
+			mes "และ";
+			mes "ถ้าคุณมี "+getitemname(.@en_itemfreeus)+" ("+.@en_itemfreeus+") จำนวน "+.@en_itemfreeam+" ea.";
+			mes "จะไม่เสียใดๆทั้งสิ้นและไม่มีโอกาศเสียหายของไอเทมอีกด้วย";
+			next;
+			mes "[ Option Item ]";
+			mes "ไอเทมที่ใช้ออฟสำหรับอุปกรณ์ต่างๆ";
+			set .@EE_ACCESSORY$,"";
+			setarray .@EE_ACCESSORY$[0], "Accessory 1","Accessory 2","Footgear","Garment","Lower","Middle","Upper","Armor","Left hand","Right hand","Upper Costume","Middle Costume","Lower Costume","Costume Garment";
+			for( set .@i,0; .@i <= 13; set .@i,.@i+1 )
+				mes "- "+.@EE_ACCESSORY$[.@i]+" ["+((.@en_itemaccus[.@i])?""+getitemname(.@en_itemaccus[.@i])+" "+.@en_itemaccam[.@i]+" ea.":"ไม่ใช้")+"]";
+			next;
+			mes "[ Option Item ]";
+			mes "โอกาศออฟติดในแต่ละช่อง";
+			mes "ช่องที่ 1 : "+(.@en_slotone/10)+"% ["+((.@en_slotoneo)?"เฉพาะไอเทมไม่มีรูในช่อง 1":"สำหรับไอเทมทุกประเภท")+"]";
+			mes "ช่องที่ 2 : "+(.@en_slottwo/10)+"% ["+((.@en_slottwoo)?"เฉพาะไอเทมไม่มีรูในช่อง 2":"สำหรับไอเทมทุกประเภท")+"]";
+			mes "ช่องที่ 3 : "+(.@en_slotthree/10)+"% ["+((.@en_slotthreeo)?"เฉพาะไอเทมไม่มีรูในช่อง 3":"สำหรับไอเทมทุกประเภท")+"]";
+			mes "ช่องที่ 4 : "+(.@en_slotfour/10)+"% ["+((.@en_slotfouro)?"เฉพาะไอเทมไม่มีรูในช่อง 4":"สำหรับไอเทมทุกประเภท")+"]";
+			mes "โอกาศเสียหาย : "+.@en_slotfail/10+"%";
+			mes "ตีบวก : "+((.@en_refine)?"ไม่หาย":"หาย")+"";
+			mes "การ์ดช่อง 1 : "+((.@en_cardone)?"ไม่ทับเมื่อ Option Item":"ทับเมื่อ Option Item")+"";
+			mes "การ์ดช่อง 2 : "+((.@en_cardtwo)?"ไม่ทับเมื่อ Option Item":"ทับเมื่อ Option Item")+"";
+			mes "การ์ดช่อง 3 : "+((.@en_cardthree)?"ไม่ทับเมื่อ Option Item":"ทับเมื่อ Option Item")+"";
+			mes "การ์ดช่อง 4 : "+((.@en_cardfour)?"ไม่ทับเมื่อ Option Item":"ทับเมื่อ Option Item")+"";
+			mes "ถ้าออฟใหม่ระบบจะรีเซ็ตค่าเดิมแล้วทำการสุ่มใหม่ให้ !!";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Accessory 1 - Accessory 2";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[1])?""+getitemname(.@en_itemaccus[1])+" "+.@en_itemaccam[1]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_1); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_1[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_1[.@i])+" ("+.@en_enslot1_1[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_1); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_1[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_1[.@i])+" ("+.@en_enslot2_1[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_1); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_1[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_1[.@i])+" ("+.@en_enslot3_1[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_1); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_1[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_1[.@i])+" ("+.@en_enslot4_1[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Footgear";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[3])?""+getitemname(.@en_itemaccus[3])+" "+.@en_itemaccam[3]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_3); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_3[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_3[.@i])+" ("+.@en_enslot1_3[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_3); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_3[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_3[.@i])+" ("+.@en_enslot2_3[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_3); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_3[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_3[.@i])+" ("+.@en_enslot3_3[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_3); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_3[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_3[.@i])+" ("+.@en_enslot4_3[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Garment";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[4])?""+getitemname(.@en_itemaccus[4])+" "+.@en_itemaccam[4]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_4); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_4[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_4[.@i])+" ("+.@en_enslot1_4[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_4); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_4[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_4[.@i])+" ("+.@en_enslot2_4[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_4); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_4[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_4[.@i])+" ("+.@en_enslot3_4[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_4); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_4[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_4[.@i])+" ("+.@en_enslot4_4[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Lower";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[5])?""+getitemname(.@en_itemaccus[5])+" "+.@en_itemaccam[5]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_5); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_5[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_5[.@i])+" ("+.@en_enslot1_5[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_5); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_5[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_5[.@i])+" ("+.@en_enslot2_5[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_5); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_5[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_5[.@i])+" ("+.@en_enslot3_5[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_5); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_5[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_5[.@i])+" ("+.@en_enslot4_5[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Middle";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[6])?""+getitemname(.@en_itemaccus[6])+" "+.@en_itemaccam[6]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_6); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_6[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_6[.@i])+" ("+.@en_enslot1_6[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_6); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_6[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_6[.@i])+" ("+.@en_enslot2_6[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_6); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_6[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_6[.@i])+" ("+.@en_enslot3_6[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_6); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_6[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_6[.@i])+" ("+.@en_enslot4_6[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Upper";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[7])?""+getitemname(.@en_itemaccus[7])+" "+.@en_itemaccam[7]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_7); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_7[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_7[.@i])+" ("+.@en_enslot1_7[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_7); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_7[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_7[.@i])+" ("+.@en_enslot2_7[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_7); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_7[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_7[.@i])+" ("+.@en_enslot3_7[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_7); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_7[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_7[.@i])+" ("+.@en_enslot4_7[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Armor";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[9])?""+getitemname(.@en_itemaccus[9])+" "+.@en_itemaccam[9]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_9); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_9[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_9[.@i])+" ("+.@en_enslot1_9[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_9); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_9[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_9[.@i])+" ("+.@en_enslot2_9[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_9); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_9[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_9[.@i])+" ("+.@en_enslot3_9[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_9); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_9[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_9[.@i])+" ("+.@en_enslot4_9[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Shields";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[10])?""+getitemname(.@en_itemaccus[10])+" "+.@en_itemaccam[10]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_10[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_10[.@i])+" ("+.@en_enslot1_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_10[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_10[.@i])+" ("+.@en_enslot2_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_10[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_10[.@i])+" ("+.@en_enslot3_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_10[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_10[.@i])+" ("+.@en_enslot4_10[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Weapons";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[10])?""+getitemname(.@en_itemaccus[10])+" "+.@en_itemaccam[10]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_10[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_10[.@i])+" ("+.@en_enslot1_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_10[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_10[.@i])+" ("+.@en_enslot2_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_10[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_10[.@i])+" ("+.@en_enslot3_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_10[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_10[.@i])+" ("+.@en_enslot4_10[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Upper Costume";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[10])?""+getitemname(.@en_itemaccus[10])+" "+.@en_itemaccam[10]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_10[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_10[.@i])+" ("+.@en_enslot1_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_10[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_10[.@i])+" ("+.@en_enslot2_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_10[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_10[.@i])+" ("+.@en_enslot3_10[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_10); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_10[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_10[.@i])+" ("+.@en_enslot4_10[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Middle Costume";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[11])?""+getitemname(.@en_itemaccus[11])+" "+.@en_itemaccam[11]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_11); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_11[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_11[.@i])+" ("+.@en_enslot1_11[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_11); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_11[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_11[.@i])+" ("+.@en_enslot2_11[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_11); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_11[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_11[.@i])+" ("+.@en_enslot3_11[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_11); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_11[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_11[.@i])+" ("+.@en_enslot4_11[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Lower Costume";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[12])?""+getitemname(.@en_itemaccus[12])+" "+.@en_itemaccam[12]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_12); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_12[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_12[.@i])+" ("+.@en_enslot1_12[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_12); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_12[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_12[.@i])+" ("+.@en_enslot2_12[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_12); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_12[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_12[.@i])+" ("+.@en_enslot3_12[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_12); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_12[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_12[.@i])+" ("+.@en_enslot4_12[.@i]+")";
+			next;
+			mes "[ Option Item ]";
+			mes "ลูกแก้วทั้งหมดของประเภท Costume Garment";
+			mes "ไอเทมจำเป็นในการออฟ : "+((.@en_itemaccus[13])?""+getitemname(.@en_itemaccus[13])+" "+.@en_itemaccam[13]+" ea.":"ไม่ใช้")+"";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot1_13); set .@i,.@i+1)
+				if (getitemname(.@en_enslot1_13[.@i]) != "null")
+					mes "ช่อง 1 : "+getitemname(.@en_enslot1_13[.@i])+" ("+.@en_enslot1_13[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot2_13); set .@i,.@i+1)
+				if (getitemname(.@en_enslot2_13[.@i]) != "null")
+					mes "ช่อง 2 : "+getitemname(.@en_enslot2_13[.@i])+" ("+.@en_enslot2_13[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot3_13); set .@i,.@i+1)
+				if (getitemname(.@en_enslot3_13[.@i]) != "null")
+					mes "ช่อง 3 : "+getitemname(.@en_enslot3_13[.@i])+" ("+.@en_enslot3_13[.@i]+")";
+			mes " ";
+			for(set .@i,0; .@i < getarraysize(.@en_enslot4_13); set .@i,.@i+1)
+				if (getitemname(.@en_enslot4_10[.@i]) != "null")
+					mes "ช่อง 4 : "+getitemname(.@en_enslot4_13[.@i])+" ("+.@en_enslot4_13[.@i]+")";
+			break;
+		case 3:
+			close;
+	}
+	close;
+	OnInit:
+		// ห้อง
+		waitingroom "Option Item",0;
+		end;
+}

@@ -119,7 +119,7 @@ S_EnchantArmor:
 			case 30: .@addpart = 4873;break; //ASPD +8%
 			case 31:.@addpart = 4887;break; // MATK+15 ร่าย VCAST เร็วขึ้น 3%
 			case 32:.@addpart = 4888;break; //MATK+20 ร่าย VCAST เร็วขึ้น 4%
-			case 33: .@addpart = 4873;break; //MATK+30 ร่าย VCAST เร็วขึ้น 5%
+			case 33: .@addpart = 4889;break; //MATK+30 ร่าย VCAST เร็วขึ้น 5%
 			case 34: .@addpart = 4907;break; //MATK +7%
 			case 35: .@addpart = 4905;break; //ATK +7%
 			case 36: .@addpart = 4790;break; //DEF+10 MDEF+10
@@ -127,7 +127,7 @@ S_EnchantArmor:
 				specialeffect2 EF_PHARMACY_FAIL;
 				close;
 		}
-		getitem2 .@itemid, 1, 1, 0, 0, 0, 0, 0, .@addpart;
+		getitem2 .@itemid, 1, 0, 0, 0, 0, 0, 0, .@addpart;
 	}
 	else {
 		mes "หืม ? ดูเหมือนว่าคุณไม่ได้มีอุปกรณ์ที่ฉันสามารถเพิ่มขีดความสามารถได้ !";

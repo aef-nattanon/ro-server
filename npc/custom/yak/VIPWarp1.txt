@@ -33,13 +33,13 @@ function Go; function Disp; function Pick; function Restrict;
 
 
 
-		menu "Towns (เมือง)",towns,"Fields (พื้นที่ทั่วไป)",Fields,"Dungeons (ดันเจียน)",Dungeons;
+		menu "Towns (เมือง)",towns,"Fields (พื้นที่ทั่วไป)",Fields,"Dungeons (ดันเจียน)",Dungeons,"PVP (พีวีพี)   [ "+getmapusers("guild_vs1.gat")+" / 100 ]",Pvp;
 	//menu "วาปไปพื้นที่ล่าสุด",lastwarp,"Fields (พื้นที่ทั่วไป)",Fields,"Dungeons (ดันเจียน)",Dungeons,"PVP (พีวีพี)   [ "+getmapusers("guild_vs1.gat")+" / 100 ]",Pvp;
 
     Pvp:
-	if (getmapusers("guild_vs3.gat") == 100) goto Exit;
+	if (getmapusers("guild_vs1.gat") == 100) goto Exit;
 	announce "คุณ [ "+strcharinfo(0)+" ] ได้เข้าสู่ [PvP]",0,0x66CC00;
-	warp "guild_vs3.gat",0,0;
+	warp "guild_vs1.gat",0,0;
 	close;	 
    
 	

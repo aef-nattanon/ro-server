@@ -13,7 +13,7 @@
 //= 1.0 First version, edited. [Euphy]
 //============================================================
 
-prontera,156,185,5	script	Devil Square Guardian#1	406,{
+morocc,181,97,5	script	Devil Square Guardian#1	406,{
 	set .@gm_level, 99; // GM level required to start/stop the event
 
 	mes "[Devil Square Guardian]";
@@ -31,16 +31,16 @@ prontera,156,185,5	script	Devil Square Guardian#1	406,{
 			mes "16:00 , 18:00 , 20:00 , 22:00";
 			close;
 		}
-		if (BaseLevel < 70 || Zeny < 20000) { // requirements
+		if (BaseLevel < 30 || Zeny < 1000) { // requirements
 			mes "[Devil Square Guardian]";
 			mes "You do not meet the requirements to enter Devil Square.";
 			mes " ";
 			mes "Requirements:";
-			mes " - Base Level 70";
-			mes " - Registration fee 20,000z";
+			mes " - Base Level 30";
+			mes " - Registration fee 1,000z";
 			close;
 		}
-		Zeny -= 20000;
+		Zeny -= 1000;
 		announce strcharinfo(0)+" has entered Devil Square.", bc_npc;
 		percentheal 100,100;
 		warp "ordeal_1-1",183,182;
@@ -110,11 +110,7 @@ OnClock2200:
 	getmapxy .@map$, .@x, .@y, BL_NPC;
 	mapwarp "ordeal_1-1", .@map$, .@x, .@y;
 	killmonsterall "ordeal_1-1";
-	announce "Devil Square is OPEN. The event will begin in 5 minutes.", bc_all;
-	sleep 60000;
-	announce "Devil Square will begin in 4 minutes.", bc_all;
-	sleep 60000;
-	announce "Devil Square will begin in 3 minutes.", bc_all;
+	announce "Devil Square is OPEN. The event will begin in 3 minutes.", bc_all;
 	sleep 60000;
 	announce "Devil Square will begin in 2 minutes.", bc_all;
 	sleep 60000;

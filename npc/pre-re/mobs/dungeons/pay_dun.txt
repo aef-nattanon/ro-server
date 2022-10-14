@@ -15,11 +15,11 @@
 //==================================================
 // pay_dun00 - Payon Cave F1
 //==================================================
-pay_dun00,0,0,0,0	monster	Familiar	1005,15,0,0,0
-pay_dun00,0,0,0,0	monster	Zombie	1015,95,0,0,0
+pay_dun00,0,0,0,0	monster	Familiar	1005,10,0,0,0
+pay_dun00,0,0,0,0	monster	Zombie	1015,40,0,0,0
 pay_dun00,0,0,0,0	monster	Boa	1025,20,0,0,0
-//pay_dun00,0,0,0,0	monster	Poporing	1031,40,0,0,0
-pay_dun00,0,0,0,0	monster	Skeleton	1076,70,0,0,0
+//pay_dun00,0,0,0,0	monster	Poporing	1031,20,0,0,0
+pay_dun00,0,0,0,0	monster	Skeleton	1076,40,0,0,0
 pay_dun00,0,0,0,0	monster	Red Plant	1078,15,180000,90000,1
 pay_dun00,140,140,5,5	monster	Black Mushroom	1084,3,360000,180000,1
 pay_dun00,0,0,0,0	monster	Spore	1014,40,0,0,0
@@ -43,12 +43,12 @@ pay_dun02,0,0,0,0	monster	Martin	1145,15,0,0,0
 //==================================================
 pay_dun02,0,0,0,0	monster	Archer Skeleton	1016,30,180000,0,0
 pay_dun02,227,185,0,0	monster	Mandragora	1020,3,300000,0,0
-pay_dun02,0,0,0,0	monster	Munak	1026,50,0,0,0
+pay_dun02,0,0,0,0	monster	Munak	1026,30,0,0,0
 pay_dun02,0,0,0,0	monster	Soldier Skeleton	1028,10,180000,0,0
 //pay_dun02,0,0,0,0	monster	Poporing	1031,15,0,0,0
 pay_dun02,0,0,0,0	monster	Magnolia	1138,15,0,0,0
 //pay_dun02,0,0,0,0	monster	Nine Tail	1180,1,0,0,0
-pay_dun02,0,0,0,0	monster	Bongun	1188,30,0,0,0
+pay_dun02,0,0,0,0	monster	Bongun	1188,20,0,0,0
 pay_dun02,116,205,0,0	monster	Hydra	1068,1,345000,100000,1
 pay_dun02,116,199,0,0	monster	Hydra	1068,1,306000,100000,1
 pay_dun02,116,196,0,0	monster	Hydra	1068,1,300000,100000,1
@@ -134,7 +134,6 @@ pay_dun03,88,35,0,0	monster	Yellow Plant	1081,1,600000,300000,1
 pay_dun03,0,0,0,0	monster	Red Plant	1078,15,180000,90000,1
 pay_dun03,246,56,20,20	monster	White Plant	1082,3,180000,90000,1
 pay_dun03,52,262,10,4	monster	White Plant	1082,2,180000,90000,1
-pay_dun03,0,0,0,0	boss_monster	Moonlight Flower	1150,1,3600000,0,1
 
 //==================================================
 // pay_dun04 - Payon Cave F5

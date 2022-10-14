@@ -51,10 +51,10 @@ gl_in01,0,0,0,0	monster	Marionette	1143,10,20000,10000,0
 //==================================================
 // gl_prison - Glast Heim Underprison F1
 //==================================================
-gl_prison,0,0,0,0	monster	Hunter Fly	1035,10,0,0,0
+gl_prison,0,0,0,0	monster	Hunter Fly	1035,5,0,0,0
 gl_prison,0,0,0,0	monster	Whisper	1179,10,0,0,0
-gl_prison,0,0,0,0	monster	Zombie Prisoner	1197,81,0,0,0
-gl_prison,0,0,0,0	monster	Skeleton Prisoner	1196,61,0,0,0
+gl_prison,0,0,0,0	monster	Zombie Prisoner	1197,40,0,0,0
+gl_prison,0,0,0,0	monster	Skeleton Prisoner	1196,40,0,0,0
 gl_prison,0,0,0,0	monster	Brilight	1211,20,0,0,0
 
 //==================================================

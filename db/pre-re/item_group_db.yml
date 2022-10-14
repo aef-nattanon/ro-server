@@ -4754,7 +4754,7 @@ Body:
       - SubGroup: 1
         List:
           - Item: Lotto31
-            Rate: 1
+            Rate: 10
           - Item: Lotto32
             Rate: 1
           - Item: Lotto33

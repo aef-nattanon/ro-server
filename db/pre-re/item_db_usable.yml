@@ -3915,7 +3915,7 @@ Body:
       sc_start SC_SILENCE,30000,0,3000,0;
   - Id: 12035
     AegisName: Lotto_Box01
-    Name: Lotto Box 01
+    Name: Yak Scroll
     Type: Usable
     Weight: 20
     Script: |
@@ -5914,7 +5914,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      sc_start SC_EXPBOOST,1800000,50;
+      sc_start SC_EXPBOOST,1800000,100;
   - Id: 12209
     AegisName: Insurance
     Name: Life Insurance
@@ -6566,8 +6566,6 @@ Body:
       NoTrade: true
       NoSell: true
       NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
       NoMail: true
       NoAuction: true
     Script: |
@@ -6583,8 +6581,6 @@ Body:
       NoTrade: true
       NoSell: true
       NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
       NoMail: true
       NoAuction: true
     Script: |
@@ -9115,7 +9111,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -9130,7 +9125,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -9140,7 +9134,7 @@ Body:
       getgroupitem(IG_SQUAD_PRIZE1);
   - Id: 12482
     AegisName: Attend_10Day_Box
-    Name: Attend 10Day Box
+    Name: All Star Scroll
     Type: Usable
     Weight: 10
     Trade:
@@ -9149,7 +9143,7 @@ Body:
       getgroupitem(IG_BS_SHA_M_S_13);
   - Id: 12483
     AegisName: Attend_15Day_Box
-    Name: Attend 15Day Box
+    Name: Yak Scroll
     Type: Usable
     Weight: 10
     Trade:
@@ -9163,7 +9157,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -9351,7 +9344,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -9367,7 +9359,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -9383,7 +9374,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -9399,7 +9389,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -9415,7 +9404,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -9431,7 +9419,6 @@ Body:
     Weight: 10
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -13456,7 +13443,6 @@ Body:
       UniqueId: true
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -13780,12 +13766,6 @@ Body:
       UniqueId: true
     Trade:
       NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       getitem 7619,10;
   - Id: 12921
@@ -13798,12 +13778,6 @@ Body:
       UniqueId: true
     Trade:
       NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
     Script: |
       getitem 7620,10;
   - Id: 12922
@@ -15769,7 +15743,6 @@ Body:
       UniqueId: true
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -18657,7 +18630,6 @@ Body:
       UniqueId: true
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -20669,7 +20641,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      getitem 11502,25;
+      getitem 11502,50;
   - Id: 13811
     AegisName: Food_Box_Lv1
     Name: Food Box Vol 1
@@ -23982,7 +23954,6 @@ Body:
       UniqueId: true
     Trade:
       NoDrop: true
-      NoTrade: true
       NoSell: true
       NoCart: true
       NoGuildStorage: true
@@ -26550,6 +26521,7 @@ Body:
       NoSell: true    
     Script: |
       getitem 684,1;
+      getitem 25250,1200;
   - Id: 14133
     AegisName: VIP15Day
     Name: VIP15Day
@@ -26561,6 +26533,7 @@ Body:
       NoSell: true
     Script: |
       getitem 685,1;
+      getitem 25250,600;
   - Id: 14134
     AegisName: F_Ring_Box
     Name: E•Yak-Coin box
@@ -31421,7 +31394,7 @@ Body:
     Buy: 2
     Weight: 10
     Script: |
-      sc_start SC_EXPBOOST,3600000,100;
+      sc_start SC_EXPBOOST,1800000,100;
   - Id: 14534
     AegisName: Small_Life_Potion
     Name: Small Life Potion
@@ -32583,8 +32556,6 @@ Body:
       NoTrade: true
       NoSell: true
       NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
       NoMail: true
       NoAuction: true
     Script: |
@@ -39962,7 +39933,6 @@ Body:
       NoTrade: true
       NoSell: true
       NoCart: true
-      NoGuildStorage: true
       NoMail: true
       NoAuction: true
     Script: |
@@ -44307,30 +44277,18 @@ Body:
     Name: "? Box"
     Type: Cash
     Buy: 10
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
     Script: |
-      getitem 2340,1;
-      getitem 2113,1;
-      getitem 2416,1;
-      getitem 5119,1;
-      getitem 2628,2;
-      getitem 2512,1;
-      getitem 1381,1;
-      getitem 1742,1;
-      getitem 13040,1;
-      getitem 1545,1;
-      getitem 1639,1;
-      getitem 569,1000;
-      getitem 4031,1;
-      getitem 4013,1;
-      getitem 4133,1;
-      getitem 4131,1;
-      getitem 4044,1;
-      getitem 4103,1;
-      getitem 4223,1;
-      getitem 18509,1;
-      getitem 5377,1;
-      getitem 5592,1;
-      getitem 20727,1;
+      getitem 12264,1;
+      getitem 14606,2;
+      getitem 12263,2;
   - Id: 5968
     AegisName: DVAngelNurseCap
     Name: DVAngelNurseCap

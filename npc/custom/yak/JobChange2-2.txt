@@ -132,16 +132,20 @@ L_Nov:
 	if(sex==1) mes "พี่ชาย คุณยังมีคุณสมบัติยังไม่พอ!";
 	close;
 L_Sword:
-	mes "^0066FF[ JobchangeMastar2-1 ]^000000";		
+	mes "^0066FF[ JobchangeMastar2-2 ]^000000";
 	if(JobLevel > 40) {
 	mes "เจ้าต้องการเปลี่ยนอาชีพ ?";
-	menu "- Knight",knight,"ออก",Exit;
+	menu "- Knight Class 2 - 1",knight,"- Crusader Class 2 - 2",crusader,"- ออก",Exit;
 	}
 	if(JobLevel == 40) {
 	mes "เจ้าต้องการเปลี่ยนอาชีพ ?";
-	menu "- Knight",knight,"ออก",Exit;
+	menu "- Knight Class 2 - 1",knight,"- Crusader Class 2 - 2",crusader,"- ออก",Exit;
 	}else{
 	mes "คุณสมบัตคุณไม่เพียงพอ";
+	next;
+	mes "^0066FF[ JobchangeMastar2-2 ]^000000";
+	mes "แล้วกลับมาหาข้าใหม่";
+	cutin "reno_kn_02",255;
 	}
 	close;
 L_Arc:
@@ -183,14 +187,14 @@ L_Aco:
 	}
 	close;
 L_Thief:	
-	mes "^0066FF[ JobchangeMastar2-1 ]^000000";		
+	mes "^0066FF[ JobchangeMastar2-2 ]^000000";
 	if(JobLevel > 40) {
 	mes "เจ้าต้องการเปลี่ยนอาชีพ ?";
-	menu "- Assassin",assassin,"ออก",Exit;
+	menu "- Assassin Class 2 - 1",assassin,"- Rogue Class 2 - 2",rogue,"- ออก",Exit;
 	}
 	if(JobLevel == 40) {
 	mes "เจ้าต้องการเปลี่ยนอาชีพ ?";
-	menu "- Assassin",assassin,"ออก",Exit;
+	menu "- Assassin Class 2 - 1",assassin,"- Rogue Class 2 - 2",rogue,"- ออก",Exit;
 	}else{
 	mes "คุณสมบัตคุณไม่เพียงพอ";
 	}

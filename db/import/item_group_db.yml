@@ -58,20 +58,25 @@ Body:
             Rate: 1
             Announced: true
           - Item: Coin_Of_Rr
+            Amount: 3
             Rate: 15
           - Item: Enriched_Oridecon
             Rate: 10
           - Item: Enriched_Elunium
             Rate: 10
           - Item: Job_Manual25
+            Amount: 3
             Rate: 10
           - Item: Bubble_Gum
             Rate: 1
           - Item: Megaphone
+            Amount: 2
             Rate: 10
           - Item: Light_White_Pot
+            Amount: 2
             Rate: 9
           - Item: Light_Blue_Pot
+            Amount: 2
             Rate: 9
           - Item: E_Str_Dish10_
             Rate: 10
@@ -85,19 +90,17 @@ Body:
             Rate: 10
           - Item: E_Vit_Dish10_
             Rate: 10
-          - Item: C_Blush
+          - Item: C_Ear_Of_Devils_Wing
+            Rate: 2
+          - Item: C_Large_Orc_Hero_Helm
             Rate: 2
           - Item: C_Filir_Wing_Ears
             Rate: 2
           - Item: C_Cyclops_Visor
             Rate: 2
+          - Item: C_Blush
+            Rate: 2
           - Item: C_Angel_Spirit
-            Rate: 2
-          - Item: C_Ear_Of_Devils_Wing
-            Rate: 2
-          - Item: C_Large_Orc_Hero_Helm
-            Rate: 2
-          - Item: C_Large_Orc_Hero_Helm
             Rate: 2
           - Item: C_Amistr_Beret
             Rate: 2
@@ -107,20 +110,25 @@ Body:
       - SubGroup: 1
         List:
           - Item: Coin_Of_Rr
+            Amount: 3
             Rate: 15
           - Item: Enriched_Oridecon
             Rate: 10
           - Item: Enriched_Elunium
             Rate: 10
           - Item: Job_Manual25
+            Amount: 3
             Rate: 10
           - Item: Bubble_Gum
             Rate: 10
           - Item: Megaphone
+            Amount: 2
             Rate: 10
           - Item: Light_Blue_Pot
+            Amount: 2
             Rate: 8
           - Item: Light_White_Pot
+            Amount: 2
             Rate: 8
           - Item: E_Str_Dish10_
             Rate: 10
@@ -134,19 +142,17 @@ Body:
             Rate: 10
           - Item: E_Vit_Dish10_
             Rate: 10
-          - Item: C_Happy_Rabbit_Ribbon
-            Rate: 2
-          - Item: C_Pink_Bunny_Band_J
-            Rate: 2
-          - Item: C_Valkyrie_Helm
+          - Item: C_Love_Chick_Hat
             Rate: 2
           - Item: C_Rabbit_Ear_Hat
             Rate: 2
-          - Item: C_Love_Chick_Hat
+          - Item: C_Mouton_Life_BL
             Rate: 2
           - Item: C_Peco_Ears
             Rate: 2
-          - Item: C_Mouton_Life_BL
+          - Item: C_Valkyrie_Helm
+            Rate: 2
+          - Item: C_Happy_Rabbit_Ribbon
             Rate: 2
           - Item: Archangel Wings
             Rate: 1
@@ -155,98 +161,74 @@ Body:
             Rate: 1
             Announced: true
 
-  - Group: BS_SHA_M_S_13
-    SubGroups:
-      - SubGroup: 1
-        List:
-          - Item: C_Gloomy_Pumpkin_Hat
-            Rate: 3
-          - Item: C_Ear_Mufs
-            Rate: 3
-          - Item: C_Antler
-            Rate: 3
-          - Item: C_Lion_Mask
-            Rate: 3
-          - Item: C_Blue_Magicianhat
-            Rate: 3
-          - Item: C_Fried_Egg
-            Rate: 3
-          - Item: C_Bone_Helm
-            Rate: 3
-          - Item: C_Beret
-            Rate: 3
-          - Item: C_Lunatic_Hat
-            Rate: 3
-          - Item: C_Joker_Jester
-            Rate: 3
-          - Item: C_Soft_Sheep_Hat
-            Rate: 3
-          - Item: C_Goat_Hat
-            Rate: 3
-          - Item: C_Sombrero
-            Rate: 3
-          - Item: C_Black_Ramen_Hat_
-            Rate: 3
-          - Item: C_Alice_Doll
-            Rate: 3
-          - Item: C_Amistr_Cap
-            Rate: 3
-          - Item: C_Poison_Spore_Hat
-            Rate: 3
-          - Item: C_Boys_Cap
-            Rate: 3
-          - Item: C_Bunny_Band
-            Rate: 3
-          - Item: C_Chick_Hat_J
-            Rate: 3
-          - Item: C_Stall_Of_Angel
-            Rate: 1
-            Announced: true
-
   - Group: BS_SHA_M_S_8
     SubGroups:
       - SubGroup: 1
         List:
-          - Item: C_Westren_Grace
-            Rate: 3
-          - Item: C_Eye_Bandage
-            Rate: 3
-          - Item: C_Divers_Goggles
-            Rate: 3
-          - Item: C_Smile_Mask_Middle
-            Rate: 3
-          - Item: C_False_Ears
-            Rate: 3
-          - Item: C_Glasses_Without_Lens
-            Rate: 3
-          - Item: C_Under_Rim_Glasses_Red
-            Rate: 3
-          - Item: C_Under_Rim_Glasses
-            Rate: 3
-          - Item: C_Glasses
-            Rate: 3
-          - Item: C_One_Eyed_Glass
-            Rate: 3
-          - Item: C_Black_Glasses
-            Rate: 3
-          - Item: C_Red_Glasses
-            Rate: 3
-          - Item: C_Zorro_Mask
-            Rate: 3
-          - Item: C_Fillet_Blue
-            Rate: 3
-          - Item: C_Bongun_Hat
-            Rate: 3
-          - Item: T_Munak_Hat
-            Rate: 3
-          - Item: C_Combat_Vestige
-            Rate: 3
-          - Item: C_Nurse_Cap
-            Rate: 3
-          - Item: C_Mini_Propeller
-            Rate: 3
-          - Item: C_Big_Sis_Ribbon
-            Rate: 3
-          - Item: C_Stole_Of_Dominion
-            Rate: 1
+          - Item: C_Wing_Of_Happiness
+            Rate: 2
             Announced: true
+          - Item: C_Cat_Mouth
+            Rate: 2
+            Announced: true
+          - Item: C_Black_Cat_Ears_Beret
+            Rate: 2
+            Announced: true
+          - Item:  C_Bell_Ribbon
+            Rate: 2
+          - Item: C_Machoman_Glasses
+            Rate: 2
+          - Item: C_Choco_Donut_in_Mouth
+            Rate: 2
+          - Item: C_Centimental_Flower
+            Rate: 2
+          - Item: Coin_Of_Rr
+            Rate: 15
+            Amount: 3
+          - Item: Enriched_Oridecon
+            Rate: 10
+            Amount: 2
+          - Item: Enriched_Elunium
+            Rate: 10
+            Amount: 2
+          - Item: Job_Manual25
+            Rate: 10
+            Amount: 2
+          - Item: Bubble_Gum
+            Rate: 10
+          - Item: Megaphone
+            Rate: 10
+            Amount: 2
+          - Item: Light_White_Pot
+            Rate: 9
+            Amount: 3
+          - Item: Light_Blue_Pot
+            Rate: 9
+            Amount: 2
+          - Item: E_Str_Dish10_
+            Rate: 10
+          - Item: E_Agi_Dish10_
+            Rate: 10
+          - Item: E_Int_Dish10_
+            Rate: 10
+          - Item: E_Dex_Dish10_
+            Rate: 10
+          - Item: E_Luk_Dish10_
+            Rate: 10
+          - Item: E_Vit_Dish10_
+            Rate: 10
+  - Group: BS_SHA_M_S_13
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Item: 
+            Rate: 2
+            Announced: true
+          - Item: 
+            Rate: 2
+            Announced: true
+          - Item: 
+            Rate: 2
+            Announced: true
+          - Item:  
+            Rate: 2

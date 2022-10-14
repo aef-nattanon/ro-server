@@ -17653,7 +17653,6 @@ Body:
           Amount: 70
         - Level: 10
           Amount: 75
-      State: Ridingdragon
   - Id: 2009
     Name: RK_DRAGONHOWLING
     Description: Dragon Howling
@@ -30220,7 +30219,6 @@ Body:
           Amount: 70
         - Level: 10
           Amount: 75
-      State: Ridingdragon
   - Id: 5005
     Name: RK_LUXANIMA
     Description: Lux Anima

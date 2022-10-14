@@ -1,0 +1,21 @@
+morocc,168,80,4	script	รับไอเทมฟรีทุกวัน	617,{
+
+set .@item,22721;
+set .@quantity,1;
+if(gettime(5) != Freebies) {
+mes "สวัสดีค่ะยินดีให้บริการค่ะ";
+mes "วันนี้คุณสามารถรับไอเทมได้ฟรี";
+mes "และจะสามารถรับได้อีกในวันถัดไปนะค่ะ^_^";
+set Freebies,gettime(5);
+getitem .@item,.@quantity;
+close;
+} else {
+mes "คุณรับไอเทมไปแล้วจะสามารถรับ";
+mes "ได้อีกในวันถัดไปนะค่ะ";
+close;
+}
+OnInit: 
+waitingroom "รับไอเทมฟรีทุกวัน",0; 
+end; 
+}
+}

@@ -18,6 +18,6 @@
 xmas_fild01,0,0,0,0	monster	Santa Poring	1062,50,0,0,0
 xmas_fild01,0,0,0,0	monster	Marin	1242,35,0,0,0
 xmas_fild01,0,0,0,0	monster	Sasquatch	1243,40,0,0,0
-//xmas_fild01,0,0,0,0	boss_monster	Hatii	1252,1,3600000,0,1
-//xmas_fild01,0,0,0,0	monster	Baby Hatii	1515,1,1800000,0,0
+xmas_fild01,0,0,0,0	boss_monster	Hatii	1252,1,3600000,0,1
+xmas_fild01,0,0,0,0	monster	Baby Hatii	1515,1,1800000,0,0
 // Boss Garm

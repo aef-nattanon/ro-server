@@ -37,8 +37,8 @@ OnInit:
 waitingroom "เหรียญYAKCOIN",0;
 npcshopdelitem "Shop_Coupon#1",909;
 set .Given_ItemID,25250; // รหัสไอเทมใช้ซื้อ
-setarray .Shop_ItemID[0],2375,2729,2424,2528,7619,7620,12208,23008,7776,607,12336; //รหัสไอเทม
-setarray .Shop_Price[0],6900,6900,2100,2100,100,100,100,80,80,30,100; //ราคา
+setarray .Shop_ItemID[0],6635,671,12483,2357,2524,2421,5171,2424,2528,7619,7620,12208,23008,7776,607,12336; //รหัสไอเทม
+setarray .Shop_Price[0],500,5,400,8000,8000,8000,4000,2100,2100,100,100,100,80,80,30,100; //ราคา
 for(set .@i,0; .@i < getarraysize(.Shop_ItemID); set .@i,.@i+1) {
 npcshopadditem "Shop_Coupon#1",.Shop_ItemID[.@i],.Shop_Price[.@i];
 }

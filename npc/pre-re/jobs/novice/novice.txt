@@ -100,7 +100,6 @@ new_1-2,100,28,4	script	Receptionist#nv1	86,{
 				warp "izlude",94,103;
 				break;
 			case 6:
-				clearitem;
 				getitem 569,1000;
 				getitem 12323,50;
 				getitem 12324,10;
@@ -136,7 +135,6 @@ new_1-2,100,28,4	script	Receptionist#nv1	86,{
 			end;
 			
 		case 2:
-				clearitem;
 				getitem 569,1000;
 				getitem 12323,50;
 				getitem 12324,10;
